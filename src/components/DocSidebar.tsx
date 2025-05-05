@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { ChevronDown, ChevronRight, Menu, ChevronLeft, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Category } from "@/types";
@@ -13,27 +13,23 @@ interface DocSidebarProps {
 
 export function DocSidebar({ categories, currentSlug }: DocSidebarProps) {
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(true);
+  const { category: categorySlug } = useParams();
+  const [isOpen, setIsOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [expandedCategories, setExpandedCategories] = useState<{ [key: string]: boolean }>(() => {
-    // Initially expand the category that contains the current page
-    const expanded: { [key: string]: boolean } = {};
-    categories.forEach((category) => {
-      if (category.pages.some((page) => page.slug === currentSlug)) {
-        expanded[category.id] = true;
-      } else {
-        expanded[category.id] = false;
-      }
-    });
-    return expanded;
-  });
+  const [currentCategory, setCurrentCategory] = useState<Category | null>(null);
 
-  const toggleCategory = (categoryId: string) => {
-    setExpandedCategories((prev) => ({
-      ...prev,
-      [categoryId]: !prev[categoryId],
-    }));
-  };
+  // Find the current category based on URL params
+  useEffect(() => {
+    if (categorySlug) {
+      const foundCategory = categories.find(cat => cat.slug === categorySlug);
+      if (foundCategory) {
+        setCurrentCategory(foundCategory);
+      }
+    } else if (categories.length > 0) {
+      // Default to first category if none specified
+      setCurrentCategory(categories[0]);
+    }
+  }, [categorySlug, categories]);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -47,6 +43,8 @@ export function DocSidebar({ categories, currentSlug }: DocSidebarProps) {
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);
+
+  if (!currentCategory) return null;
 
   return (
     <aside className="relative">
@@ -87,62 +85,57 @@ export function DocSidebar({ categories, currentSlug }: DocSidebarProps) {
         </div>
         
         <nav className={`px-3 py-4 overflow-y-auto ${isCollapsed ? "overflow-x-hidden" : ""}`}>
-          {categories
-            .sort((a, b) => a.position - b.position)
-            .map((category) => (
-              <div key={category.id} className="mb-4">
-                {!isCollapsed ? (
-                  <>
-                    <button
-                      onClick={() => toggleCategory(category.id)}
-                      className={cn(
-                        "flex items-center justify-between w-full px-2 py-2 text-left rounded-md hover:bg-sidebar-accent",
-                        currentSlug.startsWith(`/${category.slug}`) && "text-primary-600"
-                      )}
-                    >
-                      <span className="font-medium truncate">{category.label}</span>
-                      {expandedCategories[category.id] ? (
-                        <ChevronDown size={18} />
-                      ) : (
-                        <ChevronRight size={18} />
-                      )}
-                    </button>
-                    
-                    {expandedCategories[category.id] && (
-                      <ul className="pl-4 mt-1 space-y-1">
-                        {category.pages
-                          .sort((a, b) => (a.sidebar_position || 0) - (b.sidebar_position || 0))
-                          .map((page) => (
-                            <li key={page.id}>
-                              <Link
-                                to={page.slug}
-                                className={cn(
-                                  "block px-2 py-1.5 rounded-md text-sm",
-                                  page.slug === currentSlug
-                                    ? "text-primary-600 bg-sidebar-accent font-medium"
-                                    : "hover:text-primary-600 hover:bg-sidebar-accent"
-                                )}
-                              >
-                                {page.sidebar_label || page.title}
-                              </Link>
-                            </li>
-                          ))}
-                      </ul>
-                    )}
-                  </>
-                ) : (
-                  <Link 
-                    to={`/${category.slug}`}
-                    className={cn(
-                      "flex flex-col items-center justify-center w-full py-3 px-1 text-center rounded-md hover:bg-sidebar-accent",
-                      currentSlug.startsWith(`/${category.slug}`) && "text-primary-600 bg-sidebar-accent"
-                    )}
-                  >
-                    <span className="text-xs font-medium truncate">{category.label.charAt(0)}</span>
-                  </Link>
-                )}
+          <div className="mb-4">
+            {!isCollapsed ? (
+              <div className="mb-4">
+                <div className="px-2 py-2 font-medium text-primary-600">
+                  {currentCategory.label}
+                </div>
+                <ul className="pl-2 mt-1 space-y-1">
+                  {currentCategory.pages
+                    .sort((a, b) => (a.sidebar_position || 0) - (b.sidebar_position || 0))
+                    .map((page) => (
+                      <li key={page.id}>
+                        <Link
+                          to={page.slug}
+                          className={cn(
+                            "block px-2 py-1.5 rounded-md text-sm",
+                            page.slug === currentSlug
+                              ? "text-primary-600 bg-sidebar-accent font-medium"
+                              : "hover:text-primary-600 hover:bg-sidebar-accent"
+                          )}
+                        >
+                          {page.sidebar_label || page.title}
+                        </Link>
+                      </li>
+                    ))}
+                </ul>
               </div>
-            ))}
+            ) : (
+              <div className="flex flex-col items-center space-y-2">
+                <div className="text-xs font-medium text-primary-600 py-2">
+                  {currentCategory.label.charAt(0)}
+                </div>
+                {currentCategory.pages
+                  .sort((a, b) => (a.sidebar_position || 0) - (b.sidebar_position || 0))
+                  .map((page) => (
+                    <Link
+                      key={page.id}
+                      to={page.slug}
+                      className={cn(
+                        "w-10 h-10 flex items-center justify-center rounded-md",
+                        page.slug === currentSlug
+                          ? "bg-sidebar-accent text-primary-600"
+                          : "hover:bg-sidebar-accent"
+                      )}
+                      title={page.title}
+                    >
+                      {page.title.charAt(0)}
+                    </Link>
+                  ))}
+              </div>
+            )}
+          </div>
         </nav>
       </div>
     </aside>

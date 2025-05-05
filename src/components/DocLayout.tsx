@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { Header } from "./Header";
 import { DocSidebar } from "./DocSidebar";
 import { Category, DocPage } from "@/types";
@@ -12,6 +12,7 @@ interface DocLayoutProps {
 
 export function DocLayout({ children }: DocLayoutProps) {
   const location = useLocation();
+  const { category } = useParams();
   const [categories, setCategories] = useState<Category[]>(mockData.categories);
   const [currentPage, setCurrentPage] = useState<DocPage | null>(null);
 
@@ -21,8 +22,8 @@ export function DocLayout({ children }: DocLayoutProps) {
     // Find the current page based on the URL
     let foundPage: DocPage | null = null;
     
-    for (const category of categories) {
-      const page = category.pages.find(p => p.slug === pathname);
+    for (const cat of categories) {
+      const page = cat.pages.find(p => p.slug === pathname);
       if (page) {
         foundPage = page;
         break;
@@ -39,7 +40,7 @@ export function DocLayout({ children }: DocLayoutProps) {
       <div className="flex flex-1">
         <DocSidebar categories={categories} currentSlug={location.pathname} />
         
-        <main className="flex-1 pl-0 lg:pl-64">
+        <main className="flex-1 pl-0 lg:pl-64 transition-all duration-300">
           <div className="container max-w-4xl py-8 px-4 lg:px-8">
             {children}
             

@@ -31,29 +31,15 @@ export function Header() {
             <Menu size={24} />
           </button>
 
-          <nav className={`${isMobileMenuOpen ? 'flex' : 'hidden'} lg:flex flex-col lg:flex-row absolute lg:static top-16 left-0 right-0 bg-background lg:bg-transparent border-b lg:border-0 p-4 lg:p-0 gap-4 lg:gap-6 z-50`}>
-            <Link
-              to="/docs"
-              className="text-sm font-medium transition-colors hover:text-primary"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Documentation
-            </Link>
-            <Link
-              to="/tutorials"
-              className="text-sm font-medium transition-colors hover:text-primary"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Tutorials
-            </Link>
-            <Link
-              to="/community"
-              className="text-sm font-medium transition-colors hover:text-primary"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Community
-            </Link>
-          </nav>
+          <Link
+            to="/"
+            className="lg:hidden items-center space-x-2 flex"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <span className="font-bold text-lg bg-gradient-to-r from-primary-700 to-primary-500 text-transparent bg-clip-text">
+              Kana Learn
+            </span>
+          </Link>
         </div>
 
         <div className="flex items-center gap-2">
