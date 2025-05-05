@@ -4,6 +4,14 @@ import { useEffect, useState } from "react";
 import { DocLayout } from "@/components/DocLayout";
 import { Category } from "@/types";
 import { mockData } from "@/data/mockDocData";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+// Array of placeholder images for category banners
+const categoryBanners = {
+  "crypto-essentials": "photo-1488590528505-98d2b5aba04b",
+  "security": "photo-1461749280684-dccba630e2f6"
+};
 
 const CategoryPage = () => {
   const { category } = useParams();
@@ -58,9 +66,21 @@ const CategoryPage = () => {
     );
   }
 
+  // Get the banner image for current category
+  const bannerImageId = categoryBanners[categoryData.slug as keyof typeof categoryBanners] || "photo-1498050108023-c5249f4df085";
+
   return (
     <DocLayout>
       <div className="prose prose-lg max-w-none">
+        {/* Category Banner */}
+        <div className="w-full h-48 sm:h-60 md:h-72 mb-6 overflow-hidden rounded-lg">
+          <img 
+            src={`https://images.unsplash.com/${bannerImageId}?auto=format&fit=crop&w=1200&q=80`}
+            alt={categoryData.label}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
         <h1 className="text-3xl font-bold mb-6">{categoryData.label}</h1>
         
         <p className="text-lg mb-8">

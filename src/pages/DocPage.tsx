@@ -1,10 +1,12 @@
 
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { DocLayout } from "@/components/DocLayout";
 import { DocPage as DocPageType } from "@/types";
 import { mockData } from "@/data/mockDocData";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const DocPage = () => {
   const { category, slug } = useParams();
@@ -44,6 +46,20 @@ const DocPage = () => {
     }
   }, [category, slug]);
 
+  const renderCallToAction = () => {
+    return (
+      <div className="mt-12 p-6 bg-primary-50 dark:bg-primary-950/20 rounded-lg border border-primary-100 dark:border-primary-900">
+        <h3 className="text-xl font-semibold mb-3">Ready to start your crypto journey?</h3>
+        <p className="mb-6">
+          Join thousands of traders who are already using Kana Learn to navigate the cryptocurrency market with confidence.
+        </p>
+        <Button className="bg-primary hover:bg-primary-600">
+          Sign up for free <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
+      </div>
+    );
+  };
+
   return (
     <DocLayout>
       {loading ? (
@@ -58,6 +74,7 @@ const DocPage = () => {
       ) : page ? (
         <article>
           <MarkdownRenderer content={page.content} />
+          {renderCallToAction()}
         </article>
       ) : null}
     </DocLayout>

@@ -41,9 +41,10 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
   return (
     <aside className="relative">
       <div
-        className={`fixed top-0 left-0 z-40 h-screen bg-sidebar border-r border-border transition-all duration-300 ease-in-out ${
-          isCollapsed ? "w-0 overflow-hidden" : "w-64 lg:w-64"
-        } lg:translate-x-0`}
+        className={cn(
+          "fixed top-0 left-0 z-40 h-screen bg-sidebar border-r border-border transition-all duration-300 ease-in-out",
+          isCollapsed ? "w-0 overflow-hidden" : "w-64"
+        )}
       >
         <div className="p-4 border-b border-border flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
@@ -54,7 +55,10 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
         <nav className="px-3 py-4 overflow-y-auto">
           <div className="mb-4">
             <div className="mb-4">
-              <div className="px-2 py-2 font-medium text-primary-600 cursor-pointer" onClick={() => handleCategoryClick(currentCategory.slug)}>
+              <div 
+                className="px-2 py-2 font-medium text-primary-600 cursor-pointer hover:bg-sidebar-accent rounded"
+                onClick={() => handleCategoryClick(currentCategory.slug)}
+              >
                 {currentCategory.label}
               </div>
               <ul className="pl-2 mt-1 space-y-1">
@@ -86,7 +90,10 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
         variant="ghost" 
         size="sm" 
         onClick={onToggleCollapse}
-        className={`fixed z-50 bottom-4 ${isCollapsed ? 'left-4' : 'left-56'} shadow-md rounded-full p-2 bg-sidebar-accent hover:bg-sidebar-accent transition-all duration-300`}
+        className={cn(
+          "fixed z-50 bottom-4 bg-sidebar-accent hover:bg-sidebar-accent shadow-md rounded-full p-2 transition-all duration-300",
+          isCollapsed ? "left-4" : "left-56"
+        )}
         aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
       >
         {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
