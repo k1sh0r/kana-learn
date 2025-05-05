@@ -5,6 +5,7 @@ import { Header } from "./Header";
 import { DocSidebar } from "./DocSidebar";
 import { Category, DocPage } from "@/types";
 import { mockData } from "@/data/mockDocData";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface DocLayoutProps {
   children: React.ReactNode;
@@ -13,10 +14,16 @@ interface DocLayoutProps {
 
 export function DocLayout({ children, hideSidebar = false }: DocLayoutProps) {
   const location = useLocation();
+  const isMobile = useIsMobile();
   const { category } = useParams();
   const [categories, setCategories] = useState<Category[]>(mockData.categories);
   const [currentPage, setCurrentPage] = useState<DocPage | null>(null);
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(isMobile); // Collapse by default on mobile
+
+  useEffect(() => {
+    // Update sidebar state when screen size changes
+    setSidebarCollapsed(isMobile);
+  }, [isMobile]);
 
   useEffect(() => {
     const pathname = location.pathname;
@@ -49,7 +56,7 @@ export function DocLayout({ children, hideSidebar = false }: DocLayoutProps) {
           />
         )}
         
-        <main className={`flex-1 ${!hideSidebar ? (sidebarCollapsed ? "pl-12" : "pl-0 lg:pl-64") : "pl-0"} transition-all duration-300`}>
+        <main className={`flex-1 transition-all duration-300 ${!hideSidebar && !sidebarCollapsed ? "pl-64" : "pl-0"}`}>
           <div className="container max-w-4xl py-8 px-4 lg:px-8">
             {children}
             

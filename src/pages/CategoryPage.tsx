@@ -1,5 +1,5 @@
 
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { DocLayout } from "@/components/DocLayout";
 import { Category } from "@/types";
@@ -7,6 +7,7 @@ import { mockData } from "@/data/mockDocData";
 
 const CategoryPage = () => {
   const { category } = useParams();
+  const navigate = useNavigate();
   const [categoryData, setCategoryData] = useState<Category | null>(null);
   const [loading, setLoading] = useState(true);
   
@@ -26,6 +27,10 @@ const CategoryPage = () => {
     
     setLoading(false);
   }, [category]);
+
+  const handleCardClick = (slug: string) => {
+    navigate(slug);
+  };
 
   if (loading) {
     return (
@@ -68,19 +73,18 @@ const CategoryPage = () => {
             .map((page) => (
               <div 
                 key={page.id} 
-                className="block p-6 border border-border rounded-lg hover:border-primary-300 transition-colors"
+                className="block p-6 border border-border rounded-lg hover:border-primary-300 transition-colors cursor-pointer"
+                onClick={() => handleCardClick(page.slug)}
               >
                 <h2 className="text-xl font-bold mb-2">
-                  <Link to={page.slug} className="text-foreground hover:text-primary">
-                    {page.title}
-                  </Link>
+                  {page.title}
                 </h2>
                 <p className="text-muted-foreground line-clamp-2">
                   {page.content.substring(0, 150).replace(/#.*?\n/, "")}...
                 </p>
-                <Link to={page.slug} className="text-primary hover:underline mt-4 inline-block">
+                <span className="text-primary hover:underline mt-4 inline-block">
                   Read more
-                </Link>
+                </span>
               </div>
             ))}
         </div>

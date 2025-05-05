@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams, useNavigate } from "react-router-dom";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Category } from "@/types";
@@ -15,6 +15,7 @@ interface DocSidebarProps {
 
 export function DocSidebar({ categories, currentSlug, isCollapsed = false, onToggleCollapse }: DocSidebarProps) {
   const location = useLocation();
+  const navigate = useNavigate();
   const { category: categorySlug } = useParams();
   const [currentCategory, setCurrentCategory] = useState<Category | null>(null);
 
@@ -31,10 +32,9 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
     }
   }, [categorySlug, categories]);
 
-  // Close mobile sidebar when route changes
-  useEffect(() => {
-    // This effect can stay empty since we're now controlling collapse state from parent
-  }, [location.pathname]);
+  const handleCategoryClick = (categorySlug: string) => {
+    navigate(`/${categorySlug}`);
+  };
 
   if (!currentCategory) return null;
 
@@ -54,7 +54,7 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
         <nav className="px-3 py-4 overflow-y-auto">
           <div className="mb-4">
             <div className="mb-4">
-              <div className="px-2 py-2 font-medium text-primary-600">
+              <div className="px-2 py-2 font-medium text-primary-600 cursor-pointer" onClick={() => handleCategoryClick(currentCategory.slug)}>
                 {currentCategory.label}
               </div>
               <ul className="pl-2 mt-1 space-y-1">
@@ -81,12 +81,12 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
         </nav>
       </div>
 
-      {/* Collapse/Expand button positioned at bottom right of sidebar */}
+      {/* Floating Collapse/Expand button */}
       <Button 
         variant="ghost" 
         size="sm" 
         onClick={onToggleCollapse}
-        className={`fixed z-50 bottom-4 ${isCollapsed ? 'left-4' : 'left-56'} rounded-full p-2 bg-sidebar-accent hover:bg-sidebar-accent transition-all duration-300`}
+        className={`fixed z-50 bottom-4 ${isCollapsed ? 'left-4' : 'left-56'} shadow-md rounded-full p-2 bg-sidebar-accent hover:bg-sidebar-accent transition-all duration-300`}
         aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
       >
         {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
