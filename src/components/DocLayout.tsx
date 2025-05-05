@@ -8,13 +8,15 @@ import { mockData } from "@/data/mockDocData";
 
 interface DocLayoutProps {
   children: React.ReactNode;
+  hideSidebar?: boolean;
 }
 
-export function DocLayout({ children }: DocLayoutProps) {
+export function DocLayout({ children, hideSidebar = false }: DocLayoutProps) {
   const location = useLocation();
   const { category } = useParams();
   const [categories, setCategories] = useState<Category[]>(mockData.categories);
   const [currentPage, setCurrentPage] = useState<DocPage | null>(null);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   useEffect(() => {
     const pathname = location.pathname;
@@ -38,9 +40,16 @@ export function DocLayout({ children }: DocLayoutProps) {
       <Header />
       
       <div className="flex flex-1">
-        <DocSidebar categories={categories} currentSlug={location.pathname} />
+        {!hideSidebar && (
+          <DocSidebar 
+            categories={categories} 
+            currentSlug={location.pathname} 
+            isCollapsed={sidebarCollapsed}
+            onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
+          />
+        )}
         
-        <main className="flex-1 pl-0 lg:pl-64 transition-all duration-300">
+        <main className={`flex-1 ${!hideSidebar ? (sidebarCollapsed ? "pl-12" : "pl-0 lg:pl-64") : "pl-0"} transition-all duration-300`}>
           <div className="container max-w-4xl py-8 px-4 lg:px-8">
             {children}
             

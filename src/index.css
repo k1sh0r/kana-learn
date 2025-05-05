@@ -46,13 +46,14 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Changed from #030816 (222.2 84% 4.9%) to #080A0C (210 20% 4.5%) for a dark blue-grey tint */
+    --background: 210 20% 4.5%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 210 20% 4.5%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 210 20% 4.5%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 180 100% 50%; /* Teal #00FFF0 */
@@ -74,7 +75,7 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 180 100% 50%;
 
-    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-background: 210 20% 4.5%;
     --sidebar-foreground: 210 40% 98%;
     --sidebar-primary: 180 100% 50%; /* Teal for sidebar accents */
     --sidebar-primary-foreground: 222.2 47.4% 11.2%;

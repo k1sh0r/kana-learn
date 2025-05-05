@@ -18,12 +18,6 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-6 lg:gap-10">
-          <Link to="/" className="hidden items-center space-x-2 lg:flex">
-            <span className="font-bold text-lg lg:text-2xl bg-gradient-to-r from-primary-700 to-primary-500 text-transparent bg-clip-text">
-              Kana Learn
-            </span>
-          </Link>
-
           <button 
             className="lg:hidden p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -33,10 +27,10 @@ export function Header() {
 
           <Link
             to="/"
-            className="lg:hidden items-center space-x-2 flex"
+            className="items-center space-x-2 flex"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <span className="font-bold text-lg bg-gradient-to-r from-primary-700 to-primary-500 text-transparent bg-clip-text">
+            <span className="font-bold text-lg lg:text-2xl bg-gradient-to-r from-primary-700 to-primary-500 text-transparent bg-clip-text">
               Kana Learn
             </span>
           </Link>
