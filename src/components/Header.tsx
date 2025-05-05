@@ -1,9 +1,19 @@
 
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "@/components/ui/button";
+import { SignInModal } from "./SignInModal";
+import { Menu } from "lucide-react";
 
 export function Header() {
+  const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleSignInClick = () => {
+    setIsSignInModalOpen(true);
+  };
+
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
@@ -14,22 +24,32 @@ export function Header() {
             </span>
           </Link>
 
-          <nav className="hidden gap-6 lg:flex">
+          <button 
+            className="lg:hidden p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <Menu size={24} />
+          </button>
+
+          <nav className={`${isMobileMenuOpen ? 'flex' : 'hidden'} lg:flex flex-col lg:flex-row absolute lg:static top-16 left-0 right-0 bg-background lg:bg-transparent border-b lg:border-0 p-4 lg:p-0 gap-4 lg:gap-6 z-50`}>
             <Link
               to="/docs"
               className="text-sm font-medium transition-colors hover:text-primary"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Documentation
             </Link>
             <Link
               to="/tutorials"
               className="text-sm font-medium transition-colors hover:text-primary"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Tutorials
             </Link>
             <Link
               to="/community"
               className="text-sm font-medium transition-colors hover:text-primary"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Community
             </Link>
@@ -38,14 +58,20 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Button variant="outline" size="sm" className="hidden lg:flex">
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={handleSignInClick}
+          >
             Sign In
-          </Button>
-          <Button size="sm" className="hidden lg:flex">
-            Connect Wallet
           </Button>
         </div>
       </div>
+      
+      <SignInModal 
+        open={isSignInModalOpen} 
+        onOpenChange={setIsSignInModalOpen} 
+      />
     </header>
   );
 }

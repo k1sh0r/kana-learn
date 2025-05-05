@@ -45,14 +45,12 @@ const DocsHome = () => {
                     ))}
                 </ul>
                 
-                {category.pages.length > 3 && (
-                  <Link
-                    to={`/${category.slug}`}
-                    className="text-sm text-primary-600 hover:underline"
-                  >
-                    View all {category.pages.length} articles
-                  </Link>
-                )}
+                <Link
+                  to={`/${category.slug}`}
+                  className="text-sm text-primary-600 hover:underline"
+                >
+                  View all {category.pages.length} articles
+                </Link>
               </div>
             ))}
         </div>
