@@ -50,7 +50,20 @@ export function DocLayout({ children, hideSidebar = false }: DocLayoutProps) {
   }, [location.pathname, categories]);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    try {
+      // Try smooth scrolling first
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } catch (error) {
+      // Fallback for older browsers
+      window.scrollTo(0, 0);
+    }
+
+    // Additional fallback for iOS Safari
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   };
 
   const navigateToPage = (page: DocPage | null) => {
