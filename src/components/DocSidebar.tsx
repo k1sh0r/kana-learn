@@ -48,6 +48,11 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
       >
         <div className="p-4 border-b border-border flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
+            <img 
+              src="/lovable-uploads/b38bc0d6-e48e-4ffd-8794-1e90378c2d93.png" 
+              alt="Kana Learn Logo" 
+              className="h-6 w-6"
+            />
             <span className="text-xl font-bold text-primary-600">Kana Learn</span>
           </Link>
         </div>

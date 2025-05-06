@@ -13,6 +13,8 @@ Cryptocurrencies are digital currencies that use blockchain technology to record
 
 This technology creates a record of transactions that is very hard to change or hack once confirmed on the blockchain. The distributed nature of blockchain makes cryptocurrencies fundamentally different from traditional, centralized fiat currencies.
 
+![Cryptocurrency Blockchain](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800)
+
 ### Key Features of Cryptocurrencies
 
 - **Decentralization**: Not controlled by any central authority like a government or bank
@@ -50,6 +52,8 @@ Blockchain is the underlying technology that powers cryptocurrencies and many ot
 ## What is Blockchain?
 
 A blockchain is a distributed digital ledger that records transactions across many computers so that any involved record cannot be altered retroactively, without the alteration of all subsequent blocks.
+
+![Blockchain Technology](https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800)
 
 ### How Blockchain Works
 
