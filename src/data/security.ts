@@ -26,6 +26,8 @@ Securing your cryptocurrency is one of the most important aspects of participati
    - Completely offline but vulnerable to physical damage
    - Best for cold storage of long-term holdings
 
+![Wallet Security](/images/content/wallet-security.jpg)
+
 ### Best Practices for Wallet Security
 
 - **Never share your private keys or seed phrases**

@@ -1,4 +1,3 @@
-
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { DocLayout } from "@/components/DocLayout";
@@ -7,10 +6,10 @@ import { mockData } from "@/data/mockDocData";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-// Array of placeholder images for category banners
+// Map of category slugs to local banner image paths
 const categoryBanners = {
-  "crypto-essentials": "photo-1488590528505-98d2b5aba04b",
-  "security": "photo-1461749280684-dccba630e2f6"
+  "crypto-essentials": "/images/banners/crypto-essentials.jpg",
+  "security": "/images/banners/security.jpg"
 };
 
 const CategoryPage = () => {
@@ -66,8 +65,8 @@ const CategoryPage = () => {
     );
   }
 
-  // Get the banner image for current category
-  const bannerImageId = categoryBanners[categoryData.slug as keyof typeof categoryBanners] || "photo-1498050108023-c5249f4df085";
+  // Get the banner image for current category or use default
+  const bannerImage = categoryBanners[categoryData.slug as keyof typeof categoryBanners] || "/images/banners/default.jpg";
 
   return (
     <DocLayout>
@@ -75,7 +74,7 @@ const CategoryPage = () => {
         {/* Category Banner */}
         <div className="w-full h-48 sm:h-60 md:h-72 mb-6 overflow-hidden rounded-lg">
           <img 
-            src={`https://images.unsplash.com/${bannerImageId}?auto=format&fit=crop&w=1200&q=80`}
+            src={bannerImage}
             alt={categoryData.label}
             className="w-full h-full object-cover"
           />

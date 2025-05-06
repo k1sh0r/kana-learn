@@ -1,14 +1,20 @@
+
 import { useEffect } from "react";
 import { DocLayout } from "@/components/DocLayout";
 import { Link } from "react-router-dom";
 import { mockData } from "@/data/mockDocData";
 
-// Array of placeholder images for category cards
-const cardImages = ["photo-1488590528505-98d2b5aba04b", "photo-1461749280684-dccba630e2f6", "photo-1581091226825-a6a2a5aee158", "photo-1487058792275-0ad4aaf24ca7", "photo-1498050108023-c5249f4df085"];
+// Map of category slugs to local banner image paths for cards
+const categoryCardImages = {
+  "crypto-essentials": "/images/banners/crypto-essentials.jpg",
+  "security": "/images/banners/security.jpg"
+};
+
 const DocsHome = () => {
   useEffect(() => {
     document.title = "Documentation | Kana Learn";
   }, []);
+
   return <DocLayout hideSidebar>
       <div className="prose prose-lg max-w-none">
         <h1 className="text-3xl font-bold mb-6">Kana Learn Documentation</h1>
@@ -20,11 +26,11 @@ const DocsHome = () => {
         </p>
         
         <div className="grid gap-6 sm:grid-cols-2">
-          {mockData.categories.sort((a, b) => a.position - b.position).map((category, index) => {
-          const imageId = cardImages[index % cardImages.length];
+          {mockData.categories.sort((a, b) => a.position - b.position).map((category) => {
+          const cardImage = categoryCardImages[category.slug as keyof typeof categoryCardImages] || "/images/banners/default.jpg";
           return <Link key={category.id} to={`/${category.slug}`} className="block border border-border rounded-lg hover:border-primary-300 transition-colors overflow-hidden no-underline">
                   <div className="h-40 overflow-hidden">
-                    <img src={`https://images.unsplash.com/${imageId}?auto=format&fit=crop&w=800&q=80`} alt={category.label} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+                    <img src={cardImage} alt={category.label} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
                   </div>
                   <div className="p-6">
                     <h2 className="text-xl font-bold mb-2">{category.label}</h2>
