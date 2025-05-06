@@ -75,7 +75,7 @@ export function DocLayout({ children, hideSidebar = false }: DocLayoutProps) {
         )}
         
         <main className={`flex-1 transition-all duration-300 ${!hideSidebar && !sidebarCollapsed ? "ml-64" : "ml-0"}`}>
-          <div className="container max-w-4xl py-8 px-4 lg:px-8">
+          <div className="container max-w-4xl pt-8 pb-28 xl:pb-8 xl:px-4">
             {children}
             
             {currentPage && (
