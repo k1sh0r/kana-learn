@@ -77,8 +77,8 @@ export function DocLayout({ children, hideSidebar = false }: DocLayoutProps) {
             {currentPage && (
               <div className="mt-16 pt-4 border-t border-border">
                 <Pagination>
-                  <PaginationContent className="flex flex-col sm:flex-row w-full justify-between space-y-4 sm:space-y-0">
-                    <PaginationItem>
+                  <PaginationContent className="flex flex-col-reverse sm:flex-row w-full justify-between gap-4">
+                    <PaginationItem className="w-full sm:w-auto">
                       {getAdjacentPage(categories, currentPage, "prev") && (
                         <PaginationPrevious
                           onClick={() => navigateToPage(getAdjacentPage(categories, currentPage, "prev"))}
@@ -89,7 +89,7 @@ export function DocLayout({ children, hideSidebar = false }: DocLayoutProps) {
                       )}
                     </PaginationItem>
                     
-                    <PaginationItem className="ml-auto">
+                    <PaginationItem className="w-full sm:w-auto">
                       {getAdjacentPage(categories, currentPage, "next") && (
                         <PaginationNext
                           onClick={() => navigateToPage(getAdjacentPage(categories, currentPage, "next"))}

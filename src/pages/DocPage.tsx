@@ -46,6 +46,21 @@ const DocPage = () => {
     }
   }, [category, slug]);
 
+  const renderExampleImage = () => {
+    return (
+      <div className="my-8">
+        <img 
+          src="/lovable-uploads/b38bc0d6-e48e-4ffd-8794-1e90378c2d93.png" 
+          alt="Kana Learn Logo" 
+          className="max-h-24 mx-auto rounded-lg"
+        />
+        <p className="text-center text-sm text-muted-foreground mt-2">
+          The Kana Learn logo represents our commitment to crypto education
+        </p>
+      </div>
+    );
+  };
+
   const renderCallToAction = () => {
     return (
       <div className="mt-12 p-6 bg-primary-50 dark:bg-primary-950/20 rounded-lg border border-primary-100 dark:border-primary-900">
@@ -74,6 +89,7 @@ const DocPage = () => {
       ) : page ? (
         <article>
           <MarkdownRenderer content={page.content} />
+          {renderExampleImage()}
           {renderCallToAction()}
         </article>
       ) : null}
