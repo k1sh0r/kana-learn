@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation, useParams, useNavigate } from "react-router-dom";
 import { ChevronRight, ChevronLeft } from "lucide-react";
@@ -42,21 +41,11 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
     <aside className="relative">
       <div
         className={cn(
-          "fixed top-0 left-0 z-40 h-screen bg-sidebar border-r border-border transition-all duration-300 ease-in-out",
+          "fixed top-16 left-0 z-30 h-[calc(100vh-4rem)] bg-sidebar border-r border-border transition-all duration-300 ease-in-out",
           isCollapsed ? "w-0 overflow-hidden" : "w-64"
         )}
       >
-        <div className="p-4 border-b border-border flex justify-between items-center">
-          <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/images/kana-logo.png" 
-              alt="Kana Learn Logo" 
-              className="h-6 w-6"
-            />
-          </Link>
-        </div>
-        
-        <nav className="px-3 py-4 overflow-y-auto">
+        <nav className="px-3 py-4 overflow-y-auto h-full">
           <div className="mb-4">
             <div className="mb-4">
               <div 
@@ -95,8 +84,8 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
         size="sm" 
         onClick={onToggleCollapse}
         className={cn(
-          "fixed z-50 bottom-4 bg-sidebar-accent hover:bg-sidebar-accent shadow-md rounded-full p-2 transition-all duration-300",
-          isCollapsed ? "left-4" : "left-56"
+          "fixed z-50 bottom-4 bg-background hover:bg-sidebar-accent shadow-md rounded-full p-2 transition-all duration-300",
+          isCollapsed ? "left-4 bg-sidebar-accent" : "left-52"
         )}
         aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
       >

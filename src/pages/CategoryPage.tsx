@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 
 // Map of category slugs to local banner image paths
 const categoryBanners = {
-  "crypto-essentials": "/images/banners/crypto-essentials.jpeg",
+  "crypto-essentials": "/images/banners/crypto-essentials.jpg",
   "perps": "/images/banners/perps-cover.jpg"
 };
 
@@ -72,7 +72,7 @@ const CategoryPage = () => {
     <DocLayout>
       <div className="prose prose-lg max-w-none">
         {/* Category Banner */}
-        <div className="w-full h-48 sm:h-60 md:h-72 mb-6 overflow-hidden rounded-lg">
+        <div className="w-full mb-6 overflow-hidden rounded-lg">
           <img 
             src={bannerImage}
             alt={categoryData.label}
@@ -96,13 +96,13 @@ const CategoryPage = () => {
                 className="block p-6 border border-border rounded-lg hover:border-primary-300 transition-colors cursor-pointer"
                 onClick={() => handleCardClick(page.slug)}
               >
-                <h2 className="text-xl font-bold mb-2">
+                <h2 className="text-xl font-bold mb-1">
                   {page.title}
                 </h2>
-                <p className="text-muted-foreground line-clamp-2">
+                {/* <p className="text-muted-foreground line-clamp-2">
                   {page.content.substring(0, 150).replace(/#.*?\n/, "")}...
-                </p>
-                <span className="text-primary hover:underline mt-4 inline-block">
+                </p> */}
+                <span className="text-primary hover:underline mt-1 inline-block">
                   Read more
                 </span>
               </div>

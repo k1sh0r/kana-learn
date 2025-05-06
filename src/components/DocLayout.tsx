@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
 import { Header } from "./Header";
@@ -50,9 +49,14 @@ export function DocLayout({ children, hideSidebar = false }: DocLayoutProps) {
     setCurrentPage(foundPage);
   }, [location.pathname, categories]);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const navigateToPage = (page: DocPage | null) => {
     if (page) {
       navigate(page.slug);
+      scrollToTop();
     }
   };
 
@@ -77,26 +81,36 @@ export function DocLayout({ children, hideSidebar = false }: DocLayoutProps) {
             {currentPage && (
               <div className="mt-16 pt-4 border-t border-border">
                 <Pagination>
-                  <PaginationContent className="flex flex-col-reverse sm:flex-row w-full justify-between gap-4">
+                  <PaginationContent className="flex flex-row w-full justify-between gap-4">
                     <PaginationItem className="w-full sm:w-auto">
                       {getAdjacentPage(categories, currentPage, "prev") && (
-                        <PaginationPrevious
-                          onClick={() => navigateToPage(getAdjacentPage(categories, currentPage, "prev"))}
-                          className="w-full sm:w-auto justify-start cursor-pointer"
-                        >
-                          {getAdjacentPage(categories, currentPage, "prev")?.title}
-                        </PaginationPrevious>
+                        <div className="flex flex-col">
+                          <PaginationPrevious
+                            onClick={() => navigateToPage(getAdjacentPage(categories, currentPage, "prev"))}
+                            className="w-full sm:w-auto justify-start cursor-pointer"
+                          >
+                            Previous
+                          </PaginationPrevious>
+                          <span className="text-xs text-muted-foreground truncate max-w-[160px] pl-2">
+                            {getAdjacentPage(categories, currentPage, "prev")?.title}
+                          </span>
+                        </div>
                       )}
                     </PaginationItem>
                     
                     <PaginationItem className="w-full sm:w-auto">
                       {getAdjacentPage(categories, currentPage, "next") && (
-                        <PaginationNext
-                          onClick={() => navigateToPage(getAdjacentPage(categories, currentPage, "next"))}
-                          className="w-full sm:w-auto justify-end cursor-pointer"
-                        >
-                          {getAdjacentPage(categories, currentPage, "next")?.title}
-                        </PaginationNext>
+                        <div className="flex flex-col items-end">
+                          <PaginationNext
+                            onClick={() => navigateToPage(getAdjacentPage(categories, currentPage, "next"))}
+                            className="w-full sm:w-auto justify-end cursor-pointer"
+                          >
+                            Next
+                          </PaginationNext>
+                          <span className="text-xs text-muted-foreground truncate max-w-[160px] pr-2">
+                            {getAdjacentPage(categories, currentPage, "next")?.title}
+                          </span>
+                        </div>
                       )}
                     </PaginationItem>
                   </PaginationContent>
