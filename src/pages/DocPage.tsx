@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { DocLayout } from "@/components/DocLayout";
 import { DocPage as DocPageType } from "@/types";
-import { mockData } from "@/data/mockDocData";
+import { Data } from "@/data/DocData";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -22,7 +22,7 @@ const DocPage = () => {
       // Find page in mock data
       let foundPage: DocPageType | null = null;
       
-      for (const cat of mockData.categories) {
+      for (const cat of Data.categories) {
         const matchingPage = cat.pages.find(p => p.slug === path);
         if (matchingPage) {
           foundPage = matchingPage;
@@ -74,7 +74,7 @@ const DocPage = () => {
       ) : page ? (
         <article>
           <MarkdownRenderer content={page.content} />
-          {renderCallToAction()}
+          {/* {renderCallToAction()} */}
         </article>
       ) : null}
     </DocLayout>

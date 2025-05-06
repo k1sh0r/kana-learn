@@ -2,14 +2,14 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { DocLayout } from "@/components/DocLayout";
 import { Category } from "@/types";
-import { mockData } from "@/data/mockDocData";
+import { Data } from "@/data/DocData";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 // Map of category slugs to local banner image paths
 const categoryBanners = {
-  "crypto-essentials": "/images/banners/crypto-essentials.jpg",
-  "security": "/images/banners/security.jpg"
+  "crypto-essentials": "/images/banners/crypto-essentials.jpeg",
+  "perps": "/images/banners/perps-cover.jpg"
 };
 
 const CategoryPage = () => {
@@ -22,7 +22,7 @@ const CategoryPage = () => {
     setLoading(true);
     
     // Find the category in the mock data
-    const foundCategory = mockData.categories.find(
+    const foundCategory = Data.categories.find(
       (cat) => cat.slug === category
     );
     
@@ -84,6 +84,7 @@ const CategoryPage = () => {
         
         <p className="text-lg mb-8">
           Explore all topics in the {categoryData.label} category.
+          
         </p>
         
         <div className="grid gap-6">

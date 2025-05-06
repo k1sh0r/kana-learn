@@ -1,12 +1,12 @@
 
 import { Category } from "@/types";
 import { cryptoEssentialsCategory } from "./cryptoEssentials";
-import { securityCategory } from "./security";
+import { perpsCategory } from "./perps";
 
 // Export combined mock data
-export const mockData = {
+export const Data = {
   categories: [
     cryptoEssentialsCategory,
-    securityCategory,
+    perpsCategory,
   ] as Category[],
 };

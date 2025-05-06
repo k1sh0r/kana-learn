@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { useEffect } from "react";
@@ -22,7 +21,14 @@ const Home = () => {
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
                 <span className="block">Learn Crypto &</span>
-                <span className="block mt-1 bg-gradient-to-r from-primary-700 to-primary-500 text-transparent bg-clip-text">
+                <span
+                  className="block mt-1 text-transparent bg-clip-text"
+                  style={{
+                    background: "linear-gradient(142deg,#20a5ff 15.79%,#00f9a9 125.9%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
                   Blockchain Technology
                 </span>
               </h1>

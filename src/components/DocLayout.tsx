@@ -4,7 +4,7 @@ import { useLocation, useParams, useNavigate } from "react-router-dom";
 import { Header } from "./Header";
 import { DocSidebar } from "./DocSidebar";
 import { Category, DocPage } from "@/types";
-import { mockData } from "@/data/mockDocData";
+import { Data } from "@/data/DocData";
 import { useIsMobile } from "@/hooks/use-mobile";
 import {
   Pagination,
@@ -24,7 +24,7 @@ export function DocLayout({ children, hideSidebar = false }: DocLayoutProps) {
   const navigate = useNavigate();
   const isMobile = useIsMobile();
   const { category } = useParams();
-  const [categories, setCategories] = useState<Category[]>(mockData.categories);
+  const [categories, setCategories] = useState<Category[]>(Data.categories);
   const [currentPage, setCurrentPage] = useState<DocPage | null>(null);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(isMobile); // Collapse by default on mobile
 

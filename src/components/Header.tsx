@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ThemeToggle } from "./ThemeToggle";
@@ -24,11 +23,18 @@ export function Header() {
 
           <Link to="/" className="items-center space-x-2 flex" onClick={() => setIsMobileMenuOpen(false)}>
             <img 
-              src="/lovable-uploads/b38bc0d6-e48e-4ffd-8794-1e90378c2d93.png" 
+              src="/images/kana-logo.png" 
               alt="Kana Learn Logo" 
               className="h-8 w-8"
             />
-            <span className="font-bold text-lg lg:text-2xl bg-gradient-to-r from-primary-700 to-primary-500 text-transparent bg-clip-text">
+            <span
+              className="font-bold text-lg lg:text-2xl text-transparent bg-clip-text"
+              style={{
+                background: "linear-gradient(142deg,#20a5ff 15.79%,#00f9a9 125.9%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
               Kana Learn
             </span>
           </Link>

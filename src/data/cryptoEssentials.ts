@@ -47,7 +47,7 @@ But not all trading looks the same. In fact, most people who say, “I’m tradi
 
 Let’s break them down.
 
-![][image1]
+![Spot, Futures & Options](/images/content/spot-futures-options.jpg)
 
 **Spot Trading**
 
@@ -193,7 +193,7 @@ Examples include Uniswap, Kana Labs, and PancakeSwap.
 ❌ You sign every transaction manually  
 ❌ Easier to mess up — scams, wrong tokens, etc.
 
-**![][image2]**
+![CEX vs. DEX](/images/content/cex-vs-dex.jpg)
 
 **So which is better?**
 
@@ -213,21 +213,6 @@ Next up: **Module 3 — Tools of the Trade**: wallets, token types, and how ever
 `;
 
 const toolsOfTheTradeContent = `
-## **Module 3: Tools of the Trade**
-
-## **— Wallet Essentials** What wallets do, how to secure them, and how to avoid beginner mistakes.
-
-## **— Token Types** From APT and USDC to BTC and meme coins — what you're actually trading.
-
-## **— Stablecoin Swaps (APT ↔ USDC)** How swaps work, why they matter, and how they protect value during volatility.
-
-## **Module 4: Gas, Fees & Transactions**
-
-## **— What Is Gas?**  The fuel behind every on-chain action — and why it exists.
-
-## **— How Gas Impacts Users** Transaction failures, delays, and how to avoid common gas-related mistakes.
-
-## **— Gasless Trades on Kana Perps** How Kana Labs removes gas friction for traders — and what that unlocks for new users.
 
 ## **Module 3: Tools of the Trade**
 
@@ -271,7 +256,7 @@ Blockchains don’t come with a support hotline. If you make this kind of mistak
 * Does the platform support this chain?  
 * If unsure, test with a small amount.
 
-![][image3]
+![Transaction](/images/content/sending-to-address.jpg)
 
 **Security Tips (Seriously, read this one)**
 
@@ -426,7 +411,7 @@ For new users, this is one of the biggest frustrations:
 
 Fair question. The answer is: Because blockchains are global, public systems. You’re paying for your transaction to be added to a permanent, decentralized ledger — forever. That has a cost.
 
-![][image4]
+![Transaction](/images/content/gas-fees-network.jpg)
 
 ### **Gasless Trades on Kana Perps**
 
@@ -462,7 +447,7 @@ You trade. We’ll handle the gas.
 const ConclusionContent = `
 **You’ve made it through the foundations.** 
 
-**![][image5]**
+**![Transaction](/images/content/foundation-complete.png)**
 
 That means:
 

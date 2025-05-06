@@ -2,12 +2,12 @@
 import { useEffect } from "react";
 import { DocLayout } from "@/components/DocLayout";
 import { Link } from "react-router-dom";
-import { mockData } from "@/data/mockDocData";
+import { Data } from "@/data/DocData";
 
 // Map of category slugs to local banner image paths for cards
 const categoryCardImages = {
-  "crypto-essentials": "/images/banners/crypto-essentials.jpg",
-  "security": "/images/banners/security.jpg"
+  "crypto-essentials": "/images/banners/crypto-essentials.jpeg",
+  "perps": "/images/banners/perps-cover.jpg"
 };
 
 const DocsHome = () => {
@@ -17,7 +17,7 @@ const DocsHome = () => {
 
   return <DocLayout hideSidebar>
       <div className="prose prose-lg max-w-none">
-        <h1 className="text-3xl font-bold mb-6">Kana Learn Documentation</h1>
+        <h1 className="text-3xl font-bold mb-6">Kana Learn & Earn</h1>
         
         <p className="text-lg mb-8">
           Welcome to Kana Learn! Your comprehensive resource for learning about
@@ -26,7 +26,7 @@ const DocsHome = () => {
         </p>
         
         <div className="grid gap-6 sm:grid-cols-2">
-          {mockData.categories.sort((a, b) => a.position - b.position).map((category) => {
+          {Data.categories.sort((a, b) => a.position - b.position).map((category) => {
           const cardImage = categoryCardImages[category.slug as keyof typeof categoryCardImages] || "/images/banners/default.jpg";
           return <Link key={category.id} to={`/${category.slug}`} className="block border border-border rounded-lg hover:border-primary-300 transition-colors overflow-hidden no-underline">
                   <div className="h-40 overflow-hidden">
@@ -43,7 +43,7 @@ const DocsHome = () => {
                     </ul>
                     
                     <span className="text-sm text-primary-600">
-                      View all {category.pages.length} articles
+                      View all {category.pages.length} modules
                     </span>
                   </div>
                 </Link>;
