@@ -102,7 +102,7 @@ const CategoryPage = () => {
                 {/* <p className="text-muted-foreground line-clamp-2">
                   {page.content.substring(0, 150).replace(/#.*?\n/, "")}...
                 </p> */}
-                <span className="text-primary hover:underline mt-1 inline-block">
+                <span className="text-primary-600 hover:underline mt-1 inline-block">
                   Read more
                 </span>
               </div>

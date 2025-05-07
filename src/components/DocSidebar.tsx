@@ -49,7 +49,7 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
           <div className="mb-4">
             <div className="mb-4">
               <div 
-                className="px-2 py-2 font-medium text-primary-600 cursor-pointer hover:bg-sidebar-accent rounded"
+                className="px-2 py-2 font-medium text-primary-700 cursor-pointer hover:bg-sidebar-accent rounded"
                 onClick={() => handleCategoryClick(currentCategory.slug)}
               >
                 {currentCategory.label}
@@ -64,7 +64,7 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
                         className={cn(
                           "block px-2 py-1.5 rounded-md text-sm",
                           page.slug === currentSlug
-                            ? "text-primary-600 bg-sidebar-accent font-medium"
+                            ? "text-primary-700 bg-sidebar-accent font-medium"
                             : "hover:text-primary-600 hover:bg-sidebar-accent"
                         )}
                       >
