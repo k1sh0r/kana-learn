@@ -124,7 +124,7 @@ Let’s break it down without jargon.
 
 There are two main ways people first enter crypto:
 
-**1\. On-Ramps — The regular way**
+**On-Ramps — The regular way**
 
 This is where you use your regular (fiat) money to buy crypto through a service. Think of it like converting yen to dollars at the airport — but digital.
 
@@ -136,7 +136,7 @@ You enter your details, pass KYC (show your passport or ID), and receive tokens 
 ✅ Great for beginners.  
 ❌ KYC is required.
 
-**2\. P2P — The informal way**
+**P2P — The informal way**
 
 Peer-to-peer platforms connect people who want to buy or sell crypto directly with each other. You find a seller who accepts your bank transfer, send fiat — and they send you USDT (or another stablecoin).
 
@@ -246,7 +246,7 @@ Just because you see USDC on Aptos doesn’t mean it’s the same USDC as on Eth
 
 APT lives on Aptos. ETH lives on Ethereum. USDC can exist on multiple chains — and if you send it to the wrong one, it’s gone.
 
-📍 Rookie mistake: Copying an Ethereum wallet address and trying to send Aptos tokens there. Doesn’t work. You just sent your funds into the void.
+> Rookie mistake: Copying an Ethereum wallet address and trying to send Aptos tokens there. Doesn’t work. You just sent your funds into the void.
 
 Blockchains don’t come with a support hotline. If you make this kind of mistake, nobody can reverse it for you.
 
@@ -274,7 +274,7 @@ Blockchains don’t come with a support hotline. If you make this kind of mistak
 | Nightly | Aptos & Sui | Sleek, multichain |
 | OKX | Multi-chain | Integrated with CEX/DEX |
 
-We recommend starting with **Petra** or **Nightly** — both work great with Kana Perps.
+We recommend starting with **Petra** or **Nightly** — both work great with Kana Labs products.
 
 **Summary:** Your wallet is your passport to crypto. Lose your private key, and you'll lose your funds. Pick the right network. Stay alert. Practice safe storage.
 
@@ -466,12 +466,47 @@ export const cryptoEssentialsCategory: Category = {
   label: "Crypto Essentials",
   slug: "crypto-essentials",
   position: 1,
+  description: `## **Overview**
+
+**Crypto Onboarding Essentials** is a course for those who want to understand how crypto works in real life. Not in theory, not in hype, but in practice — how people get their first tokens, what wallets actually do, how swaps work, and why even simple transactions can go wrong.
+
+We won’t tell you that a blockchain is “a chain of blocks.” Instead, we’ll focus on the tools and mechanics you actually use: setting up a wallet, understanding token types, moving assets between chains, avoiding fake tokens, and navigating between centralized and decentralized exchanges.
+
+You’ll learn what stablecoins are really for, why gas fees matter, and how to use crypto without constantly worrying you’ve missed something critical. We’ll explain the common pitfalls — from sending tokens to the wrong chain to signing risky transactions — and how to avoid them before they happen.
+
+This isn’t a course about trading strategies or chasing the next big coin. It’s about getting your foundation right — so that wherever you go next in crypto, you’ll do it with clarity, control, and confidence.
+
+Whether you’re planning to explore DeFi, try out perpetuals, or just manage your assets safely, this is where it starts — with the basics that actually matter.
+
+## **What You Will Learn**
+
+### **Set up and use a crypto wallet**
+
+What a wallet really is, why it matters, and how to use it without losing your funds. You’ll learn to choose between hot and cold wallets, keep your keys safe, and avoid common mistakes.
+
+### **Understand token types and stablecoins**
+
+Get to know what you're actually holding — from APT and ETH to meme coins and USDC. Learn why stablecoins are essential tools, not just “dollar copies,” and how to use them to reduce risk.
+
+### **Swap tokens safely and confidently**
+
+Swapping is how crypto moves. You’ll learn how it works, when to use it, and how to avoid traps like fake tokens, wrong chains, and excessive slippage — so your swaps go where they should.
+
+### **Navigate CEXs and DEXs**
+
+Explore the real difference between centralized and decentralized platforms. Find out where beginners usually start, how DEXs work with your wallet directly, and when to use each.
+
+### **Handle gas fees and failed transactions**
+
+Gas fees aren’t just technical details — they affect every action on-chain. You’ll learn what they are, why transactions sometimes fail, and how platforms like Kana Perps are making it easier to trade without worrying about gas.
+
+`,
   pages: [
     {
       id: "intro",
       title: "What Is Crypto Trading?",
       slug: "/crypto-essentials/what-is-crypto-trading",
-      sidebar_label: "What Is Crypto Trading?",
+      sidebar_label: "1. What Is Crypto Trading?",
       sidebar_position: 1,
       content: introContent,
     },
@@ -479,7 +514,7 @@ export const cryptoEssentialsCategory: Category = {
       id: "getting-into-market",
       title: "Getting Into the Market",
       slug: "/crypto-essentials/getting-into-the-market",
-      sidebar_label: "Getting Into the Market",
+      sidebar_label: "2. Getting Into the Market",
       sidebar_position: 2,
       content: gettingIntoCryptoContent,
     },
@@ -487,7 +522,7 @@ export const cryptoEssentialsCategory: Category = {
       id: "tools-of-the-trade",
       title: "Tools of the Trade",
       slug: "/crypto-essentials/tools-of-the-trade",
-      sidebar_label: "Tools of the Trade",
+      sidebar_label: "3. Tools of the Trade",
       sidebar_position: 3,
       content: toolsOfTheTradeContent,
     },
@@ -495,7 +530,7 @@ export const cryptoEssentialsCategory: Category = {
       id: "gas-fees-transactions",
       title: "Gas, Fees & Transactions",
       slug: "/crypto-essentials/gas-fees-transactions",
-      sidebar_label: "Gas, Fees & Transactions",
+      sidebar_label: "4. Gas, Fees & Transactions",
       sidebar_position: 4,
       content: gasFeesContent,
     },
@@ -503,7 +538,7 @@ export const cryptoEssentialsCategory: Category = {
       id: "conclusion",
       title: "Conclusion",
       slug: "/crypto-essentials/conclusion",
-      sidebar_label: "Conclusion",
+      sidebar_label: "5. Conclusion",
       sidebar_position: 5,
       content: ConclusionContent,
     },

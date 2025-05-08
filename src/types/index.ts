@@ -1,4 +1,3 @@
-
 export interface DocPage {
   id: string;
   title: string;
@@ -15,6 +14,7 @@ export interface Category {
   slug: string;
   position: number;
   pages: DocPage[];
+  description?: string; // Optional markdown description
 }
 
 export interface ThemeProviderProps {

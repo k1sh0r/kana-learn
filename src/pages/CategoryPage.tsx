@@ -5,6 +5,7 @@ import { Category } from "@/types";
 import { Data } from "@/data/DocData";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 
 // Map of category slugs to local banner image paths
 const categoryBanners = {
@@ -80,13 +81,28 @@ const CategoryPage = () => {
           />
         </div>
         
-        <h1 className="text-3xl font-bold mb-6">{categoryData.label}</h1>
+        <h1 className="text-3xl font-bold mb-4">{categoryData.label}</h1>
         
-        <p className="text-lg mb-8">
-          Explore all topics in the {categoryData.label} category.
-          
+
+        {categoryData.pages.length > 0 && (
+          <Button
+            onClick={() => handleCardClick(categoryData.pages[0].slug)}
+            className="mb-4"
+          >
+            Start Learning <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        )}
+
+        {categoryData.description && (
+          <div className="mb-12">
+            <MarkdownRenderer content={categoryData.description} />
+          </div>
+        )}
+
+        <p className="text-lg mb-4">
+          Explore all topics in the {categoryData.label} category:
         </p>
-        
+
         <div className="grid gap-6">
           {categoryData.pages
             .sort((a, b) => (a.sidebar_position || 0) - (b.sidebar_position || 0))
