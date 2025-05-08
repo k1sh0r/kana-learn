@@ -71,9 +71,9 @@ const CategoryPage = () => {
 
   return (
     <DocLayout>
-      <div className="prose prose-lg max-w-none">
+      <div className="prose prose-lg max-w-none ">
         {/* Category Banner */}
-        <div className="w-full mb-6 overflow-hidden rounded-lg">
+        <div className="w-full mb-6 overflow-hidden rounded-2xl border-2 border-[#002019]">
           <img 
             src={bannerImage}
             alt={categoryData.label}

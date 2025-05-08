@@ -161,4 +161,14 @@
   .markdown-content th {
     @apply bg-muted font-semibold;
   }
+
+  /* Target all images in markdown content, regardless of parent element */
+  .markdown-content img {
+    @apply rounded-2xl border-2 border-[#002019] max-w-full h-auto;
+  }
+
+  /* Override any specific cases where we don't want the styling */
+  .markdown-content .no-style-img img {
+    @apply border-0 rounded-none;
+  }
 }
