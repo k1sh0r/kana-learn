@@ -12,6 +12,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { useWalletSignature } from "@/hooks/useWalletSignature";
 
 // Helper function to shorten address
 const shortenAddress = (address: string, chars = 4): string => {
@@ -24,6 +25,8 @@ export function Header() {
   const { connect, disconnect, account, connected, wallet, wallets } = useWallet();
   const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
   
+  useWalletSignature();
+
   const handleSignInClick = () => {
     setIsSignInModalOpen(true);
   };
