@@ -99,7 +99,23 @@ This document outlines the key flows related to wallet connection, message signi
     2.  **Verify `recaptchaToken` with Google (using your Secret Key).** This is vital to protect against bots.
     3.  If reCAPTCHA is valid, verify the Aptos message signature.
     4.  Return a meaningful response.
-*   **reCAPTCHA v3 Site Key:** Ensure the correct reCAPTCHA v3 Site Key is set in `src/main.tsx` for `GoogleReCaptchaProvider`.
+*   **reCAPTCHA v3 Keys:**
+    *   **Site Key (Frontend):** 
+        1.  Go to the [Google reCAPTCHA Admin Console](https://www.google.com/recaptcha/admin/).
+        2.  Register a new site.
+        3.  Choose \"reCAPTCHA v3\".
+        4.  Add your domain(s).
+        5.  Accept the terms of service.
+        6.  After submission, you will receive a **Site Key** and a **Secret Key**.
+        7.  The **Site Key** is used in `src/main.tsx` for the `GoogleReCaptchaProvider`.
+    *   **Secret Key (Backend):**
+        1.  The **Secret Key** obtained during site registration is for server-side communication between your backend and Google to verify the user\'s response (the `recaptchaToken`).
+        2.  **Never expose your Secret Key in frontend code.** Keep it secure on your server.
+        3.  When your backend receives a `recaptchaToken` from the client, it must make a POST request to `https://www.google.com/recaptcha/api/siteverify` including:
+            *   `secret`: Your Secret Key.
+            *   `response`: The `recaptchaToken` received from the client.
+            *   Optionally, `remoteip`: The user\'s IP address (recommended by Google).
+        4.  Google\'s response will indicate if the token is valid and provide a score.
 
 ### Fetch Wrapper (Conceptual - Integrated into Hook)
 
