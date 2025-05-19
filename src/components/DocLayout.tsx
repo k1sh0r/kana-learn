@@ -16,21 +16,22 @@ import {
 interface DocLayoutProps {
   children: React.ReactNode;
   hideSidebar?: boolean;
+  defaultCollapsed?: boolean;
 }
 
-export function DocLayout({ children, hideSidebar = false }: DocLayoutProps) {
+export function DocLayout({ children, hideSidebar = false, defaultCollapsed = false }: DocLayoutProps) {
   const location = useLocation();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
   const { category } = useParams();
   const [categories, setCategories] = useState<Category[]>(Data.categories);
   const [currentPage, setCurrentPage] = useState<DocPage | null>(null);
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(isMobile); // Collapse by default on mobile
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(defaultCollapsed || isMobile); // Collapse by default on mobile
 
   useEffect(() => {
     // Update sidebar state when screen size changes or on mobile
-    setSidebarCollapsed(isMobile);
-  }, [isMobile]);
+    setSidebarCollapsed(defaultCollapsed || isMobile);
+  }, [isMobile, defaultCollapsed]);
 
   useEffect(() => {
     const pathname = location.pathname;

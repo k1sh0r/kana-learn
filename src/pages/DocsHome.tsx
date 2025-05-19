@@ -17,12 +17,14 @@ const DocsHome = () => {
 
   return <DocLayout hideSidebar>
       <div className="prose prose-lg max-w-none">
-        <h1 className="text-3xl font-bold mb-6">Kana Learn & Earn</h1>
+        <h1 className="text-3xl font-bold mb-6">Welcome to Kana Learn!</h1>
         
         <p className="text-lg mb-8">
-          Welcome to Kana Learn! Your comprehensive resource for learning about
-          cryptocurrency and blockchain technology. Get started by exploring one
-          of our documentation categories below.
+          This platform is designed to help you understand the world of cryptocurrency through clear, structured learning. Whether you're just starting out or looking to solidify your knowledge, our step-by-step guides walk you through the essentials of crypto trading, wallets, tokens, and real on-chain tools.
+          <br></br>
+          <br></br>
+          We’re launching with Crypto Onboarding Essentials — a beginner-friendly course that covers everything you need to get started with confidence.
+          More walkthroughs and practical materials are on the way. Start here — and check back soon for what’s next.
         </p>
         
         <div className="grid gap-6 sm:grid-cols-2">

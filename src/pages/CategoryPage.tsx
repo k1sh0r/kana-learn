@@ -42,7 +42,7 @@ const CategoryPage = () => {
 
   if (loading) {
     return (
-      <DocLayout>
+      <DocLayout defaultCollapsed={true}>
         <div className="flex justify-center items-center p-8">
           <div className="h-8 w-8 animate-spin rounded-full border-b-2 border-primary"></div>
         </div>
@@ -52,7 +52,7 @@ const CategoryPage = () => {
 
   if (!categoryData) {
     return (
-      <DocLayout>
+      <DocLayout defaultCollapsed={true}>
         <div className="text-center p-8">
           <h1 className="text-2xl font-bold mb-4">Category Not Found</h1>
           <p className="text-muted-foreground">
@@ -70,7 +70,7 @@ const CategoryPage = () => {
   const bannerImage = categoryBanners[categoryData.slug as keyof typeof categoryBanners] || "/images/banners/default.jpg";
 
   return (
-    <DocLayout>
+    <DocLayout defaultCollapsed={true}>
       <div className="prose prose-lg max-w-none ">
         {/* Category Banner */}
         <div className="w-full mb-6 overflow-hidden rounded-2xl border-2 border-[#002019]">
