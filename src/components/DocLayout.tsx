@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/pagination";
 import { ScrollToTop } from "./ScrollToTop";
 import { metricsService } from "@/services/metricsService";
-import { FeedbackForm } from "./FeedbackForm";
+import { FeedbackForm } from "./feedbackform";
 
 interface DocLayoutProps {
   children: React.ReactNode;
