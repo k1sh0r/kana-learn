@@ -3,6 +3,8 @@ import { Category } from "@/types";
 const introContent = `
 ## **Module 1: What Is Crypto Trading?**
 
+![What Is Crypto Trading](/images/content/what-is.jpeg)
+
 *Crypto trading explained simply — without jargon or hype*
 
 ### **Introduction**
@@ -112,6 +114,8 @@ Next up: **Module 2**: Getting Into Crypto
 const gettingIntoCryptoContent = `
 ## **Module 2: Getting Into the Market**
 
+![Getting Into the Market](/images/content/getting-into.jpg)
+
 *How people enter crypto and where trades actually happen*
 
 ### **Getting Into Crypto**
@@ -215,6 +219,8 @@ Next up: **Module 3 — Tools of the Trade**: wallets, token types, and how ever
 const toolsOfTheTradeContent = `
 
 ## **Module 3: Tools of the Trade**
+
+![Tools of the Trade](/images/content/tools-of.jpg)
 
 *Wallets, tokens, stablecoins, and how it all connects*
 
@@ -374,6 +380,8 @@ In **Module 4**, we’ll get under the hood and explain gas, fees, and what ever
 
 const gasFeesContent = `
 ## **Module 4: Gas, Fees & Transactions**
+
+![Gas, Fees & Transactions](/images/content/gas-fees.jpg)
 
 *Why some trades fail, how gas works, and what it means for you*
 
