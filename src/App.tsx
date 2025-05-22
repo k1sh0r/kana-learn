@@ -11,6 +11,7 @@ import DocsHome from "./pages/DocsHome";
 import DocPage from "./pages/DocPage";
 import CategoryPage from "./pages/CategoryPage";
 import NotFound from "./pages/NotFound";
+import Metrics from "./pages/Metrics";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/docs" element={<DocsHome />} />
+            <Route path="/metrics" element={<Metrics />} />
             <Route path="/:category" element={<CategoryPage />} />
             <Route path="/:category/:slug" element={<DocPage />} />
             <Route path="*" element={<NotFound />} />

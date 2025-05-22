@@ -12,6 +12,9 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { ScrollToTop } from "./ScrollToTop";
+import { metricsService } from "@/services/metricsService";
+import { FeedbackForm } from "./FeedbackForm";
 
 interface DocLayoutProps {
   children: React.ReactNode;
@@ -27,6 +30,7 @@ export function DocLayout({ children, hideSidebar = false, defaultCollapsed = fa
   const [categories, setCategories] = useState<Category[]>(Data.categories);
   const [currentPage, setCurrentPage] = useState<DocPage | null>(null);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(defaultCollapsed || isMobile); // Collapse by default on mobile
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
 
   useEffect(() => {
     // Update sidebar state when screen size changes or on mobile
@@ -50,32 +54,34 @@ export function DocLayout({ children, hideSidebar = false, defaultCollapsed = fa
     setCurrentPage(foundPage);
   }, [location.pathname, categories]);
 
-  const scrollToTop = () => {
-    try {
-      // Try smooth scrolling first
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    } catch (error) {
-      // Fallback for older browsers
-      window.scrollTo(0, 0);
-    }
+  // Track page visits
+  useEffect(() => {
+    metricsService.updateMetrics(location.pathname, {
+      visits: 1,
+      lastVisited: Date.now()
+    });
+  }, [location.pathname]);
 
-    // Additional fallback for iOS Safari
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  };
+  useEffect(() => {
+    const startTime = performance.now();
+    
+    return () => {
+      const timeSpent = Math.round((performance.now() - startTime) / 1000);
+      metricsService.updateMetrics(location.pathname, {
+        timeSpent
+      });
+    };
+  }, [location.pathname]);
 
   const navigateToPage = (page: DocPage | null) => {
     if (page) {
       navigate(page.slug);
-      scrollToTop();
     }
   };
 
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollToTop />
       <Header />
       
       <div className="flex flex-1">
@@ -113,7 +119,16 @@ export function DocLayout({ children, hideSidebar = false, defaultCollapsed = fa
                     </PaginationItem>
                     
                     <PaginationItem className="w-full sm:w-auto">
-                      {getAdjacentPage(categories, currentPage, "next") && (
+                      {isLastPageInCategory(categories, currentPage) ? (
+                        <div className="flex flex-col items-end">
+                          <PaginationNext
+                            onClick={() => setFeedbackOpen(true)}
+                            className="w-full sm:w-auto justify-end cursor-pointer"
+                          >
+                            Finish
+                          </PaginationNext>
+                        </div>
+                      ) : getAdjacentPage(categories, currentPage, "next") && (
                         <div className="flex flex-col items-end">
                           <PaginationNext
                             onClick={() => navigateToPage(getAdjacentPage(categories, currentPage, "next"))}
@@ -134,23 +149,27 @@ export function DocLayout({ children, hideSidebar = false, defaultCollapsed = fa
           </div>
         </main>
       </div>
+      <FeedbackForm open={feedbackOpen} onOpenChange={setFeedbackOpen} />
     </div>
   );
 }
 
 function getAdjacentPage(categories: Category[], currentPage: DocPage, direction: "prev" | "next"): DocPage | null {
   let allPages: DocPage[] = [];
+  const currentCategory = categories.find(category => 
+    category.pages.some(page => page.id === currentPage.id)
+  );
   
-  // Flatten all pages from all categories into a single sorted array
-  categories.sort((a, b) => a.position - b.position).forEach(category => {
-    allPages = [...allPages, ...category.pages.sort((a, b) => (a.sidebar_position || 0) - (b.sidebar_position || 0))];
-  });
+  if (!currentCategory) return null;
+
+  // Only get pages from the current category
+  allPages = currentCategory.pages.sort((a, b) => 
+    (a.sidebar_position || 0) - (b.sidebar_position || 0)
+  );
   
   const currentIndex = allPages.findIndex(page => page.id === currentPage.id);
   
-  if (currentIndex === -1) {
-    return null;
-  }
+  if (currentIndex === -1) return null;
   
   const targetIndex = direction === "prev" ? currentIndex - 1 : currentIndex + 1;
   
@@ -159,4 +178,18 @@ function getAdjacentPage(categories: Category[], currentPage: DocPage, direction
   }
   
   return allPages[targetIndex];
+}
+
+// Add this helper function at the bottom of the file
+function isLastPageInCategory(categories: Category[], currentPage: DocPage): boolean {
+  const currentCategory = categories.find(category => 
+    category.pages.some(page => page.id === currentPage.id)
+  );
+  
+  if (!currentCategory) return false;
+  
+  const sortedPages = currentCategory.pages
+    .sort((a, b) => (a.sidebar_position || 0) - (b.sidebar_position || 0));
+  
+  return sortedPages[sortedPages.length - 1].id === currentPage.id;
 }
