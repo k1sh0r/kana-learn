@@ -441,7 +441,6 @@ Gasless trading lowers the barrier to entry. It removes one of the key frictions
 
 You focus on price and risk. We take care of the backend.
 
-\[Visual: Kana Perps UI showing market order placed with “0 APT” gas cost\]
 
 **Final Thought:**
 
