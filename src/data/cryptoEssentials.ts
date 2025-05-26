@@ -353,11 +353,40 @@ Swaps can be done either through a widget — embedded in some wallets and app i
 **Walkthrough: Swapping APT → USDC on Kana Labs**
 
 1. Connect wallet (Petra, Nightly, etc.)  
+
+<img src="/images/content/crypto-3-1.png" class="hidden md:block" alt="Connect wallet" />
+<img src="/images/content/crypto-3-m1.png" class="block md:hidden" alt="Connect wallet" />
+<br />
+
 2. Select APT → USDC  
+
+<img src="/images/content/crypto-3-2.png" class="hidden md:block" alt="Select APT → USDC" />
+<img src="/images/content/crypto-3-m2.png" class="md:hidden" alt="Select APT → USDC" />
+<br />
+
 3. Enter amount (e.g., 10 APT)  
+
+<img src="/images/content/crypto-3-3.png" class="hidden md:block" alt="Enter amount" />
+<img src="/images/content/crypto-3-m3.png" class="md:hidden" alt="Enter amount" />
+<br />
+
 4. Review rate \+ gas estimate  
-5. Click “Swap,” sign the transaction  
+
+<img src="/images/content/crypto-3-4.png" class="hidden md:block" alt="Review rate" />
+<img src="/images/content/crypto-3-m4.png" class="md:hidden" alt="Review rate" />
+<br />
+
+5. Click "Swap," sign the transaction  
+
+<img src="/images/content/crypto-3-5.png" class="hidden md:block" alt="Sign transaction" />
+<img src="/images/content/crypto-3-m5.png" class="md:hidden" alt="Sign transaction" />
+<br />
+
 6. Done — tokens arrive in seconds
+
+<img src="/images/content/crypto-3-6.png" class="hidden md:block" alt="Swap complete" />
+<img src="/images/content/crypto-3-m6.png" class="md:hidden" alt="Swap complete" />
+<br />
 
 Want to go back? Just reverse the flow.
 
