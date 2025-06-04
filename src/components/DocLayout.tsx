@@ -73,6 +73,29 @@ export function DocLayout({ children, hideSidebar = false, defaultCollapsed = fa
     };
   }, [location.pathname]);
 
+  useEffect(() => {
+    if (currentPage) {
+      // Update meta tags when page changes
+      document.title = `${currentPage.title} | Kana Learn`;
+      
+      // Update meta description
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', 
+          `Learn about ${currentPage.title.toLowerCase()} in crypto and blockchain. Comprehensive guide covering ${currentPage.title} fundamentals and practical usage.`
+        );
+      }
+      
+      // Update Open Graph tags
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogTitle) ogTitle.setAttribute('content', `${currentPage.title} | Kana Learn`);
+      if (ogDesc) ogDesc.setAttribute('content', 
+        `Learn about ${currentPage.title.toLowerCase()} in crypto and blockchain. Part of Kana Learn's comprehensive education platform.`
+      );
+    }
+  }, [currentPage]);
+
   const navigateToPage = (page: DocPage | null) => {
     if (page) {
       navigate(page.slug);
