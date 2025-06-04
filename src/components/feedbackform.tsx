@@ -106,7 +106,7 @@ export function FeedbackForm({ open, onOpenChange }: FeedbackFormProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl max-h-[80vh] flex flex-col p-0 gap-0">
+      <DialogContent className="max-w-2xl max-h-[100vh] md:max-h-[80vh] flex flex-col p-0 gap-0">
         <div className="sticky top-0 border-b">
           <DialogHeader className="px-6 py-4">
             <DialogTitle>Leave Your Feedback</DialogTitle>

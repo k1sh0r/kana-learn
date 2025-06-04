@@ -26,8 +26,8 @@ export function OptimizedImage({ src, alt, className, fallback = "/images/placeh
         onLoad={() => setLoading(false)}
         onError={() => setError(true)}
         className={cn(
-          "transition-all duration-500 ease-smooth",
-          loading ? "scale-[1.02] blur-sm" : "scale-100 blur-0",
+          "transition-all duration-200 ease-smooth",
+          loading ? "blur-sm" : "blur-0",
           className
         )}
         {...props}
