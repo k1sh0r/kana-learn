@@ -1,868 +1,244 @@
 import { Category } from "@/types";
 
-// Module 1: Perpetual Futures Essentials
-const module1Content = `
-### **📘 Module 1: Perpetual Futures Essentials**
+const intro = `# **Kana Perps Step-by-Step Walkthroughs** 
 
-**— What Are Perpetual Futures?**
+Learning by doing is the fastest way to get comfortable. That’s why we’ve prepared step-by-step walkthroughs for every major action you’ll need. Whenever you’re unsure, just check the guide and keep moving forward — everything’s laid out clearly and simply.
 
-**— Long vs. Short Positions**
+<img src="/images/content/perps1.png" alt="kana perps" />  <br>
 
-**— Margin, Leverage & Liquidation**
+Click next and start learning.`;
 
-**— Funding Rates**
+const connectingwallet = `# **Connecting Your Wallet & Enabling One-Click Trading**
 
-# **Module 1: Perpetual Futures Essentials**
+### **Why Enable One-Click Trading?**
 
-***What they are, how they work, and why people trade them***
+Usually, DeFi requires users to manually sign each transaction, causing delays and frustration. Kana Perps simplifies this process with one-click trading across all wallets. 
 
-## **What Are Perpetual Futures?**
+### **Step-by-Step Walkthrough:**
 
-**Or: How to bet on price movement without owning the asset**
+* Open <a href="https://www.kana.trade/" target="_blank" rel="" className="text-primary">Kana Perps <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mb-1"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>  <br>
 
-Let’s start from zero.
+  <img src="/images/content/perps2.png" alt="Open Kana Perps" /> <br>
 
-Perpetual futures — or just perps — are contracts that let you trade on the price of a crypto token without actually holding it. You’re not buying an asset. You’re speculating on its direction — up or down.
+* Click on **Connect Wallet** and choose your wallet (Petra or Nightly).
 
-There’s no expiry. You can go long or short. You use collateral (like USDT), and the rest happens on-chain.
+  <img src="/images/content/perps3.png" alt="Connect Wallet" />  <br>
 
-That’s the short version. Now the real one.
+* Click **Enable Trading** → **Sign Trading**.  
 
-### **Why Do Traders Use Perps?**
+  <img src="/images/content/perps4.png" alt="Enable Trading" /> <br>
 
-Because they’re flexible, fast, and built for modern trading:
+  <img src="/images/content/perps5.png" alt="Sign Trading" />  <br>
 
-* You can go long or short — profit either way  
-* You don’t need to hold APT or ETH — just collateral  
-* You can use leverage — open larger positions with less capital  
-* No expiry — hold your position as long as you want  
-* Built for volatility — with tools like stop-loss, TP, and hedging
+* **Confirm the prompt from your wallet to activate one-click trading.**  
 
-Perps are the backbone of serious crypto trading. Platforms like Binance, OKX, and now Kana Perps move billions in perp volume every day. It’s not just a niche tool — it’s where most of the action happens.
-
-### **Perps vs. Spot: What’s the Actual Difference?**
-
-| Action | Spot Trade | Perps Trade |
-| ----- | ----- | ----- |
-| Buy APT at $10 | You own APT | You open a contract tracking APT’s price |
-| APT goes to $12 | \+$2 profit | \+$2 profit |
-| APT drops to $8 | −$2 loss | −$2 loss (amplified if leveraged) |
-| Go short? | Not possible | Yes |
-| Need the token? | Yes | No |
-
-With spot, you buy the token. With perps, you trade the price. That’s it.
-
-### **Real Use Cases**
-
-* You expect a breakout → Long APT  
-* You expect a dump → Short APT  
-* You hold APT and want to hedge downside → Short perp  
-* You don’t want to move funds between wallets → Just open a perp
-
-### **Why It’s Powerful — and Risky**
-
-Perps aren’t just fast — they’re unforgiving.
-
-* Leverage can grow your profit — or your loss  
-* If the market moves against you too far, you get liquidated  
-* Funding rates quietly chip away at your PnL if you’re not paying attention
-
-We’ll break all of that down in this module. But for now, the one-line summary is simple:
-
-You’re not buying crypto. You’re trading the idea of where its price will go next.
-
-## **Long vs. Short Positions**
-
-**Or: Trading is just picking a side**
-
-Perpetual futures are simple in theory. You’re not trying to be right about everything — just one thing:
-
-Will price go up or down?
-
-That’s the whole game. And that’s why we talk about two basic positions:
-
-* **Go Long** — you bet the price will rise  
-* **Go Short** — you bet the price will fall
-
-Pick a direction. Manage your risk. That’s trading.
-
-### **Long \= You Expect the Price to Go Up**
-
-You open a long position when you believe the asset will increase in value.
-
-**Example:**  
- You long APT at $10  
- Price goes to $12  
- You close the position → you earn $2 per token  
- With 3× leverage → you earn 3× that
-
-This is the bullish move. You’re betting on growth.
-
-### **Short \= You Expect the Price to Go Down**
-
-You open a short position when you believe the asset will drop in price. You’re essentially selling high, buying back lower.
-
-**Example:**  
-You short APT at $10. Price drops to $8. You close the trade → you earn $2 per token
-
-You never needed to own APT. That’s what makes perps powerful.
-
-### **Summary Table**
-
-| Position | You profit if... | You lose if... |
-| ----- | ----- | ----- |
-| Long | Price goes up | Price goes down |
-| Short | Price goes down | Price goes up |
-
-### **Real Example: Alex Trades Both Ways**
-
-* On Monday, APT looks strong → Alex goes long at $9  
-   APT hits $10.20 → he closes. Profit.
-
-* On Thursday, bad news drops → Alex goes short at $10.20  
-   APT dumps to $9.60 → he closes. Another profit.
-
-**Takeaway:** Alex doesn’t care about direction. He reacts to it.
-
-### **This Isn’t About “Bull or Bear”**
-
-Perps traders don’t need to believe in Bitcoin forever. They just need to know how to play the current move. Long and short are just tools. Use them both.
-
-### **Margin, Leverage & Liquidation**
-
-*Or: How to trade big with small money (and why that’s dangerous)*
-
-**What Is Margin?**  
-Margin is the amount you put up to open a leveraged trade. It’s your money on the line. If things go wrong, that’s what disappears.
-
-Let’s say you want to open a $1,000 position using 5× leverage: you only need $200 margin. The other $800 is synthetic — borrowed via the contract. That $200 is what you risk. If the trade goes south — that’s what disappears.
-
-**Margin \= your capital buffer.** Lose it, and the trade is done.
-
-**How Leverage Works**  
-Leverage means you can control a larger position than the money you put in. It multiplies both your gains and your losses. That’s the deal. When you use leverage, you say, *“Let me trade like I have more money than I actually do.”*
-
-If you’re right — you make more. If you’re wrong — you lose more.
-
-On Kana Perps and similar platforms, you choose the position size first — say, $500. Then you choose the leverage — let’s say 5×. That means your required margin is $100 ($500 ÷ 5).
-
-Now what happens when price moves?
-
-* Price goes up 10% → You earn $50 profit (10% of $500)  
-* Price drops 10% → You lose $50  
-* If price drops 20% → Your $100 margin is gone. You’re liquidated.
-
-**The takeaway?**  
- Leverage doesn’t give you more capital. It reduces the amount you need to control a bigger position. But the risk scales with the full position, not just your margin.
-
-**What Is Liquidation?**  
-Liquidation happens when your margin balance drops below the **maintenance margin** — the minimum amount required to keep the position open.
-
-If the price moves too far against your trade, your margin starts shrinking.  
- You can add more to keep it alive — but if you don’t, and it falls below the threshold, the platform will close your position automatically.
-
-You don’t go into debt, but you do lose your margin.
-
-The platform steps in and says: *“You don’t have enough left to keep this trade open. We're closing it.”*
-
-**How Close Is Too Close?**
-
-| Leverage | Price Move to Liquidation |
-| ----- | ----- |
-| 2× | \~50% |
-| 5× | \~20% |
-| 10× | \~10% |
-| 20× | \~5% |
-
-Exact numbers depend on the platform and margin model.  
- High leverage \= high stress. Low leverage \= breathing room.
-
-A 5% move against you at 20× → Game over.
-
-**Isolated Margin on Kana Perps**  
- On Kana Perps, every position uses **isolated margin**.  
- That means:
-
-* Each trade has its own margin  
-* If one gets liquidated — your other trades are safe  
-* You won’t lose your whole balance from one mistake
-
-This is different from **cross margin**, where all positions share the same collateral pool (used on some other platforms).
-
-**How to Use Leverage Like a Trader, Not a Gambler**
-
-* Start with 2× or 3×. That’s already strong  
-* Always use stop-losses — even if wide  
-* Don’t choose max leverage just because the slider goes that high  
-* More leverage \= less room for error  
-* Treat it like a scalpel, not a slingshot
-
-**Example: Emma Skips the Stop**  
- Emma opens a 10× long on APT at $10 using $100 margin.  
- She’s controlling a $1,000 position. APT drops 9%.  
- She hesitates. It bounces slightly, but too late. The margin is gone. Liquidated.
-
-If she had added $30 more margin or used 5× instead, she might’ve stayed in.
-
-**How to Stay Out of Trouble**
-
-* Use lower leverage to widen your liquidation buffer  
-* Watch your margin ratio — most platforms show it clearly  
-* Add margin if price drifts against you  
-* Never trade your full account balance — leave breathing room  
-* Use stop-losses — yes, again
-
-Margin is your first and last defense.
-
-**Next: Part 4 — Funding Rates**  
- The hidden PnL leak most traders ignore. Let’s fix that.
-
-## **Funding Rates**
-
-**Or: Why holding a position isn’t free**
-
-Perpetual futures don’t expire. That’s great for flexibility — but it also means perp prices can drift away from the real market (spot).
-
-To fix that, we have funding rates. They’re not fees from the exchange. They’re small payments traders make to each other.
-
-### **Who Pays Whom?**
-
-It depends on market imbalance:
-
-* If most traders are long → funding rate is **positive** → **longs pay shorts**  
-* If most traders are short → funding rate is **negative** → **shorts pay longs**
-
-It’s a soft nudge to keep things balanced — and aligned with reality.
-
-### **Why It Matters**
-
-If you hold a position across a funding interval, this payment impacts your PnL — even if the price doesn’t move at all.
-
-That’s why experienced traders check funding before holding overnight.
-
-### **Example: You Pay to Hold**
-
-You go long APT with $5,000 at a \+0.01% funding rate. You hold the position for 24 hours — that’s 3 intervals.
-
-You pay:  
- 0.01% × 3 × $5,000 \= **$1.50**
-
-Not a big number. But with size or time, it stacks up.
-
-### **Example: Lisa Earns by Doing Nothing**
-
-Lisa shorts a meme coin during peak hype. Everyone else is long. Funding rate \= \+0.05% every 8 hours.
-
-She holds her short for 12 hours → two intervals. Even if price stays flat, she **earns** from the long traders. Just by being on the unpopular side.
-
-### **How It Works on Kana Perps**
-
-Kana shows you the current funding rate directly in the trade panel — no guesswork.
-
-* You **don’t pay or earn** if you open and close within the same funding window  
-* **Market orders** opened and closed quickly often avoid funding impact entirely  
-* **Funding farming** (e.g. shorting during high positive funding) is a real strategy — but comes with risk
-
-### **Bottom Line**
-
-* Funding is a payment between traders — not to the platform  
-* It’s based on perp vs. spot imbalance  
-* **Positive** \= longs pay, **Negative** \= shorts pay  
-* It can quietly erode (or boost) your PnL — especially in sideways markets
-
-Use it wisely — or at least know when it’s working against you.
-
-## **You’ve Made It Through Module 1**
-
-You now understand:
-
-* What perpetual futures are  
-* The difference between spot and perps  
-* How to take long and short positions  
-* What leverage really means — and how fast it can bite  
-* How margin and liquidation actually work  
-* And how funding rates affect your PnL even if price doesn’t move
-
-**Next: Module 2 — Executing Trades on Kana Perps**  
- We’ll walk through placing trades, setting stop-loss/take-profit, adjusting margin, and more — directly on the platform.
-
-Let’s get practical.
+  <img src="/images/content/perps6.png" alt="Confirm Prompt" /> <br>
 `;
 
-// Module 2: Executing Trades on Kana Perps
-const module2Content = `
-### **📘 Module 2: Executing Trades on Kana Perps**
+const deposit = `# **Deposit or Withdraw USDT Between Your Wallet and Trading Account**
 
-**— Market vs. Limit Orders**
+To start trading, you need to move USDT from your wallet into your Kana Perps trading account.
+<br>
 
-**— Opening a Position**
 
-**— Closing a Trade**
+>If you don’t have USDT yet, you can check <a href="/perps/token-swaps">how to swap</a> using <a href="https://app.kanalabs.io/swap">Kana Swap</a>
 
-**— Setting TP & SL**
+<br>
 
-**— Hedge Mode & Dual Positions**
 
-# **Module 2: Executing Trades on Kana Perps**
+**1\. Click “Deposit” in the top right**
+  In the top-right corner of the interface, you’ll see your wallet address and a green Deposit button. Click it to open the fund transfer window.
 
-**How to enter, manage, and close trades like a pro**
+  <img src="/images/content/perps7.png" alt="Click Deposit" /> <br>
 
-## **Market vs. Limit Orders**
+**2\. Deposit USDT into Your Trading Account**  
+  Make sure the direction is correct: **From: Your Wallet → To: Trading Account**. If it’s reversed, click the ↕ icon to switch. Then enter the amount you want to deposit manually or use the quick buttons (25%, 50%, 75%, Max). Once everything looks good, click the green **Deposit** button to confirm. Your funds will be moved instantly.
 
-***Or: Do you want it now — or at your price?***
+  <img src="/images/content/perps8.png" alt="Deposit USDT" /> <br>
 
-Before you can manage trades properly, you need to understand the basics: market and limit orders.
+**3\. Confirm your new balance**  
+  After depositing, your Trading Account balance will update in the top-right corner.  
+  You’re now ready to open your first position.
 
-### **Market Orders — Speed First**
+  <img src="/images/content/perps9.png" alt="Confirm Balance" /> <br>
 
-A market order says: **"I want it right now — give me the best available price."**
+**To Withdraw Funds (Trading Account → Wallet)**
 
-Use it when:
+1. Click the **arrow icon** next to your trading balance at the top right.  
+ 
+<img src="/images/content/perps10.png" alt="Click Withdraw" /> <br>
 
-* You're reacting to news or a breakout  
-* You're trading highly liquid assets (BTC, ETH)  
-* Speed matters more than exact pricing
-
-**The downside:** slippage.  
- If the asset has low liquidity or you're using high leverage, your entry may be worse than expected.
-
-**Example (APT around $10):**
-
-* 4 APT filled @ $10.01  
-* 3 APT @ $10.03  
-* 3 APT @ $10.05  
-   Average \= $10.03 instead of $10. On 10× leverage, you’re already down 3% before the trade even moves.
-
-### **Limit Orders — Control First**
-
-A limit order says: **"Only fill my order at this price or better."**
-
-Use it when:
-
-* You know your ideal entry  
-* You want to avoid slippage  
-* You’re okay waiting for the market to come to you
-
-**The downside:**  
- If the price doesn’t reach your limit, the trade never happens.
-
-### **Slippage — The Hidden Cost**
-
-Slippage is the difference between your expected price and the actual fill. On Kana Perps, always preview slippage before confirming your trade — especially with leverage. It matters.
-
-### **Comparison: Market vs. Limit**
-
-| Order Type | Speed | Price Control | Risk |
-| ----- | ----- | ----- | ----- |
-| Market | Instant | Low | Slippage |
-| Limit | Delayed | High | May not fill |
-
-## **Structuring Your Trades (Entries & Exits)**
-
-***Or: Trading isn’t just about clicking “Buy”***
-
-Beginners obsess over entries. Experienced traders know exits matter just as much.
-
-### **Planning Your Entry**
-
-Before you hit “Buy”, define:
-
-* **Entry price** – your ideal start  
-* **Stop-loss (SL)** – where your idea fails  
-* **Take-profit (TP)** – where you exit with gains  
-* **Invalidation** – when the setup no longer makes sense
-
-“Let’s see what happens” is not a strategy. “Entry $10.05, SL $9.85, TP $10.50” — that’s a plan.
-
-### **Planning Your Exit**
-
-You exit when:
-
-* TP hits (target achieved)  
-* SL hits (risk managed)  
-* Setup is invalidated (news, structure)  
-* Trade stalls too long (time-based exit)
-
-### **Example: Structured Execution**
-
-* Entry: Limit order at $9.80  
-* Stop-loss: $9.60  
-* Take-profit: $10.40
-
-This gives you a clean 1:3 risk/reward. Price dips, fills, hits TP — no improvisation required.
-
-### **Common Mistake: Chasing Missed Entries**
-
-If the price jumps past your planned entry, don’t chase. Stay disciplined, reanalyze, and wait for a new opportunity.
-
-## **Execution Quality & Liquidity**
-
-**Or: Why “I clicked buy” ≠ “I got the price I wanted”**
-
-Execution quality is the gap between your intended price and what actually gets filled.
-
-Liquidity is how easily your order gets filled without distortion. Low liquidity means:
-
-* More slippage  
-* Worse fills  
-* Unpredictable execution
-
-### **Real Example (Leverage Multiplies Impact)**
-
-You buy at $10.00, but get filled at $10.07.  
-That’s 0.7% slippage. With 10× leverage, you’re instantly down 7%.
-
-### **Execution Tips**
-
-* Use **market orders** only for liquid pairs  
-* Use **limit orders** for volatile or low-liquidity assets  
-* Always check slippage preview on Kana Perps before confirming
-
-## **Managing Positions (TP, SL & Margin)**
-
-**Or: Staying safe after you enter your trade**
-
-Setting TP (Take-Profit) and SL (Stop-Loss) is how you manage risk automatically.  
- Once you’re in a trade, the next job is protecting it.
-
-Kana Perps uses **isolated margin**, meaning:
-
-* Each position has its own risk  
-* One bad trade won’t drain your whole account
-
-You can **manually add margin** anytime from your “Positions” tab.
-
-Stay proactive. Don't just set and forget.
-
-## **Hedge Mode & Dual Positions**
-
-**Or: Trading both sides at once — Kana’s unique edge**
-
-Kana Perps supports **Hedge Mode**, which lets you hold a Long and a Short on the same asset at the same time.
-
-Why it matters:
-
-* Protect an open trade during volatility  
-* Profit from movement in either direction  
-* Keep funds on one platform — no juggling
-
-### **Example: Dual Positioning**
-
-Open a Long and Short on APT at the same time. If price spikes, close the profitable side and let the other ride — or hold the hedge for flexibility.
-
-## **Module 2 Checklist**
-
-* Understand the difference between Market and Limit orders  
-* Always plan your Entry, Stop-Loss, and Take-Profit  
-* Preview slippage and check liquidity before placing a trade  
-* Manage margin and risk after the trade is live  
-* Use Hedge Mode strategically when needed
-
-**Next Module: Risk Management Essentials**  
- Because even the best trade idea is worthless if you blow up your account.
-
-Let’s talk about survival.
+2. In the popup, confirm the direction is set to “From: Trading Account → To: Your Wallet.” If it’s reversed, click the ↕ icon to switch. Enter the amount you want to withdraw manually or use the quick buttons (25%, 50%, 75%, Max), then click the green Withdraw button. Your funds will be transferred instantly.  
+ 
+<img src="/images/content/perps11.png" alt="Withdraw Funds" /> <br>
 `;
 
-// Module 3: Risk Management Essentials
-const module3Content = `
-### **📘 Module 3: Risk Management Essentials**
+const trade = `
+# **Trade Basics**
 
-**— Understanding Risk**
+Kana Perps lets you trade with leverage in both directions — **Long** (if you expect the price to rise) or **Short** (if you expect it to fall).
 
-**— Stop Loss & Take Profit in Practice**
+You can choose between **Market orders** (instant execution at current price) and **Limit orders** (execute only at your chosen price).
 
-**— Margin & Liquidation: Deeper Dive**
+Leverage goes up to **20x**. For example:  
+ **100 USDT trade at 20x \= 5 USDT required margin.**  
+ Higher leverage lowers the upfront margin — but increases the risk of liquidation.
 
-**— Funding & Its Impact on Strategy**
+All positions on Kana Perps use **Isolated Margin** — meaning each trade has its own risk. If one gets liquidated, your others stay untouched.
 
-# **Module 3: Risk Management Essentials**
+## **Quick Links:**
 
-***Or: How to not blow your account trading perps***
-
-## **Understanding Risk**
-
-**Or: A trade isn’t real until you know exactly how much you’re willing to lose**
-
-Perpetual futures offer speed, leverage, and high potential returns — but without clear risk management, you’ll burn through your account in no time.
-
-### **What Is “Risk” in Trading?**
-
-Risk isn’t a feeling — it’s a number. It’s the **maximum amount you’re willing to lose on a trade**, and you define it *before* you enter.
-
-### **Three Types of Risk You Must Control**
-
-**1\. Trade-Level Risk**  
- How much are you risking on this specific trade?
-
-**Example:**
-
-* Entry: $10.00  
-* Stop-loss: $9.80  
-* Position size: 50 APT  
-   → Risk \= 50 × $0.20 \= **$10**
-
-That’s your per-trade risk.
-
-**2\. Account-Level Risk**  
- How much of your total balance are you risking?
-
-**Example:**
-
-* Account: $1,000  
-* Risk on trade: $100 → That’s 10% of your account (too much)
-
-Most serious traders keep it at **1–3% per trade**, so they survive a losing streak and stay in the game.
-
-**3\. Risk-to-Reward Ratio (R:R)**  
- Is the trade even worth taking?
-
-**Example:**
-
-* Risk: $50  
-* Potential profit: $150 → R:R \= **1:3** (Good)  
-* Risk: $50  
-* Profit: $30 → R:R \= **1:0.6** (Bad)
-
-Even a high win rate won’t help if your R:R is upside down.
-
-### **Bottom Line**
-
-You don’t size positions based on gut feeling. You calculate risk, define it, and stick to it. That’s trading.
-
-## **Stop Loss & Take Profit: Your Essential Exits**
-
-**Or: How to leave trades without second-guessing yourself**
-
-Entries matter. But exits — planned, precise exits — are what protect and compound your capital.
-
-### **Stop-Loss (SL): Your Defense**
-
-A stop-loss is a price level that says: **“If it hits here, I was wrong. I’m out.”**
-
-Why it matters:
-
-* Caps your loss  
-* Forces discipline  
-* Prevents emotional exits
-
-No SL? You’re gambling, not trading.
-
-### **Take-Profit (TP): Your Target**
-
-A TP is your profit exit — set in advance. It keeps you from:
-
-* Taking profits too early  
-* Holding too long and turning green trades red  
-* Improvising
-
-A good TP locks in reward with no drama.
-
-### **Example Trade Setup**
-
-* Entry: $10.00  
-* Stop-loss: $9.85 (risk \= $0.15)  
-* Take-profit: $10.40 (reward \= $0.40)  
-   → Risk-to-reward ≈ **1:2.66**
-
-Set it all **before** the trade. That’s how you remove emotion from execution.
-
-## **Margin & Liquidation: Understanding Your Real Risk**
-
-**Or: What actually happens when you ignore leverage math**
-
-You’ve seen margin before. Now we look at it through a risk lens.
-
-### **What’s Margin?**
-
-It’s your **collateral**. The portion of your capital backing the trade.  
- At 10× leverage:
-
-* Position size: $1,000  
-* Margin: $100 (your funds)  
-* Borrowed: $900
-
-If things go wrong, you lose **your** $100 — not the borrowed amount.
-
-### **What’s Liquidation?**
-
-Liquidation happens when your margin gets too thin. The platform force-closes your trade to prevent further loss.
-
-It happens when:
-
-* Price moves hard against you  
-* You don’t use a stop-loss  
-* You risk too much
-
-It’s not random. It’s math — and it’s avoidable.
-
-### **Example: Stop-Loss vs. Liquidation**
-
-You long APT at $10.00, 10× leverage.  
- Your margin: $100.
-
-* Price drops to $9.00 → You’re liquidated. Loss: $100  
-* Price drops to $9.85 and you had a stop-loss? → Small loss: $15. No liquidation.
-
-That’s the difference between controlled risk and total wipeout.
-
-## **Funding Rates: The Hidden Fee**
-
-**Or: Why your profits shrink even when you’re right**
-
-Funding is a recurring payment between traders to keep perp prices aligned with spot.
-
-* If **perp \> spot** → longs pay shorts  
-* If **perp \< spot** → shorts pay longs
-
-### **Why It Matters**
-
-Funding **eats into your PnL**, especially with leverage.
-
-**Example:**
-
-* You’re long APT  
-* 20× leverage  
-* $5,000 position  
-* Funding \= 0.01% per 8 hours
-
-→ \~$1.50 per day  
- → $10+ per week — gone
-
-### **Always Know the Rate**
-
-Before you hold a leveraged trade overnight, **check funding**. It could be the silent drain that kills your profit over time.
-
-## **Module 3: Key Checklist**
-
-* Define your **risk per trade** before you enter  
-* Always use a **stop-loss** and **take-profit**  
-* Know where liquidation happens — and avoid it  
-* Track **funding costs** and factor them into your PnL
-
-**Next up → Module 4: Technical Analysis Basics**  
- Because great trades aren’t guesses — they’re built on logic, structure, and levels.
-
-Ready? Let’s chart it out.
+- [How to Open a Market Trade](/perps/opening-trades#placing-a-market-trade-order)
+- [How to Place Limit Orders](/perps/opening-trades#placing-a-limit-long-order)
+- [How to Close Positions (Partial & Full)](/perps/managing-trades#closing-a-trade-partial--full)
+- [Adding More Margin](/perps/managing-trades#adding-margin-to-an-open-position)
 `;
+const opentrade = `
+# **Placing Market & Limit Order**
+## **Opening a Market Trade Order**
 
-// Module 4: Technical Analysis Basics
-const module4Content = `
-### **📘 Module 4: Technical Analysis Basics**
+**Step 1: Select Asset & Trade Type**
 
-**— Candlestick Charts 101**
+Go to the Order Placement section. By default, Market order is selected. Choose the asset you want to trade and set your preferred leverage using the slider — from 1x to 20x.  
 
-**— Common Patterns**
+<img src="/images/content/perps12.png" alt="Select Asset and Trade Type" /> <br>
 
-**— Support & Resistance and Indicators**
+**Step 2: Enter Order Value**
 
-**— Trading Psychology**
+Type in the amount you want to trade, either in USDT or in the asset token. As you enter the value, the platform will show your estimated liquidation price, required margin, and slippage.  
 
-# **Module 4: Technical Analysis Basics**
+<img src="/images/content/perps13.png" alt="Enter Order Value" /> <br>
 
-***Or: Real tools for smarter trading — no fluff, just clarity***
+**Step 3: Place Market Order**
 
-**Reading Candlestick Charts**
+Click **Long** if you expect the price to rise, or **Short** if you expect it to fall. The order will execute instantly at the current market price, and your new position will appear in the **Positions** tab below.
 
-**Or: How traders see price, momentum, and psychology in one little picture**
+<img src="/images/content/perps14.png" alt="Place Market Order" /> <br>
 
-Charts don’t predict the future. They just tell a story — in real time, through price. In crypto, candlestick charts are the most used format. And if you can read them, you’ll start to see:
+## **Opening a Limit Long Order**
 
-* Who’s in control — buyers or sellers  
-* Whether momentum is building or fading  
-* How confident, uncertain, or chaotic the market is
+**Limit orders** let you open positions at a specific, pre-defined price, different from the current market.
 
-Each candle shows 4 prices over a set time period (1m, 1h, 1d — your choice):
+**Step 1: Select Limit Order and Set Entry Price**  
+In the Order Placement section, select **Limit**. Enter the price at which you want the order to execute — typically below the market price for Long, or above for Short.
 
-* **Open** — where the price started  
-* **Close** — where it ended  
-* **High/Low** — the extremes in that period
+<img src="/images/content/perps15.png" alt="Select Limit Order" /> <br>
 
-The shape of the candle tells you what happened:
+**Step 2: Enter Order Size**  
+Type in the amount you want to trade, either in USDT or in the asset token. As you enter the value, the platform will show your estimated liquidation price, required margin, and slippage.
 
-* Green body → buyers won  
-* Red body → sellers won  
-* Long wick on top → sellers pushed back  
-* Long wick on bottom → buyers defended the low
+<img src="/images/content/perps16.png" alt="Enter Order Size" /> <br>
 
-But one candle alone means nothing. Context is everything.
+**Step 3: Place Limit Order**  
+Click **Long** or **Short** to place your order. It will appear in the **Open Orders** tab and remain there until the market reaches your target price. Once filled, it will move to the **Positions** tab.  
 
-### **Example**
+<img src="/images/content/perps17.png" alt="Place Limit Order" /> <br>
+`;
+const closetrade = `
 
-BTC trades at $30,000. You see three small red candles… then a big green candle breaks higher. → Buyers just punched back. That could be a long setup.
+# **Closing a Trade (Partial & Full)**
 
-### **Candlestick Signals Worth Knowing**
+**Fully Close a Position**  
+Go to the **Positions** tab and find the trade you want to close. Click **Quick Close** to close the entire position at market price.
 
-* Long upper wick → bearish pressure  
-* Long lower wick → bullish defense  
-* Big green body → buyers in control  
-* Big red body → sellers in control
+<img src="/images/content/perps18.png" alt="Close Position" /><br>
 
-## **Candlestick & Chart Patterns**
+**Partially Close at Market Price**  
+Select the position, choose **Market**, enter the amount you want to close, and click **Confirm**. The reduced position size will update automatically.
 
-**Or: Ignore 90% of Twitter — these patterns actually matter**
+<img src="/images/content/perps19.png" alt="Partially Close Market" /><br>
 
-You don’t need to memorize 50 patterns. You need 5 that actually show up — and work.
+**Partially Close at a Specific Price (Limit)**  
+Select the position, switch to **Limit**, and enter your desired exit price and amount. Click **Confirm** to place the closing order. It will appear under **Open Orders** and execute when the price is reached.
 
-### **Candlestick Patterns**
+<img src="/images/content/perps20.png" alt="Partially Close Limit" /><br>
 
-**Engulfing Pattern**
+Once closed, the trade will move to **Order History**.
 
-* Bullish: big green candle fully engulfs red  
-* Bearish: big red candle swallows green  
-   → Strong reversal signal
+<img src="/images/content/perps21.png" alt="Order History" /><br>
+`;
+const margin = `
+# **Adding Margin to an Open Position**
 
-**Doji**
+Kana Perps uses **isolated margin**. Each trade requires fixed collateral, preventing total balance liquidation. Monitor your positions and add margin when needed.
 
-* Tiny body  
-* Means indecision  
-* Often appears after a trend → potential pause or reversal
+**Step 1: Select Position**  
+ Go to the **Positions** tab and click the **pencil icon** next to the trade you want to add margin to.
 
-### **Chart Patterns**
+<img src="/images/content/perps22.png" alt="Select Position" /><br>
 
-**Double Top / Bottom**
+**Step 2: Enter Additional Margin**  
+ Type the amount you want to add — it must be **less than your current margin**.  
+ Click **Update** to confirm.  The new margin value will be reflected in your **Positions** tab immediately.  
 
-* Price hits the same level twice and fails  
-* Double top \= bearish  
-* Double bottom \= bullish
+ <img src="/images/content/perps23.png" alt="Add Margin" /><br>
+`;
+const tpsl = `
+# **Setting TP/SL (Take Profit/Stop Loss)**
 
-**Breakout & Retest**
+**Method 1: Set TP/SL While Opening a Trade**  
+ Before placing your order, check the **TP/SL** box in the Order Placement section. Enter your desired take profit and stop loss prices. As you adjust the values, the platform will show your estimated gains and losses in real time. Once ready, place your Long or Short order as usual — your TP/SL will be set automatically.
 
-* Price breaks resistance, then comes back to test it  
-* If it holds → continuation  
-* If it fails → fakeout
+<img src="/images/content/perps24.png" alt="Set TPSL" /><br>
 
-### **Pattern Trap**
+**Method 2: Add or Modify TP/SL After Opening a Trade**  
+Go to the **Positions** tab and click the **edit icon** next to the TP/SL section of your open trade. Enter your target values and click **Confirm**. Your updated TP/SL will be applied immediately and shown in the same tab.
 
-New traders see patterns *everywhere*. Don’t. Structure and context matter more than imagination.
+<img src="/images/content/perps25.png" alt="Modify TPSL" /><br>
 
-## **Reading Structure: Support, Resistance & Indicators**
+<img src="/images/content/perps26.png" alt="TPSL Confirmation" /><br>
 
-**Or: Price tells the story — indicators confirm it**
+**Opening a Dual Position (Hedge Mode)**
 
-### **Support & Resistance: The Backbone of Every Chart**
+Kana Perps uses **hedge mode by default**, allowing you to hold both Long and Short positions on the same asset simultaneously. This helps manage volatility, hedge risk, or react to sudden news without closing trades or moving funds.
 
-Support is where **buyers step in**. Resistance is where **sellers push back**.
+**Step 1: Select Asset**  
+Go to the Order Placement section and choose the asset you want to hedge.
 
-These aren’t random lines. They’re memory zones. Markets don’t forget key levels — and neither should you.
+**Step 2: Open a Long and Short Position**  
+Set your desired leverage and trade amount. First, open a **Long** position — then immediately open a **Short** on the same asset (or vice versa).
 
-**Support \= floor**  
- Price bounces up from this level
+**Step 3: Manage Positions Separately**  
+Both trades will appear independently in the **Positions** tab. They can be adjusted, partially closed, or fully closed one at a time.
 
-**Resistance \= ceiling**  
- Price gets rejected from this level
+`;
+const swap = `
 
-### **Key Rule: Support ↔ Resistance Flip**
+# **Walkthrough: Swapping APT → USDC on Kana Labs**
 
-* If support breaks → it becomes resistance  
-* If resistance breaks → it often flips to support
+Swapping tokens is one of the most basic and essential actions in DeFi. Kana Labs makes it fast, cheap, and easy — especially on Aptos. Here’s a simple walkthrough to guide you through your first swap.
 
-**Example:**  
- APT rejects at $10 → it’s resistance.  
- Breaks above, pulls back to $10 — and holds → $10 becomes support.
+**What You’ll Do:**  
+ You’ll swap your APT tokens for USDC (a stablecoin) using Kana Labs’ DEX Aggregator, which finds the best rate across multiple sources automatically.
 
-Structure like this gives your trades a map. Everything else is just confirmation.
+## **Step-by-Step Walkthrough:**
 
-### **Indicators: Confirmation, Not Commands**
+**Step 1: Connect Your Wallet**  
+ Open Kana Labs and click "Connect Wallet."  
+ Select your preferred wallet (Petra, Nightly, etc.) and make sure you’re connected to the correct network (Aptos Mainnet or Testnet).
 
-Indicators don’t predict anything. They help you **read the market's strength** — if used right.
+**Step 2: Select Swap Pair**  
+ In the Swap section, select **APT** as the token you’re selling, and **USDC** as the token you want to receive.
 
-#### **RSI (Relative Strength Index)**
+**Step 3: Enter Swap Amount**  
+ Type in how much APT you want to swap.  
+ You’ll see the estimated amount of USDC you’ll get, including the live exchange rate.
 
-* Above 70 \= overbought  
-* Below 30 \= oversold  
-* **Best use:** divergence  
-   → Price makes new high, RSI doesn’t \= trend weakening
+**Step 4: Review Rate and Gas Fee**  
+ Kana automatically pulls the best available rate across DEXs.  
+ Check the slippage, expected output, and estimated gas fee before proceeding.
 
-#### **Moving Averages (MA)**
+**Step 5: Execute Swap**  
+ Click **"Swap"**, then confirm the transaction in your wallet popup.
 
-* Show the **trend**  
-* Act as **dynamic support/resistance**
+**Step 6: Done\!**  
+ Your USDC will arrive in your wallet within seconds.  
+ You can check your updated balance immediately.
 
-→ Price above 50 or 200 MA \= trend is strong  
- → Price often bounces off MAs during healthy moves
+## **Tip:**
 
-#### **MACD**
-
-* Measures **momentum shifts** using moving averages  
-* MACD crosses above signal → bullish  
-* MACD crosses below → bearish
-
-Great for **confirmation** — not for entries alone.
-
-### **Don’t Use Indicators Like This**
-
-* Don’t long just because RSI says “oversold”  
-* Don’t short just because MACD crosses once  
-* Don’t forget the structure
-
-Use indicators to **validate** what the chart already shows — not to replace your thinking.
-
-**Next: Part 4 — Trading Psychology**  
- Because none of this matters if your brain bails on you mid-trade.
-
-## **Trading Psychology**
-
-**Or: Why you panic-close the best setups**
-
-You can have perfect TA. It won’t matter if your emotions hijack the trade.
-
-Here’s what usually ruins it:
-
-* Exiting early before TP hits  
-* Doubling down after a loss  
-* FOMOing into random candles  
-* Ignoring your stop “just this once”
-
-### **Three Mental Rules That Save You**
-
-1. **Discipline over Emotion**  
-    Stick to your plan — especially when it’s hardest.  
-2. **Accept Losses**  
-    Losses don’t make you a bad trader. Breaking your plan does.  
-3. **Kill the Jackpot Fantasy**  
-    You’re not here for one lucky win. You’re here to last.
-
-### **How to Build Discipline**
-
-* Write a plan before entering  
-* Take breaks — no revenge trades  
-* Review both wins and mistakes  
-* Track not just price — but **your mindset**
-
-## **Final Checklist: Technical Analysis Foundation**
-
-* Read candlestick charts in context  
-* Recognize effective chart and candle patterns  
-* Use support and resistance for structure  
-* Apply RSI, MA, and MACD to confirm, not decide  
-* Stay emotionally consistent and structured
-
-## **End of Module 4: Technical Analysis Basics**
-
-**Course Complete — You Made It**
-
-That’s your full foundation. You’re not guessing anymore. You’re trading with structure, logic, and real tools.
-
-### **What’s Next?**
-
-→ **Practice**  
- Theory is nice. Execution is everything.  
- Go place testnet trades. Review them. Make small mistakes. Learn.
-
-→ **Refine Your Edge**  
- Keep a journal. Study your best trades. Study your worst trades.  
- The winners usually look the same. So do the losers.
-
-### **Final Note**
-
-This isn’t just a tutorial. It’s a toolkit smart traders use to survive, adapt, and win — even in chaotic markets.
-
-Whether you’re scalping, hedging, or learning to stay in the game — you now have a framework.
-
-Let’s make sure your first real trade doesn’t feel like your first.
-
-See you on the charts.
+Want to swap back?  
+ Simply reverse the direction (USDC → APT) and follow the same steps.
 `;
 
 // Export category data
@@ -883,66 +259,79 @@ We’ll walk through the basics of perpetual futures: what they are, how they di
 It’s all tied to real usage on **Kana Perps**, so you’re not just reading theory — you’re learning how to trade in practice, with real buttons and real decisions.
 
 No promises. No screenshots of 400% wins. Just a clear framework to help you trade smarter, last longer, and avoid the traps that take most people out early.
-
-## **What You Will Learn**
-
-### **Trade without guessing**
-
-Understand how perpetual futures work — and how they don’t. Learn why people use them, when to go long or short, and what separates a smart position from a blind bet.
-
-### **Use leverage without losing your head**
-
-See how margin works, how liquidation happens, and why the 20× button isn’t your friend. Learn how to size positions, manage exposure, and stay in control — even in fast markets.
-
-### **Open and manage real trades**
-
-Walk through market and limit orders, setting stop-loss and take-profit, adjusting margin, and using hedge mode — directly on Kana Perps. Every concept ties back to execution.
-
-### **Protect your capital**
-
-You’ll build a clear risk framework: how much to risk per trade, how to survive drawdowns, and how to stop revenge trading before it starts. Because staying in the game is step one.
-
-### **Read price like a trader**
-
-Get the basics of technical analysis: candlestick charts, chart patterns, key support and resistance levels. Plus how to use indicators without turning your screen into a mess.
-
-### **Handle the mental side**
-
-Learn how to stick to your plan when it’s uncomfortable, take losses without spiraling, and stop overtrading because “it almost hit target.” Trading isn’t just charts — it’s mindset.
-
 `,
   pages: [
     {
-      id: "perps-essentials",
-      title: "Perpetual Futures Essentials",
-      slug: "/perps/essentials",
-      sidebar_label: "Perps Essentials",
+      id: "perps-intro",
+      title: "Introduction",
+      slug: "/perps/intro",
+      sidebar_label: "Introduction",
       sidebar_position: 1,
-      content: module1Content,
+      content: intro,
     },
     {
-      id: "executing-trades",
-      title: "Executing Trades on Kana Perps",
-      slug: "/perps/executing-trades",
-      sidebar_label: "Executing Trades",
+      id: "connecting-wallet",
+      title: "Connecting Your Wallet",
+      slug: "/perps/connecting-wallet",
+      sidebar_label: "Connecting Wallet",
       sidebar_position: 2,
-      content: module2Content,
+      content: connectingwallet,
     },
     {
-      id: "risk-management",
-      title: "Risk Management Essentials",
-      slug: "/perps/risk-management",
-      sidebar_label: "Risk Management",
+      id: "deposit-withdraw",
+      title: "Deposit & Withdraw",
+      slug: "/perps/deposit-withdraw",
+      sidebar_label: "Deposit & Withdraw",
       sidebar_position: 3,
-      content: module3Content,
+      content: deposit,
     },
     {
-      id: "technical-analysis",
-      title: "Technical Analysis Basics",
-      slug: "/perps/technical-analysis",
-      sidebar_label: "Technical Analysis",
+      id: "trade-basics",
+      title: "Trade Basics",
+      slug: "/perps/trade-basics",
+      sidebar_label: "Trade Basics",
       sidebar_position: 4,
-      content: module4Content,
+      content: trade,
     },
+    {
+      id: "opening-trades",
+      title: "Opening Trades",
+      slug: "/perps/opening-trades",
+      sidebar_label: "Opening Trades",
+      sidebar_position: 5,
+      content: opentrade,
+    },
+    {
+      id: "closing-trades",
+      title: "Closing Trades",
+      slug: "/perps/closing-trades",
+      sidebar_label: "Closing Trades",
+      sidebar_position: 6,
+      content: closetrade,
+    },
+    {
+      id: "margin",
+      title: "Adding Margin",
+      slug: "/perps/margin",
+      sidebar_label: "Adding Margin",
+      sidebar_position: 7,
+      content: margin,
+    },
+    {
+      id: "tpsl",
+      title: "TP/SL",
+      slug: "/perps/tpsl",
+      sidebar_label: "TP/SL",
+      sidebar_position: 8,
+      content: tpsl,
+    },
+    {
+      id: "token-swaps",
+      title: "Token Swaps",
+      slug: "/perps/token-swaps",
+      sidebar_label: "Token Swaps",
+      sidebar_position: 9,
+      content: swap,
+    }
   ],
 };

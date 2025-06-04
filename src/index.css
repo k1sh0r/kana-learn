@@ -118,7 +118,7 @@
   }
 
   .markdown-content p {
-    @apply mb-4 leading-relaxed;
+    @apply mb-4 leading-relaxed dark:text-[#D1D5DB];
   }
 
   .markdown-content ul {
@@ -164,7 +164,7 @@
 
   /* Target all images in markdown content, regardless of parent element */
   .markdown-content img {
-    @apply rounded-2xl border-2 border-[#002019] max-w-full h-auto;
+    @apply rounded-lg md:rounded-xl border-2 border-[#002019] max-w-full h-auto;
   }
 
   /* Override any specific cases where we don't want the styling */

@@ -84,7 +84,7 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
         size="sm" 
         onClick={onToggleCollapse}
         className={cn(
-          "fixed z-50 bottom-4 bg-background hover:bg-sidebar-accent shadow-md rounded-full p-2 transition-all duration-300",
+          "fixed z-40 bottom-4 bg-background hover:bg-sidebar-accent shadow-md rounded-full p-2 transition-all duration-300",
           isCollapsed ? "left-4 bg-sidebar-accent" : "left-52"
         )}
         aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}

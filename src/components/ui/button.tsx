@@ -32,6 +32,16 @@ const buttonVariants = cva(
         icon: "h-10 w-10 rounded-xl",
       },
     },
+    compoundVariants: [
+      {
+        variant: "default",
+        size: "sm",
+        className: [
+          "shadow-[0_2px_0_0_#009C9C,0_5px_2px_0_rgba(0,255,255,0.2),0_2px_4px_0_rgba(0,0,0,0.15)]",
+          "hover:translate-y-[1px] hover:shadow-[0_1px_0_0_#009C9C,0_3px_1px_0_rgba(0,255,255,0.15),0_1px_3px_0_rgba(0,0,0,0.1)]",
+        ],
+      },
+    ],
     defaultVariants: {
       variant: "default",
       size: "default",

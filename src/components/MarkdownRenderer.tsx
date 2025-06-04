@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { useLocation } from "react-router-dom";
 import { metricsService } from "@/services/metricsService";
+import { OptimizedImage } from './OptimizedImage';
 
 interface MarkdownRendererProps {
   content: string;
@@ -121,6 +122,15 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       className="markdown-content"
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeRaw]}
+      components={{
+        img: ({ node, ...props }) => (
+          <OptimizedImage
+            {...props}
+            src={props.src || ''}
+            alt={props.alt || ''}
+          />
+        ),
+      }}
     >
       {content}
     </ReactMarkdown>
