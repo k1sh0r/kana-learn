@@ -238,7 +238,7 @@ Want to swap back?
 // Export category data
 export const perpsCategory: Category = {
   id: "perps",
-  label: "Perpetual Futures Tutorial",
+  label: "Kana Perps Walkthroughs",
   slug: "perps",
   position: 2,
   description:`
