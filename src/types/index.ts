@@ -15,6 +15,7 @@ export interface Category {
   position: number;
   pages: DocPage[];
   description?: string; // Optional markdown description
+  isNew?: boolean;
 }
 
 export interface ThemeProviderProps {
