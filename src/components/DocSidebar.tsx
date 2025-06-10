@@ -56,6 +56,7 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
               </div>
               <ul className="pl-2 mt-1 space-y-1">
                 {currentCategory.pages
+                  .filter(page => page.sidebar_position !== 0)
                   .sort((a, b) => (a.sidebar_position || 0) - (b.sidebar_position || 0))
                   .map((page) => (
                     <li key={page.id}>

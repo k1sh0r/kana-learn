@@ -35,7 +35,7 @@ To start trading, you need to move USDT from your wallet into your Kana Perps tr
 <br>
 
 
->If you don’t have USDT yet, you can check <a href="/perps/token-swaps">how to swap</a> using <a href="https://app.kanalabs.io/swap">Kana Swap</a>
+>If you don’t have USDT yet, you can visit <a href="https://app.kanalabs.io/swap">Kana Swap</a> and get it.
 
 <br>
 
@@ -301,13 +301,13 @@ Learning by doing is the fastest way to get comfortable. That’s why we’ve pr
       sidebar_position: 8,
       content: tpsl,
     },
-    // {
-    //   id: "token-swaps",
-    //   title: "Token Swaps",
-    //   slug: "/perps/token-swaps",
-    //   sidebar_label: "Token Swaps",
-    //   sidebar_position: 9,
-    //   content: swap,
-    // }
+    {
+      id: "token-swaps",
+      title: "Token Swaps",
+      slug: "/perps/token-swaps",
+      sidebar_label: "Token Swaps",
+      sidebar_position: 0,
+      content: swap,
+    }
   ],
 };

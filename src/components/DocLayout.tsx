@@ -15,6 +15,7 @@ import {
 import { ScrollToTop } from "./ScrollToTop";
 import { metricsService } from "@/services/metricsService";
 import { FeedbackForm } from "./feedbackform";
+import { ChevronLeft } from "lucide-react";
 
 interface DocLayoutProps {
   children: React.ReactNode;
@@ -119,9 +120,22 @@ export function DocLayout({ children, hideSidebar = false, defaultCollapsed = fa
         
         <main className={`flex-1 transition-all duration-300 ${!hideSidebar && !sidebarCollapsed ? "ml-64" : "ml-0"}`}>
           <div className="container max-w-4xl pt-8 pb-28 xl:pb-8 xl:px-4">
+            {currentPage?.sidebar_position === 0 && (
+              <div className="sticky top-20 z-40 mb-8">
+                <button
+                  onClick={() => navigate(-1)}
+                  className="inline-flex items-center justify-center bg-background/95 backdrop-blur whitespace-nowrap text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-accent hover:text-accent-foreground h-9 rounded-xl px-3 shadow"
+                >
+                  <ChevronLeft className="mr-2 h-4 w-4" />
+                  Go Back
+                </button>
+              </div>
+            )}
+
             {children}
             
-            {currentPage && (
+            {/* Only show pagination for pages with sidebar_position !== 0 */}
+            {currentPage && currentPage.sidebar_position !== 0 && (
               <div className="mt-16 pt-4 border-t border-border">
                 <Pagination>
                   <PaginationContent className="flex flex-row w-full justify-between gap-4">
