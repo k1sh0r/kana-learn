@@ -1,12 +1,6 @@
 import { Category } from "@/types";
 
-const intro = `# **Kana Perps Step-by-Step Walkthroughs** 
 
-Learning by doing is the fastest way to get comfortable. That’s why we’ve prepared step-by-step walkthroughs for every major action you’ll need. Whenever you’re unsure, just check the guide and keep moving forward — everything’s laid out clearly and simply.
-
-<img src="/images/content/perps1.png" alt="kana perps" />  <br>
-
-Click next and start learning.`;
 
 const connectingwallet = `# **Connecting Your Wallet & Enabling One-Click Trading**
 
@@ -244,31 +238,13 @@ Want to swap back?
 // Export category data
 export const perpsCategory: Category = {
   id: "perps",
-  label: "Perpetual Futures",
+  label: "Perpetual Futures Tutorial",
   slug: "perps",
   position: 2,
   description:`
-  ## **Overview**
-
-**Perpetual Futures Essentials** is a course for anyone who’s looked at a leverage slider, hovered over “Open Long,” and thought: *“Wait… how does this actually work?”*
-
-This course is not about predicting the market. It’s about understanding the tools — and how to not blow up your account while learning to use them.
-
-We’ll walk through the basics of perpetual futures: what they are, how they differ from spot, and why traders use them. You’ll learn how to take long and short positions, manage leverage and margin, set stop-losses and take-profit, and understand liquidation before it happens. We’ll explain funding rates, execution quality, and what really matters when you’re placing trades — not after.
-
-It’s all tied to real usage on **Kana Perps**, so you’re not just reading theory — you’re learning how to trade in practice, with real buttons and real decisions.
-
-No promises. No screenshots of 400% wins. Just a clear framework to help you trade smarter, last longer, and avoid the traps that take most people out early.
+Learning by doing is the fastest way to get comfortable. That’s why we’ve prepared step-by-step walkthroughs for every major action you’ll need. Whenever you’re unsure, just check the guide and keep moving forward — everything’s laid out clearly and simply.
 `,
   pages: [
-    {
-      id: "perps-intro",
-      title: "Introduction",
-      slug: "/perps/intro",
-      sidebar_label: "Introduction",
-      sidebar_position: 1,
-      content: intro,
-    },
     {
       id: "connecting-wallet",
       title: "Connecting Your Wallet",
@@ -325,13 +301,13 @@ No promises. No screenshots of 400% wins. Just a clear framework to help you tra
       sidebar_position: 8,
       content: tpsl,
     },
-    {
-      id: "token-swaps",
-      title: "Token Swaps",
-      slug: "/perps/token-swaps",
-      sidebar_label: "Token Swaps",
-      sidebar_position: 9,
-      content: swap,
-    }
+    // {
+    //   id: "token-swaps",
+    //   title: "Token Swaps",
+    //   slug: "/perps/token-swaps",
+    //   sidebar_label: "Token Swaps",
+    //   sidebar_position: 9,
+    //   content: swap,
+    // }
   ],
 };

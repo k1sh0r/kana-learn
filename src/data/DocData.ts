@@ -1,7 +1,7 @@
 
 import { Category } from "@/types";
 import { cryptoEssentialsCategory } from "./cryptoEssentials";
-import { perpsCategory } from "./perps";
+import { perpsCategory } from "./perpswalkthrough";
 
 // Export combined mock data
 export const Data = {
