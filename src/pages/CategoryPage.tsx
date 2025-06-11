@@ -105,6 +105,7 @@ const CategoryPage = () => {
 
         <div className="grid gap-6">
           {categoryData.pages
+            .filter(page => page.sidebar_position !== 0)
             .sort((a, b) => (a.sidebar_position || 0) - (b.sidebar_position || 0))
             .map((page) => (
               <div 
