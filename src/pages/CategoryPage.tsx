@@ -110,7 +110,7 @@ const CategoryPage = () => {
             .map((page) => (
               <div 
                 key={page.id} 
-                className="block p-6 border border-border rounded-lg hover:border-primary-300 transition-colors cursor-pointer"
+                className="bg-card block p-6 border border-border rounded-lg hover:border-primary-300 transition-colors cursor-pointer"
                 onClick={() => handleCardClick(page.slug)}
               >
                 <h2 className="text-xl font-bold mb-1">

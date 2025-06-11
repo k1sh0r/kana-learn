@@ -54,7 +54,7 @@ const Home = () => {
         </section>
 
         {/* Features Section */}
-        <section className="py-16 px-4 bg-muted/50">
+        <section className="py-16 px-4">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold text-center mb-12">Everything You Need to Know</h2>
             
@@ -138,7 +138,7 @@ const Home = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4">
+        <section className="py-20 px-4 bg-gradient-to-br from-primary-100/20 to-transparent dark:from-primary-950/20 dark:to-transparent">
           <div className="container mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Master Crypto?</h2>
             <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
