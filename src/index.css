@@ -23,7 +23,7 @@
     --muted: 220 13% 96%;     /* More neutral grey */
     --muted-foreground: 220 10% 46%;
 
-    --accent: 220 13% 96%;    /* More neutral grey */
+    --accent: 220 13% 92%;    /* Darker accent from 96% to 92% */
     --accent-foreground: 220 13% 9%;
 
     --destructive: 0 84.2% 60.2%;
