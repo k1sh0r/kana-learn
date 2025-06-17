@@ -1,7 +1,5 @@
 import { Category } from "@/types";
-
-
-
+// Kana Perps Walkthroughs
 const connectingwallet = `# **Connecting Your Wallet & Enabling One-Click Trading**
 
 ### **Why Enable One-Click Trading?**
@@ -241,9 +239,8 @@ export const perpsCategory: Category = {
   label: "Kana Perps Walkthroughs",
   slug: "perps",
   position: 2,
-  description:`
-Learning by doing is the fastest way to get comfortable. That’s why we’ve prepared step-by-step walkthroughs for every major action you’ll need. Whenever you’re unsure, just check the guide and keep moving forward — everything’s laid out clearly and simply.
-`,isNew: true,
+  description:` Learning by doing is the fastest way to get comfortable. That’s why we’ve prepared step-by-step walkthroughs for every major action you’ll need. Whenever you’re unsure, just check the guide and keep moving forward — everything’s laid out clearly and simply.`,
+  
   pages: [
     {
       id: "connecting-wallet",

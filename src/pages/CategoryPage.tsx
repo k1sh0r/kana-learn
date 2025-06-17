@@ -10,7 +10,8 @@ import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 // Map of category slugs to local banner image paths
 const categoryBanners = {
   "crypto-essentials": "/images/banners/crypto-essentials0.jpg",
-  "perps": "/images/content/perps1.png"
+  "perps": "/images/banners/perps1.png",
+  "perps1": "/images/banners/perpsEss11.png",
 };
 
 const CategoryPage = () => {
