@@ -1,34 +1,5 @@
 import { Category } from "@/types";
 
-const whatYouWillLearn = `
-# **What You Will Learn**
-
-### **Trade without guessing**
-
-Understand how perpetual futures work — and how they don’t. Learn why people use them, when to go long or short, and what separates a smart position from a blind bet.
-
-### **Use leverage without losing your head**
-
-See how margin works, how liquidation happens, and why the 20× button isn’t your friend. Learn how to size positions, manage exposure, and stay in control — even in fast markets.
-
-### **Open and manage real trades**
-
-Walk through market and limit orders, setting stop-loss and take-profit, adjusting margin, and using hedge mode — directly on Kana Perps. Every concept ties back to execution.
-
-### **Protect your capital**
-
-You’ll build a clear risk framework: how much to risk per trade, how to survive drawdowns, and how to stop revenge trading before it starts. Because staying in the game is step one.
-
-### **Read price like a trader**
-
-Get the basics of technical analysis: candlestick charts, chart patterns, key support and resistance levels. Plus how to use indicators without turning your screen into a mess.
-
-### **Handle the mental side**
-
-Learn how to stick to your plan when it’s uncomfortable, take losses without spiraling, and stop overtrading because “it almost hit target.” Trading isn’t just charts — it’s mindset.
-
-Let’s get into it.
-`;
 
 const understanding = `
 # **Understanding Perpetual Futures** <br>
@@ -342,23 +313,45 @@ You’ll walk through the basics of perpetual futures: what they are, how they d
 And it’s all tied to real usage on **Kana Perps** — so you’re not just reading theory. You’re learning to trade in practice, with real buttons and real decisions.
 
 No promises. No screenshots of 400% wins. Just a clear framework to help you trade smarter, last longer, and avoid the traps that take most people out early.
+
+***
+
+## **What You Will Learn**
+
+### **Trade without guessing**
+
+Understand how perpetual futures work — and how they don’t. Learn why people use them, when to go long or short, and what separates a smart position from a blind bet.
+
+### **Use leverage without losing your head**
+
+See how margin works, how liquidation happens, and why the 20× button isn’t your friend. Learn how to size positions, manage exposure, and stay in control — even in fast markets.
+
+### **Open and manage real trades**
+
+Walk through market and limit orders, setting stop-loss and take-profit, adjusting margin, and using hedge mode — directly on Kana Perps. Every concept ties back to execution.
+
+### **Protect your capital**
+
+You’ll build a clear risk framework: how much to risk per trade, how to survive drawdowns, and how to stop revenge trading before it starts. Because staying in the game is step one.
+
+### **Read price like a trader**
+
+Get the basics of technical analysis: candlestick charts, chart patterns, key support and resistance levels. Plus how to use indicators without turning your screen into a mess.
+
+### **Handle the mental side**
+
+Learn how to stick to your plan when it’s uncomfortable, take losses without spiraling, and stop overtrading because “it almost hit target.” Trading isn’t just charts — it’s mindset.
+
+Let’s get into it.
 `,
   isNew: true,
   pages: [
-    {
-      id: "what-you-will-learn",
-      title: "What You Will Learn",
-      slug: "/perps1/what-you-will-learn", 
-      sidebar_label: "Learning Objectives",
-      sidebar_position: 1,
-      content: whatYouWillLearn,
-    },
     {
       id: "understanding-perps",
       title: "Understanding Perpetual Futures",
       slug: "/perps1/understanding-perps",
       sidebar_label: "Understanding Perps",
-      sidebar_position: 2,
+      sidebar_position: 1,
       content: understanding,
     },
     {
@@ -366,7 +359,7 @@ No promises. No screenshots of 400% wins. Just a clear framework to help you tra
       title: "Long vs. Short Positions",
       slug: "/perps1/long-short",
       sidebar_label: "Long vs. Short",
-      sidebar_position: 3,
+      sidebar_position: 2,
       content: longShort,
     },
     {
@@ -374,7 +367,7 @@ No promises. No screenshots of 400% wins. Just a clear framework to help you tra
       title: "Margin, Leverage & Liquidation",
       slug: "/perps1/margin-liquidation",
       sidebar_label: "Margin & Leverage",
-      sidebar_position: 4,
+      sidebar_position: 3,
       content: margin,
     },
     {
@@ -382,7 +375,7 @@ No promises. No screenshots of 400% wins. Just a clear framework to help you tra
       title: "Funding Rates",
       slug: "/perps1/funding",
       sidebar_label: "Funding Rates",
-      sidebar_position: 5,
+      sidebar_position: 4,
       content: funding,
     },
     
