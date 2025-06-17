@@ -288,6 +288,22 @@ Kana shows you the current funding rate directly in the trade panel — no guess
 * It can quietly erode (or boost) your PnL — especially in sideways markets
 
 Use it wisely — or at least know when it’s working against you.
+
+**You’ve Made It Through Module 1**
+
+You now understand:
+
+* What perpetual futures are
+
+* The difference between spot and perps
+
+* How to take long and short positions
+
+* What leverage really means — and how fast it can bite
+
+* How margin and liquidation actually work
+
+* How funding rates affect your PnL — even when price doesn’t move
 `;
 
 // Export category data
