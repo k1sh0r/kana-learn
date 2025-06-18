@@ -515,6 +515,8 @@ This isn't a course about trading strategies or chasing the next big coin. It's 
 
 Whether you're planning to explore DeFi, try out perpetuals, or just manage your assets safely, this is where it starts — with the basics that actually matter.
 
+___
+
 ## **What You Will Learn**
 
 ### **Set up and use a crypto wallet**
@@ -536,6 +538,10 @@ Explore the real difference between centralized and decentralized platforms. Fin
 ### **Handle gas fees and failed transactions**
 
 Gas fees aren't just technical details — they affect every action on-chain. You'll learn what they are, why transactions sometimes fail, and how platforms like Kana Perps are making it easier to trade without worrying about gas.
+
+___
+
+<p classname="!-mb-8 pt-8 pb-0">Explore all topics in the Crypto Essentials category:</p>
 
 `,
   pages: [

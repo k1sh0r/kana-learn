@@ -232,8 +232,11 @@ export const perpsCategory: Category = {
   label: "Kana Perps Walkthroughs",
   slug: "kanaperps",
   position: 2,
-  cardContent: "step-by-step guides showing exactly what to click, how to trade, and how to manage positions on Kana Perps.",
-  description:` Learning by doing is the fastest way to get comfortable. That's why we've prepared step-by-step walkthroughs for every major action you'll need. Whenever you're unsure, just check the guide and keep moving forward — everything's laid out clearly and simply.`,
+  description:` Learning by doing is the fastest way to get comfortable. That’s why we’ve prepared step-by-step walkthroughs for every major action you’ll need. Whenever you’re unsure, just check the guide and keep moving forward — everything’s laid out clearly and simply.
+  
+  ___
+
+<p classname="!-mb-8 pt-8 pb-0">Explore all topics in the Kana Perps Walkthrough:</p>`,
   
   pages: [
     {
