@@ -100,9 +100,9 @@ const CategoryPage = () => {
           </div>
         )}
 
-        <p className="text-lg mb-4">
+        {/* <p className="text-lg mb-4">
           Explore all topics in the {categoryData.label} category:
-        </p>
+        </p> */}
 
         <div className="grid gap-6">
           {categoryData.pages

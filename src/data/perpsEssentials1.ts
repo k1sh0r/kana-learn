@@ -69,12 +69,12 @@ Will price go up or down?
 
 That’s the whole game. And that’s why we talk about two basic positions:
 
-**Going Long →** — You bet the price will go up. You lose if it goes down.  
-**Going Short →** You bet the price will go down. You lose if it goes up.
+**Going <span class="green-text">Long</span> →** You bet the price will go up. You lose if it goes down.  
+**Going <span class="red-text">Short</span> →** You bet the price will go down. You lose if it goes up.
 
 Pick a direction. Manage your risk. That’s trading. It sounds simple — but let’s make it real. Let’s break it down with a simple example. Here’s what going long or short actually looks like in a real trade:
 
-### **Long \= You Expect the Price to Go Up**  
+### **<span class="green-text">Long</span> = You Expect the Price to Go Up**  
 You open a long position when you believe the asset will increase in value.
 
 **In practice:**  
@@ -86,7 +86,7 @@ You open a long position when you believe the asset will increase in value.
 
 This is the ***bullish*** move. You’re betting on growth.
 
-### **Short \= You Expect the Price to Go Down**  
+### **<span class="red-text">Short</span> = You Expect the Price to Go Down**  
  You open a short position when you believe the asset will drop in price. You’re selling high, buying back lower.
 
 **In practice:**  
@@ -309,7 +309,7 @@ You now understand:
 // Export category data
 export const perpsEssentialsCategory: Category = {
   id: "perps1",
-  label: "Perpetual Futures Essentials Module 1",
+  label: "Perpetual Futures Essentials",
   slug: "perps1",
   position: 3,
   description: `## **Overview**
@@ -359,6 +359,9 @@ Get the basics of technical analysis: candlestick charts, chart patterns, key su
 Learn how to stick to your plan when it’s uncomfortable, take losses without spiraling, and stop overtrading because “it almost hit target.” Trading isn’t just charts — it’s mindset.
 
 Let’s get into it.
+___
+
+<p classname="!-mb-8 pt-8 pb-0">Start with Module 1:</p>
 `,
   isNew: true,
   pages: [
