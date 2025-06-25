@@ -4,9 +4,9 @@ import Image from "next/image";
 import { Data } from "@/data/DocData";
 
 const categoryCardImages = {
-  "crypto-essentials": "/images/banners/crypto-essentials.jpg",
-  "perps": "/images/banners/perps-cover.jpg",
-  "perps1": "/images/banners/perpsEss10.jpg",
+  "crypto-essentials": "/images/thumbnails/crypto-essentials.jpg",
+  "kanaperps": "/images/thumbnails/kana-perps-thumbnail-english.jpg",
+  "perps": "/images/thumbnails/perps-essentials-english.jpg",
 };
 
 export default function DocsCardGrid() {

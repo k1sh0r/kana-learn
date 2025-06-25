@@ -1,4 +1,3 @@
-
 import { Category } from "@/types";
 import { cryptoEssentialsCategory } from "./cryptoEssentials";
 import { perpsCategory } from "./perpswalkthrough";

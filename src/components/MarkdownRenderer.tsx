@@ -5,7 +5,7 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { usePathname } from "next/navigation";
 import { metricsService } from "@/services/metricsService";
-import { OptimizedImage } from './OptimizedImage';
+import Image from "next/image";
 
 interface MarkdownRendererProps {
   content: string;
@@ -124,13 +124,29 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeRaw]}
       components={{
-          img: ({ ...props }) => (
-          <OptimizedImage
+        a: ({ href, children, ...props }) => (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
             {...props}
-              src={props.src as string}
-            alt={props.alt || ''}
-          />
+          >
+            {children}
+          </a>
         ),
+        img: ({ src = "", alt = "", ...props }) => {
+          if (!src || typeof src !== "string") return null;
+          return (
+            <Image
+              src={src}
+              alt={alt}
+              width={900}
+              height={600}
+              className={props.className}
+              style={{ maxWidth: "100%", height: "auto" }}
+            />
+          );
+        },
       }}
     >
       {content}

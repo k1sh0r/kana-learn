@@ -10,59 +10,52 @@ Usually, DeFi requires users to manually sign each transaction, causing delays a
 
 * Open <a href="https://www.kana.trade/" target="_blank" rel="" className="text-primary">Kana Perps <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mb-1"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>  <br>
 
-  <img src="/images/content/perps2.png" alt="Open Kana Perps" /> <br>
+  ![Open Kana Perps](/images/perps-walkthrough/open-kana-perps-english.png) <br>
 
 * Click on **Connect Wallet** and choose your wallet (Petra or Nightly).
 
-  <img src="/images/content/perps3.png" alt="Connect Wallet" />  <br>
+  ![Connect Wallet](/images/perps-walkthrough/connect-wallet-english.png)  <br>
 
 * Click **Enable Trading** → **Sign Trading**.  
 
-  <img src="/images/content/perps4.png" alt="Enable Trading" /> <br>
-
-  <img src="/images/content/perps5.png" alt="Sign Trading" />  <br>
+  ![Enable Trading](/images/perps-walkthrough/enable-trading-english.png) ![Sign Trading](/images/perps-walkthrough/sign-trading-english.png)  <br>
 
 * **Confirm the prompt from your wallet to activate one-click trading.**  
 
-  <img src="/images/content/perps6.png" alt="Confirm Prompt" /> <br>
+  ![Confirm Prompt](/images/perps-walkthrough/confirm-prompt-english.png) <br>
 `;
 
 const deposit = `# **Deposit or Withdraw USDT Between Your Wallet and Trading Account**
 
 To start trading, you need to move USDT from your wallet into your Kana Perps trading account.
-<br>
 
+>If you don't have USDT yet, you can visit <a href="https://app.kanalabs.io/swap">Kana Swap</a> and get it.
 
->If you don’t have USDT yet, you can visit <a href="https://app.kanalabs.io/swap">Kana Swap</a> and get it.
+**1\. Click "Deposit" in the top right**
+  In the top-right corner of the interface, you'll see your wallet address and a green Deposit button. Click it to open the fund transfer window.
 
-<br>
-
-
-**1\. Click “Deposit” in the top right**
-  In the top-right corner of the interface, you’ll see your wallet address and a green Deposit button. Click it to open the fund transfer window.
-
-  <img src="/images/content/perps7.png" alt="Click Deposit" /> <br>
+  ![Click Deposit](/images/perps-walkthrough/click-deposit-english.png) <br>
 
 **2\. Deposit USDT into Your Trading Account**  
-  Make sure the direction is correct: **From: Your Wallet → To: Trading Account**. If it’s reversed, click the ↕ icon to switch. Then enter the amount you want to deposit manually or use the quick buttons (25%, 50%, 75%, Max). Once everything looks good, click the green **Deposit** button to confirm. Your funds will be moved instantly.
+  Make sure the direction is correct: **From: Your Wallet → To: Trading Account**. If it's reversed, click the ↕ icon to switch. Then enter the amount you want to deposit manually or use the quick buttons (25%, 50%, 75%, Max). Once everything looks good, click the green **Deposit** button to confirm. Your funds will be moved instantly.
 
-  <img src="/images/content/perps8.png" alt="Deposit USDT" /> <br>
+  ![Deposit USDT](/images/perps-walkthrough/deposit-usdt-english.png) <br>
 
 **3\. Confirm your new balance**  
   After depositing, your Trading Account balance will update in the top-right corner.  
-  You’re now ready to open your first position.
+  You're now ready to open your first position.
 
-  <img src="/images/content/perps9.png" alt="Confirm Balance" /> <br>
+  ![Confirm Balance](/images/perps-walkthrough/confirm-balance-english.png) <br>
 
 **To Withdraw Funds (Trading Account → Wallet)**
 
 1. Click the **arrow icon** next to your trading balance at the top right.  
- 
-<img src="/images/content/perps10.png" alt="Click Withdraw" /> <br>
 
-2. In the popup, confirm the direction is set to “From: Trading Account → To: Your Wallet.” If it’s reversed, click the ↕ icon to switch. Enter the amount you want to withdraw manually or use the quick buttons (25%, 50%, 75%, Max), then click the green Withdraw button. Your funds will be transferred instantly.  
- 
-<img src="/images/content/perps11.png" alt="Withdraw Funds" /> <br>
+![Click Withdraw](/images/perps-walkthrough/click-withdraw-english.png) <br>
+
+2. In the popup, confirm the direction is set to "From: Trading Account → To: Your Wallet." If it's reversed, click the ↕ icon to switch. Enter the amount you want to withdraw manually or use the quick buttons (25%, 50%, 75%, Max), then click the green Withdraw button. Your funds will be transferred instantly.  
+
+![Withdraw Funds](/images/perps-walkthrough/withdraw-funds-english.png) <br>
 `;
 
 const trade = `
@@ -93,19 +86,19 @@ const opentrade = `
 
 Go to the Order Placement section. By default, Market order is selected. Choose the asset you want to trade and set your preferred leverage using the slider — from 1x to 20x.  
 
-<img src="/images/content/perps12.png" alt="Select Asset and Trade Type" /> <br>
+![Select Asset and Trade Type](/images/perps-walkthrough/select-asset-and-trade-type-english.png) <br>
 
 **Step 2: Enter Order Value**
 
 Type in the amount you want to trade, either in USDT or in the asset token. As you enter the value, the platform will show your estimated liquidation price, required margin, and slippage.  
 
-<img src="/images/content/perps13.png" alt="Enter Order Value" /> <br>
+![Enter Order Value](/images/perps-walkthrough/enter-order-value-english.png) <br>
 
 **Step 3: Place Market Order**
 
 Click **Long** if you expect the price to rise, or **Short** if you expect it to fall. The order will execute instantly at the current market price, and your new position will appear in the **Positions** tab below.
 
-<img src="/images/content/perps14.png" alt="Place Market Order" /> <br>
+![Place Market Order](/images/perps-walkthrough/place-market-order-english.png) <br>
 
 ## **Opening a Limit Long Order**
 
@@ -114,17 +107,17 @@ Click **Long** if you expect the price to rise, or **Short** if you expect it to
 **Step 1: Select Limit Order and Set Entry Price**  
 In the Order Placement section, select **Limit**. Enter the price at which you want the order to execute — typically below the market price for Long, or above for Short.
 
-<img src="/images/content/perps15.png" alt="Select Limit Order" /> <br>
+![Select Limit Order](/images/perps-walkthrough/select-limit-order-english.png) <br>
 
 **Step 2: Enter Order Size**  
 Type in the amount you want to trade, either in USDT or in the asset token. As you enter the value, the platform will show your estimated liquidation price, required margin, and slippage.
 
-<img src="/images/content/perps16.png" alt="Enter Order Size" /> <br>
+![Enter Order Size](/images/perps-walkthrough/enter-order-size-english.png) <br>
 
 **Step 3: Place Limit Order**  
 Click **Long** or **Short** to place your order. It will appear in the **Open Orders** tab and remain there until the market reaches your target price. Once filled, it will move to the **Positions** tab.  
 
-<img src="/images/content/perps17.png" alt="Place Limit Order" /> <br>
+![Place Limit Order](/images/perps-walkthrough/place-limit-order-english.png) <br>
 `;
 const closetrade = `
 
@@ -133,21 +126,21 @@ const closetrade = `
 **Fully Close a Position**  
 Go to the **Positions** tab and find the trade you want to close. Click **Quick Close** to close the entire position at market price.
 
-<img src="/images/content/perps18.png" alt="Close Position" /><br>
+![Close Position](/images/perps-walkthrough/close-position-english.png) <br>
 
 **Partially Close at Market Price**  
 Select the position, choose **Market**, enter the amount you want to close, and click **Confirm**. The reduced position size will update automatically.
 
-<img src="/images/content/perps19.png" alt="Partially Close Market" /><br>
+![Partially Close Market](/images/perps-walkthrough/partially-close-market-english.png) <br>
 
 **Partially Close at a Specific Price (Limit)**  
 Select the position, switch to **Limit**, and enter your desired exit price and amount. Click **Confirm** to place the closing order. It will appear under **Open Orders** and execute when the price is reached.
 
-<img src="/images/content/perps20.png" alt="Partially Close Limit" /><br>
+![Partially Close Limit](/images/perps-walkthrough/partially-close-limit-english.png) <br>
 
 Once closed, the trade will move to **Order History**.
 
-<img src="/images/content/perps21.png" alt="Order History" /><br>
+![Order History](/images/perps-walkthrough/order-history-english.png) <br>
 `;
 const margin = `
 # **Adding Margin to an Open Position**
@@ -157,13 +150,13 @@ Kana Perps uses **isolated margin**. Each trade requires fixed collateral, preve
 **Step 1: Select Position**  
  Go to the **Positions** tab and click the **pencil icon** next to the trade you want to add margin to.
 
-<img src="/images/content/perps22.png" alt="Select Position" /><br>
+![Select Position](/images/perps-walkthrough/select-position-english.png) <br>
 
 **Step 2: Enter Additional Margin**  
  Type the amount you want to add — it must be **less than your current margin**.  
  Click **Update** to confirm.  The new margin value will be reflected in your **Positions** tab immediately.  
 
- <img src="/images/content/perps23.png" alt="Add Margin" /><br>
+ ![Add Margin](/images/perps-walkthrough/add-margin-english.png) <br>
 `;
 const tpsl = `
 # **Setting TP/SL (Take Profit/Stop Loss)**
@@ -171,14 +164,14 @@ const tpsl = `
 **Method 1: Set TP/SL While Opening a Trade**  
  Before placing your order, check the **TP/SL** box in the Order Placement section. Enter your desired take profit and stop loss prices. As you adjust the values, the platform will show your estimated gains and losses in real time. Once ready, place your Long or Short order as usual — your TP/SL will be set automatically.
 
-<img src="/images/content/perps24.png" alt="Set TPSL" /><br>
+![Set TPSL](/images/perps-walkthrough/set-tpsl-english.png) <br>
 
 **Method 2: Add or Modify TP/SL After Opening a Trade**  
 Go to the **Positions** tab and click the **edit icon** next to the TP/SL section of your open trade. Enter your target values and click **Confirm**. Your updated TP/SL will be applied immediately and shown in the same tab.
 
-<img src="/images/content/perps25.png" alt="Modify TPSL" /><br>
+![Modify TPSL](/images/perps-walkthrough/modify-tpsl-english.png) <br>
 
-<img src="/images/content/perps26.png" alt="TPSL Confirmation" /><br>
+![TPSL Confirmation](/images/perps-walkthrough/tpsl-confirmation-english.png) <br>
 
 **Opening a Dual Position (Hedge Mode)**
 
@@ -198,23 +191,23 @@ const swap = `
 
 # **Walkthrough: Swapping APT → USDC on Kana Labs**
 
-Swapping tokens is one of the most basic and essential actions in DeFi. Kana Labs makes it fast, cheap, and easy — especially on Aptos. Here’s a simple walkthrough to guide you through your first swap.
+Swapping tokens is one of the most basic and essential actions in DeFi. Kana Labs makes it fast, cheap, and easy — especially on Aptos. Here's a simple walkthrough to guide you through your first swap.
 
-**What You’ll Do:**  
- You’ll swap your APT tokens for USDC (a stablecoin) using Kana Labs’ DEX Aggregator, which finds the best rate across multiple sources automatically.
+**What You'll Do:**  
+ You'll swap your APT tokens for USDC (a stablecoin) using Kana Labs' DEX Aggregator, which finds the best rate across multiple sources automatically.
 
 ## **Step-by-Step Walkthrough:**
 
 **Step 1: Connect Your Wallet**  
  Open Kana Labs and click "Connect Wallet."  
- Select your preferred wallet (Petra, Nightly, etc.) and make sure you’re connected to the correct network (Aptos Mainnet or Testnet).
+ Select your preferred wallet (Petra, Nightly, etc.) and make sure you're connected to the correct network (Aptos Mainnet or Testnet).
 
 **Step 2: Select Swap Pair**  
- In the Swap section, select **APT** as the token you’re selling, and **USDC** as the token you want to receive.
+ In the Swap section, select **APT** as the token you're selling, and **USDC** as the token you want to receive.
 
 **Step 3: Enter Swap Amount**  
  Type in how much APT you want to swap.  
- You’ll see the estimated amount of USDC you’ll get, including the live exchange rate.
+ You'll see the estimated amount of USDC you'll get, including the live exchange rate.
 
 **Step 4: Review Rate and Gas Fee**  
  Kana automatically pulls the best available rate across DEXs.  
@@ -235,17 +228,17 @@ Want to swap back?
 
 // Export category data
 export const perpsCategory: Category = {
-  id: "perps",
+  id: "kanaperps",
   label: "Kana Perps Walkthroughs",
-  slug: "perps",
+  slug: "kanaperps",
   position: 2,
-  description:` Learning by doing is the fastest way to get comfortable. That’s why we’ve prepared step-by-step walkthroughs for every major action you’ll need. Whenever you’re unsure, just check the guide and keep moving forward — everything’s laid out clearly and simply.`,
+  description:` Learning by doing is the fastest way to get comfortable. That's why we've prepared step-by-step walkthroughs for every major action you'll need. Whenever you're unsure, just check the guide and keep moving forward — everything's laid out clearly and simply.`,
   
   pages: [
     {
       id: "connecting-wallet",
       title: "Connecting Your Wallet",
-      slug: "/perps/connecting-wallet",
+      slug: "/kanaperps/connecting-wallet",
       sidebar_label: "Connecting Wallet",
       sidebar_position: 2,
       content: connectingwallet,
@@ -253,7 +246,7 @@ export const perpsCategory: Category = {
     {
       id: "deposit-withdraw",
       title: "Deposit & Withdraw",
-      slug: "/perps/deposit-withdraw",
+      slug: "/kanaperps/deposit-withdraw",
       sidebar_label: "Deposit & Withdraw",
       sidebar_position: 3,
       content: deposit,
@@ -261,7 +254,7 @@ export const perpsCategory: Category = {
     {
       id: "trade-basics",
       title: "Trade Basics",
-      slug: "/perps/trade-basics",
+      slug: "/kanaperps/trade-basics",
       sidebar_label: "Trade Basics",
       sidebar_position: 4,
       content: trade,
@@ -269,7 +262,7 @@ export const perpsCategory: Category = {
     {
       id: "opening-trades",
       title: "Opening Trades",
-      slug: "/perps/opening-trades",
+      slug: "/kanaperps/opening-trades",
       sidebar_label: "Opening Trades",
       sidebar_position: 5,
       content: opentrade,
@@ -277,7 +270,7 @@ export const perpsCategory: Category = {
     {
       id: "closing-trades",
       title: "Closing Trades",
-      slug: "/perps/closing-trades",
+      slug: "/kanaperps/closing-trades",
       sidebar_label: "Closing Trades",
       sidebar_position: 6,
       content: closetrade,
@@ -285,7 +278,7 @@ export const perpsCategory: Category = {
     {
       id: "margin",
       title: "Adding Margin",
-      slug: "/perps/margin",
+      slug: "/kanaperps/margin",
       sidebar_label: "Adding Margin",
       sidebar_position: 7,
       content: margin,
@@ -293,7 +286,7 @@ export const perpsCategory: Category = {
     {
       id: "tpsl",
       title: "TP/SL",
-      slug: "/perps/tpsl",
+      slug: "/kanaperps/tpsl",
       sidebar_label: "TP/SL",
       sidebar_position: 8,
       content: tpsl,
@@ -301,7 +294,7 @@ export const perpsCategory: Category = {
     {
       id: "token-swaps",
       title: "Token Swaps",
-      slug: "/perps/token-swaps",
+      slug: "/kanaperps/token-swaps",
       sidebar_label: "Token Swaps",
       sidebar_position: 0,
       content: swap,

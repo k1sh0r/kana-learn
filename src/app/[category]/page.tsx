@@ -6,9 +6,9 @@ import Image from "next/image";
 import CategoryPagesGrid from "@/components/CategoryPagesGrid";
 
 const categoryBanners = {
-  "crypto-essentials": "/images/banners/crypto-essentials0.jpg",
-  "perps": "/images/banners/perps1.png",
-  "perps1": "/images/banners/perpsEss11.png",
+  "crypto-essentials": "/images/crypto-essentials/crypto-essentials-banner-english.jpg",
+  "kanaperps": "/images/perps-walkthrough/perps-walkthrough-banner-english.png",
+  "perps": "/images/perps-essentials/perps-essentials-banner-english.png",
 };
 
 export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {

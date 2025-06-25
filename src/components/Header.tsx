@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Sun, Moon, Monitor } from "lucide-react";
 import { Tooltip } from "@/components/ui/tooltip";
+import Image from "next/image";
 
 interface HeaderProps {
   rightAction?: React.ReactNode;
@@ -55,10 +56,13 @@ export function Header({ rightAction }: HeaderProps = {}) {
         <div className="lg:container flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-6 lg:gap-10">
             <Link href="/" className="items-center space-x-2 flex">
-              <img 
+              <Image 
                 src="/images/kana-logo.png" 
                 alt="Kana Learn Logo" 
+                width={32}
+                height={32}
                 className="h-8 w-8"
+                priority
               />
               <span
                 className="font-bold text-lg lg:text-2xl text-transparent bg-clip-text"

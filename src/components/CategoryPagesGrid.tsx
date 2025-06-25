@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Home } from "lucide-react";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { useRouter } from "next/navigation";
 import type { Category, DocPage } from "@/types/index";
@@ -15,16 +15,28 @@ export default function CategoryPagesGrid({ foundCategory }: { foundCategory: Ca
   return (
     <>
       {foundCategory.pages.length > 0 && (
-        <Button
-          onClick={() => {
-            if (firstPage) {
-              router.push(firstPage.slug);
-            }
-          }}
-          className="mb-4"
-        >
-          Start Learning <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-4 mb-4">
+          <Button
+            onClick={() => {
+              if (firstPage) {
+                router.push(firstPage.slug);
+              }
+            }}
+            size="lg"
+            className=""
+          >
+            Start Learning <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className=""
+            onClick={() => router.push('/docs')}
+          >
+            <Home className="mr-2 h-5 w-5" />
+            Back to All topics
+          </Button>
+        </div>
       )}
       {foundCategory.description && (
         <MarkdownRenderer content={foundCategory.description} />
