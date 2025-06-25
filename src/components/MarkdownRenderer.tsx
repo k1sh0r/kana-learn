@@ -1,8 +1,9 @@
+"use client";
 import { useEffect, useCallback, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
-import { useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
 import { metricsService } from "@/services/metricsService";
 import { OptimizedImage } from './OptimizedImage';
 
@@ -11,23 +12,23 @@ interface MarkdownRendererProps {
 }
 
 export function MarkdownRenderer({ content }: MarkdownRendererProps) {
-  const location = useLocation();
+  const pathname = usePathname();
   const metricsRef = useRef({
     startTime: performance.now(),
     lastStoredTime: performance.now(),
     maxScroll: 0,
     isWriting: false
   });
-  const writeTimeoutRef = useRef<NodeJS.Timeout>();
+  const writeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const ticking = useRef(false);
 
   // Initialize page visit on mount
   useEffect(() => {
-    metricsService.updateMetrics(location.pathname, {
+    metricsService.updateMetrics(pathname, {
       visits: 1,
       lastVisited: Date.now()
     });
-  }, [location.pathname]);
+  }, [pathname]);
 
   // Optimized metrics storage
   const storeMetrics = useCallback((path: string, timeSpent: number, maxScroll: number) => {
@@ -55,7 +56,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       maxScroll: 0,
       isWriting: false
     };
-  }, [location.pathname]);
+  }, [pathname]);
 
   // Optimized scroll tracking
   useEffect(() => {
@@ -78,13 +79,13 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       // Save metrics before unmounting
-      storeMetrics(location.pathname, 
+      storeMetrics(pathname, 
         Math.round((performance.now() - metricsRef.current.lastStoredTime) / 1000),
         metricsRef.current.maxScroll
       );
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [location.pathname, storeMetrics]); // Add location dependency
+  }, [pathname, storeMetrics]); // Add location dependency
 
   // Efficient time tracking with 1-second updates
   useEffect(() => {
@@ -93,7 +94,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       const timeSpentInSeconds = Math.round((now - metricsRef.current.lastStoredTime) / 1000);
       
       if (timeSpentInSeconds > 0) {
-        storeMetrics(location.pathname, timeSpentInSeconds, metricsRef.current.maxScroll);
+        storeMetrics(pathname, timeSpentInSeconds, metricsRef.current.maxScroll);
         metricsRef.current.lastStoredTime = now;
       }
     };
@@ -115,7 +116,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
     window.addEventListener("beforeunload", cleanup);
 
     return cleanup;
-  }, [location.pathname, storeMetrics]);
+  }, [pathname, storeMetrics]);
 
   return (
     <ReactMarkdown
@@ -123,10 +124,10 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeRaw]}
       components={{
-        img: ({ node, ...props }) => (
+          img: ({ ...props }) => (
           <OptimizedImage
             {...props}
-            src={props.src || ''}
+              src={props.src as string}
             alt={props.alt || ''}
           />
         ),

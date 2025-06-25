@@ -1,4 +1,5 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+"use client";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { DocLayout } from "@/components/DocLayout";
 import { Category } from "@/types";
@@ -6,6 +7,9 @@ import { Data } from "@/data/DocData";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 
 // Map of category slugs to local banner image paths
 const categoryBanners = {
@@ -16,7 +20,7 @@ const categoryBanners = {
 
 const CategoryPage = () => {
   const { category } = useParams();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [categoryData, setCategoryData] = useState<Category | null>(null);
   const [loading, setLoading] = useState(true);
   
@@ -38,7 +42,7 @@ const CategoryPage = () => {
   }, [category]);
 
   const handleCardClick = (slug: string) => {
-    navigate(slug);
+    router.push(slug);
   };
 
   if (loading) {
@@ -59,7 +63,7 @@ const CategoryPage = () => {
           <p className="text-muted-foreground">
             The requested category could not be found.
           </p>
-          <Link to="/docs" className="text-primary hover:underline mt-4 inline-block">
+          <Link href="/docs" className="text-primary hover:underline mt-4 inline-block">
             Return to Documentation
           </Link>
         </div>
@@ -75,8 +79,10 @@ const CategoryPage = () => {
       <div className="prose prose-lg max-w-none ">
         {/* Category Banner */}
         <div className="w-full mb-6 overflow-hidden rounded-2xl border-2 border-[#002019]">
-          <img 
-            src={bannerImage}
+          <Image 
+                src={bannerImage}
+            width={1000}
+            height={1000}
             alt={categoryData.label}
             className="w-full h-full object-cover"
           />

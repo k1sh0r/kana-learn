@@ -1,5 +1,5 @@
+"use client";
 import { useState, useEffect } from "react";
-import { useLocation, useParams, useNavigate } from "react-router-dom";
 import { Header } from "./Header";
 import { DocSidebar } from "./DocSidebar";
 import { Category, DocPage } from "@/types";
@@ -16,6 +16,8 @@ import { ScrollToTop } from "./ScrollToTop";
 import { metricsService } from "@/services/metricsService";
 import { FeedbackForm } from "./feedbackform";
 import { ChevronLeft } from "lucide-react";
+import { useRouter, usePathname } from "next/navigation";
+
 
 interface DocLayoutProps {
   children: React.ReactNode;
@@ -24,22 +26,19 @@ interface DocLayoutProps {
 }
 
 export function DocLayout({ children, hideSidebar = false, defaultCollapsed = false }: DocLayoutProps) {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const router = useRouter();
   const isMobile = useIsMobile();
-  const { category } = useParams();
-  const [categories, setCategories] = useState<Category[]>(Data.categories);
+  const [categories] = useState<Category[]>(Data.categories);
   const [currentPage, setCurrentPage] = useState<DocPage | null>(null);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(defaultCollapsed || isMobile); // Collapse by default on mobile
   const [feedbackOpen, setFeedbackOpen] = useState(false);
-
+  const pathname = usePathname();
   useEffect(() => {
     // Update sidebar state when screen size changes or on mobile
     setSidebarCollapsed(defaultCollapsed || isMobile);
   }, [isMobile, defaultCollapsed]);
 
   useEffect(() => {
-    const pathname = location.pathname;
     
     // Find the current page based on the URL
     let foundPage: DocPage | null = null;
@@ -53,26 +52,26 @@ export function DocLayout({ children, hideSidebar = false, defaultCollapsed = fa
     }
     
     setCurrentPage(foundPage);
-  }, [location.pathname, categories]);
+  }, [pathname, categories]);
 
   // Track page visits
   useEffect(() => {
-    metricsService.updateMetrics(location.pathname, {
+    metricsService.updateMetrics(pathname, {
       visits: 1,
       lastVisited: Date.now()
     });
-  }, [location.pathname]);
+    }, [pathname]);
 
   useEffect(() => {
     const startTime = performance.now();
     
     return () => {
       const timeSpent = Math.round((performance.now() - startTime) / 1000);
-      metricsService.updateMetrics(location.pathname, {
+      metricsService.updateMetrics(pathname, {
         timeSpent
       });
     };
-  }, [location.pathname]);
+  }, [pathname]);
 
   useEffect(() => {
     if (currentPage) {
@@ -99,7 +98,7 @@ export function DocLayout({ children, hideSidebar = false, defaultCollapsed = fa
 
   const navigateToPage = (page: DocPage | null) => {
     if (page) {
-      navigate(page.slug);
+      router.push(page.slug);
     }
   };
 
@@ -112,7 +111,7 @@ export function DocLayout({ children, hideSidebar = false, defaultCollapsed = fa
         {!hideSidebar && (
           <DocSidebar 
             categories={categories} 
-            currentSlug={location.pathname} 
+            currentSlug={pathname} 
             isCollapsed={sidebarCollapsed}
             onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
           />
@@ -123,7 +122,7 @@ export function DocLayout({ children, hideSidebar = false, defaultCollapsed = fa
             {currentPage?.sidebar_position === 0 && (
               <div className="sticky top-20 z-40 mb-8">
                 <button
-                  onClick={() => navigate(-1)}
+                  onClick={() => router.back()}
                   className="inline-flex items-center justify-center bg-background/95 backdrop-blur whitespace-nowrap text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-accent hover:text-accent-foreground h-9 rounded-xl px-3 shadow"
                 >
                   <ChevronLeft className="mr-2 h-4 w-4" />

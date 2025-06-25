@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+"use client";
+import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
@@ -40,11 +41,11 @@ const Home = () => {
               
               <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="text-base">
-                  <Link to="/docs">Start Learning</Link>
+                  <Link href="/docs">Start Learning</Link>
                 </Button>
                 
                 <Button asChild variant="outline" size="lg" className="text-base">
-                  <Link to="/crypto-essentials/what-is-crypto-trading" className="flex items-center">
+                  <Link href="/crypto-essentials/what-is-crypto-trading" className="flex items-center">
                     Quick Introduction <ChevronRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>
@@ -147,7 +148,7 @@ const Home = () => {
             </p>
             
             <Button asChild size="lg" className="text-base px-8">
-              <Link to="/docs">Get Started Now</Link>
+                <Link href="/docs">Get Started Now</Link>
             </Button>
           </div>
         </section>

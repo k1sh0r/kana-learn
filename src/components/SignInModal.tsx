@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -45,7 +44,7 @@ export function SignInModal({ open, onOpenChange }: SignInModalProps) {
             </svg>
           </div>
           <p className="text-center text-muted-foreground">
-            We're working on implementing a comprehensive authentication system.
+            We&apos;re working on implementing a comprehensive authentication system.
             Please check back soon!
           </p>
         </div>

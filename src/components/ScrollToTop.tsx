@@ -1,8 +1,9 @@
+"use client";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { usePathname } from "next/navigation";
 
 export function ScrollToTop() {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     try {
@@ -10,7 +11,7 @@ export function ScrollToTop() {
         top: 0,
         behavior: 'smooth'
       });
-    } catch (error) {
+    } catch {
       window.scrollTo(0, 0);
     }
     // Additional fallback for iOS Safari

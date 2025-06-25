@@ -1,5 +1,5 @@
-
-import { useParams, Link } from "react-router-dom";
+"use client";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { DocLayout } from "@/components/DocLayout";
@@ -74,7 +74,7 @@ const DocPage = () => {
       ) : page ? (
         <article>
           <MarkdownRenderer content={page.content} />
-          {/* {renderCallToAction()} */}
+          {renderCallToAction()}
         </article>
       ) : null}
     </DocLayout>

@@ -1,56 +1,36 @@
-# Kana Learn
-
-Kana Learn is a modern educational platform for learning about cryptocurrency and blockchain technology.
-
-## Features
-
-- Interactive documentation modules on crypto, trading, and blockchain
-- Modern UI with dark/light/system themes
-- Built with React, TypeScript, Tailwind CSS, and shadcn-ui
-- Responsive design for desktop and mobile
-- Powered by Vite for fast development
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-### Local Development
+First, run the development server:
 
-1. **Clone the repository:**
-   ```sh
-   git clone <YOUR_GIT_URL>
-   cd <YOUR_PROJECT_NAME>
-   ```
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-2. **Install dependencies:**
-   ```sh
-   npm install
-   ```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-3. **Start the development server:**
-   ```sh
-   npm run dev
-   ```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-4. **Open your browser:**
-   Visit [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal).
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### Editing the Project
+## Learn More
 
-You can edit this project in several ways:
+To learn more about Next.js, take a look at the following resources:
 
-- **In your IDE:** Edit files locally and push changes to your Git repository.
-- **Directly on GitHub:** Use the GitHub web editor for quick changes.
-- **GitHub Codespaces:** Launch a Codespace for a cloud-based development environment.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Technologies Used
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- [Vite](https://vitejs.dev/)
-- [React](https://react.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [shadcn/ui](https://ui.shadcn.com/)
+## Deploy on Vercel
 
-## Deployment
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-You can deploy using your preferred static hosting provider (e.g., Vercel, Netlify).
-
----
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

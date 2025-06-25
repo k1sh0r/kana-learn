@@ -13,7 +13,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/components/ui/use-toast";
 import { Loader2 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 interface FeedbackFormProps {
   open: boolean;
@@ -36,7 +36,7 @@ const feelingOptions = [
 ];
 
 export function FeedbackForm({ open, onOpenChange }: FeedbackFormProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [clarity, setClarity] = React.useState<string>();
   const [selectedTone, setSelectedTone] = React.useState<string[]>([]);
   const [liked, setLiked] = React.useState("");
@@ -91,7 +91,7 @@ export function FeedbackForm({ open, onOpenChange }: FeedbackFormProps) {
         description: "Your response has been recorded successfully.",
       });
       onOpenChange(false);
-      navigate("/docs"); // Redirect to DocsHome
+      router.push("/docs"); // Redirect to DocsHome
     } catch (error) {
       console.error("Form submission error:", error);
       toast({
@@ -112,7 +112,7 @@ export function FeedbackForm({ open, onOpenChange }: FeedbackFormProps) {
             <DialogTitle>Leave Your Feedback</DialogTitle>
             <DialogDescription>
               We want to make this course even better. Help us out — tell us what
-              worked, what didn't, and what could use a touch-up.
+              worked, what didn&apos;t, and what could use a touch-up.
             </DialogDescription>
           </DialogHeader>
         </div>

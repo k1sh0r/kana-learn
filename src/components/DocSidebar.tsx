@@ -1,9 +1,12 @@
+"use client";
 import { useState, useEffect } from "react";
-import { Link, useLocation, useParams, useNavigate } from "react-router-dom";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Category } from "@/types";
 import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 interface DocSidebarProps {
   categories: Category[];
@@ -13,8 +16,7 @@ interface DocSidebarProps {
 }
 
 export function DocSidebar({ categories, currentSlug, isCollapsed = false, onToggleCollapse }: DocSidebarProps) {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const router = useRouter();
   const { category: categorySlug } = useParams();
   const [currentCategory, setCurrentCategory] = useState<Category | null>(null);
 
@@ -32,7 +34,7 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
   }, [categorySlug, categories]);
 
   const handleCategoryClick = (categorySlug: string) => {
-    navigate(`/${categorySlug}`);
+    router.push(`/${categorySlug}`);
   };
 
   if (!currentCategory) return null;
@@ -61,7 +63,7 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
                   .map((page) => (
                     <li key={page.id}>
                       <Link
-                        to={page.slug}
+                        href={page.slug}
                         className={cn(
                           "block px-2 py-1.5 rounded-md text-sm",
                           page.slug === currentSlug

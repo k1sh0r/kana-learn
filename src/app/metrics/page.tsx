@@ -1,9 +1,9 @@
+"use client";   
 import { useEffect, useState } from "react";
 import { Header } from "@/components/Header";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
