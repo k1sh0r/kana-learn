@@ -481,7 +481,7 @@ You trade. We’ll handle the gas.
 `;
 
 const ConclusionContent = `
-**You’ve made it through the foundations.** 
+## **You’ve made it through the foundations.** 
 
 **![Transaction](/images/content/foundation-complete.png)**
 

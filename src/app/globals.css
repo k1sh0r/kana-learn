@@ -94,6 +94,16 @@
     @apply bg-background text-foreground;
   }
 
+  /* Custom text colors */
+  .green-text {
+    @apply text-emerald-500 dark:text-emerald-400 font-semibold;
+  }
+
+  .red-text {
+    @apply text-red-500 dark:text-red-400 font-semibold;
+  }
+
+
   /* Markdown content styling */
   .markdown-content {
     @apply text-foreground; 

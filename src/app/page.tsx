@@ -1,15 +1,10 @@
 "use client";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 
 const Home = () => {
-  useEffect(() => {
-    document.title = "Kana Learn | Crypto & Blockchain Education";
-  }, []);
-
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
@@ -62,7 +57,7 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Feature 1 */}
               <div className="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-all">
-                <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+                <div className="h-12 w-12 rounded-full bg-accent flex items-center justify-center mb-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -87,7 +82,7 @@ const Home = () => {
               
               {/* Feature 2 */}
               <div className="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-all">
-                <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+                <div className="h-12 w-12 rounded-full bg-accent flex items-center justify-center mb-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -112,7 +107,7 @@ const Home = () => {
               
               {/* Feature 3 */}
               <div className="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-all">
-                <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+                <div className="h-12 w-12 rounded-full bg-accent flex items-center justify-center mb-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

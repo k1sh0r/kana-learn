@@ -3,9 +3,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SignInModal } from "./SignInModal";
 import { Menu, X } from "lucide-react";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useTheme } from "next-themes";
 import { Sun, Moon, Monitor } from "lucide-react";
+import { Tooltip } from "@/components/ui/tooltip";
 
 interface HeaderProps {
   rightAction?: React.ReactNode;
@@ -15,6 +15,8 @@ export function Header({ rightAction }: HeaderProps = {}) {
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   
   const handleSignInClick = () => {
     setIsSignInModalOpen(true);
@@ -32,6 +34,20 @@ export function Header({ rightAction }: HeaderProps = {}) {
       document.body.style.overflow = 'unset';
     };
   }, [isMobileMenuOpen]);
+  
+  // Helper to get next theme
+  const getNextTheme = (current: string | undefined) => {
+    if (current === "light") return "dark";
+    if (current === "dark") return "system";
+    return "light";
+  };
+
+  // Helper to get icon and label for current theme
+  const getThemeIcon = (current: string | undefined) => {
+    if (current === "light") return { icon: <Sun className="w-4 h-4" />, label: "Light mode" };
+    if (current === "dark") return { icon: <Moon className="w-4 h-4" />, label: "Dark mode" };
+    return { icon: <Monitor className="w-4 h-4" />, label: "System mode" };
+  };
   
   return (
     <>
@@ -59,23 +75,20 @@ export function Header({ rightAction }: HeaderProps = {}) {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-2">
-            <ToggleGroup
-              type="single"
-              value={theme === undefined ? "system" : theme}
-              onValueChange={(val) => val && setTheme(val)}
-              className="mr-2"
-              aria-label="Theme toggle"
-            >
-              <ToggleGroupItem value="light" aria-label="Light mode">
-                <Sun className="w-4 h-4" />
-              </ToggleGroupItem>
-              <ToggleGroupItem value="dark" aria-label="Dark mode">
-                <Moon className="w-4 h-4" />
-              </ToggleGroupItem>
-              <ToggleGroupItem value="system" aria-label="System mode">
-                <Monitor className="w-4 h-4" />
-              </ToggleGroupItem>
-            </ToggleGroup>
+            {mounted && (
+              <Tooltip>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  aria-label={getThemeIcon(theme).label}
+                  className="p-2 hover:bg-accent rounded-lg h-9 w-9"
+                  onClick={() => setTheme(getNextTheme(theme))}
+                >
+                  {getThemeIcon(theme).icon}
+                </Button>
+                <span className="sr-only">{getThemeIcon(theme).label}</span>
+              </Tooltip>
+            )}
             <a 
               href="https://twitter.com/intent/post?text=Check%20out%20this%20beginner%20friendly%20trading%20guide%20by%20Kana%20Labs%3A%20https%3A%2F%2Flearn.kana.trade"
               target="_blank"
@@ -133,23 +146,6 @@ export function Header({ rightAction }: HeaderProps = {}) {
           {/* Mobile Menu Content */}
           <div className="flex-1 overflow-y-auto flex flex-col">
             <div className="flex flex-col p-6 space-y-4">
-              <ToggleGroup
-                type="single"
-                value={theme === undefined ? "system" : theme}
-                onValueChange={(val) => val && setTheme(val)}
-                className="mb-2"
-                aria-label="Theme toggle"
-              >
-                <ToggleGroupItem value="light" aria-label="Light mode">
-                  <Sun className="w-4 h-4" />
-                </ToggleGroupItem>
-                <ToggleGroupItem value="dark" aria-label="Dark mode">
-                  <Moon className="w-4 h-4" />
-                </ToggleGroupItem>
-                <ToggleGroupItem value="system" aria-label="System mode">
-                  <Monitor className="w-4 h-4" />
-                </ToggleGroupItem>
-              </ToggleGroup>
               <Button variant="outline" size="sm" onClick={handleSignInClick}>
                 Sign In
               </Button>
@@ -162,7 +158,7 @@ export function Header({ rightAction }: HeaderProps = {}) {
             
             <div className="mt-auto border-t">
               <div className="p-6 flex items-center gap-2 justify-between">
-                <a 
+              <a 
                   href="https://twitter.com/intent/post?text=Check%20out%20this%20beginner%20friendly%20trading%20guide%20by%20Kana%20Labs%3A%20https%3A%2F%2Flearn.kana.trade"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -170,6 +166,20 @@ export function Header({ rightAction }: HeaderProps = {}) {
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3174 10.7749ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7646 19.0075H15.6432L11.4257 12.9738Z"></path></svg>
                 </a>
+                {mounted && (
+                  <Tooltip>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      aria-label={getThemeIcon(theme).label}
+                      className="h-9 w-9"
+                      onClick={() => setTheme(getNextTheme(theme))}
+                    >
+                      {getThemeIcon(theme).icon}
+                    </Button>
+                    <span className="sr-only">{getThemeIcon(theme).label}</span>
+                  </Tooltip>
+                )}
               </div>
             </div>
           </div>

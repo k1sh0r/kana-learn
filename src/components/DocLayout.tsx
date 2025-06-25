@@ -138,44 +138,44 @@ export function DocLayout({ children, hideSidebar = false, defaultCollapsed = fa
               <div className="mt-16 pt-4 border-t border-border">
                 <Pagination>
                   <PaginationContent className="flex flex-row w-full justify-between gap-4">
-                    <PaginationItem className="w-full sm:w-auto">
+                    <PaginationItem className="flex flex-col items-start">
                       {getAdjacentPage(categories, currentPage, "prev") && (
-                        <div className="flex flex-col">
+                        <>
                           <PaginationPrevious
                             onClick={() => navigateToPage(getAdjacentPage(categories, currentPage, "prev"))}
-                            className="w-full sm:w-auto justify-start cursor-pointer"
+                            className="justify-start cursor-pointer rounded-md w-auto"
                           >
                             Previous
                           </PaginationPrevious>
                           <span className="text-xs text-muted-foreground truncate max-w-[160px] pl-2">
                             {getAdjacentPage(categories, currentPage, "prev")?.title}
                           </span>
-                        </div>
+                        </>
                       )}
                     </PaginationItem>
                     
-                    <PaginationItem className="w-full sm:w-auto">
+                    <PaginationItem className="flex flex-col items-end">
                       {isLastPageInCategory(categories, currentPage) ? (
-                        <div className="flex flex-col items-end">
+                        <>
                           <PaginationNext
                             onClick={() => setFeedbackOpen(true)}
-                            className="w-full sm:w-auto justify-end cursor-pointer"
+                            className="justify-end cursor-pointer rounded-md w-auto"
                           >
                             Finish
                           </PaginationNext>
-                        </div>
+                        </>
                       ) : getAdjacentPage(categories, currentPage, "next") && (
-                        <div className="flex flex-col items-end">
+                        <>
                           <PaginationNext
                             onClick={() => navigateToPage(getAdjacentPage(categories, currentPage, "next"))}
-                            className="w-full sm:w-auto justify-end cursor-pointer"
+                            className="justify-end cursor-pointer rounded-md w-auto"
                           >
                             Next
                           </PaginationNext>
                           <span className="text-xs text-muted-foreground truncate max-w-[160px] pr-2">
                             {getAdjacentPage(categories, currentPage, "next")?.title}
                           </span>
-                        </div>
+                        </>
                       )}
                     </PaginationItem>
                   </PaginationContent>
