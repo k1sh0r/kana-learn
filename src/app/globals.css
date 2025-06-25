@@ -103,7 +103,6 @@
     @apply text-red-500 dark:text-red-400 font-semibold;
   }
 
-
   /* Markdown content styling */
   .markdown-content {
     @apply text-foreground; 

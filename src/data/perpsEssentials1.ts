@@ -358,9 +358,6 @@ Get the basics of technical analysis: candlestick charts, chart patterns, key su
 Learn how to stick to your plan when it's uncomfortable, take losses without spiraling, and stop overtrading because "it almost hit target." Trading isn't just charts — it's mindset.
 
 Let's get into it.
-___
-
-<span className="start-module">Start with Module 1:</span>
 `,
   isNew: true,
   pages: [
