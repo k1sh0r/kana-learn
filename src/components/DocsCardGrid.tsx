@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Data } from "@/data/DocData";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 const categoryCardImages = {
   "crypto-essentials": "/images/thumbnails/crypto-essentials.jpg",
@@ -23,7 +24,14 @@ export default function DocsCardGrid() {
                 </span>
               )}
               <div className="h-40 overflow-hidden">
-                <img src={cardImage} alt={category.label} width={1000} height={1000} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+                <OptimizedImage
+                  src={cardImage.replace(/\.[^/.]+$/, '')}
+                  alt={category.label}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  width={1000}
+                  height={1000}
+                  sizes="100vw"
+                />
               </div>
               <div className="p-6">
                 <h2 className="text-xl font-bold mb-2">

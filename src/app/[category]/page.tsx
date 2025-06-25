@@ -2,8 +2,8 @@ import { DocLayout } from "@/components/DocLayout";
 import { Data } from "@/data/DocData";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import Image from "next/image";
 import CategoryPagesGrid from "@/components/CategoryPagesGrid";
+import {OptimizedImage} from "@/components/OptimizedImage"
 
 const categoryBanners = {
   "crypto-essentials": "/images/crypto-essentials/crypto-essentials-banner-english.jpg",
@@ -37,11 +37,14 @@ export default function CategoryPage({ params }: { params: { category: string } 
     <DocLayout defaultCollapsed={true}>
       <div className="prose prose-lg max-w-none ">
         <div className="w-full mb-6 overflow-hidden rounded-2xl border-2 border-[#002019]">
-          <img 
-            src={bannerImage}
-            alt={foundCategory.label}
-            className="w-full h-full object-cover"
-          />
+        <OptimizedImage
+          src={bannerImage.replace(/\.[^/.]+$/, '')}  // Remove extension if present
+          alt={foundCategory.label}
+          className="w-full h-full object-cover"
+          width={1200}
+          height={600}
+          sizes="100vw"
+        />  
         </div>
         <h1 className="text-3xl font-bold mb-4">{foundCategory.label}</h1>
         {foundCategory.description && (
