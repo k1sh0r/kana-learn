@@ -59,10 +59,10 @@ export function Header({ rightAction }: HeaderProps = {}) {
               <OptImage 
                 src="/images/kana-logo.png"
                 alt="Kana Learn Logo" 
+                className="h-8 w-8"
                 width={32}
                 height={32}
-                className="h-8 w-8"
-              />
+              />  
               <span
                 className="font-bold text-lg lg:text-2xl text-transparent bg-clip-text"
                 style={{

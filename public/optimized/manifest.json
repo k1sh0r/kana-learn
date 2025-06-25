@@ -1,0 +1,394 @@
+{
+  "cex-vs-dex-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/cex-vs-dex-english-640w.jpeg",
+      "1280": "/optimized/crypto-essentials/cex-vs-dex-english-1280w.jpeg",
+      "original": "/optimized/crypto-essentials/cex-vs-dex-english.jpeg"
+    }
+  },
+  "crypto-essentials-banner-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/crypto-essentials-banner-english-640w.jpeg",
+      "1280": "/optimized/crypto-essentials/crypto-essentials-banner-english-1280w.jpeg",
+      "original": "/optimized/crypto-essentials/crypto-essentials-banner-english.jpeg"
+    }
+  },
+  "crypto-onboarding-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/crypto-onboarding-english-640w.jpeg",
+      "1280": "/optimized/crypto-essentials/crypto-onboarding-english-1280w.jpeg",
+      "original": "/optimized/crypto-essentials/crypto-onboarding-english.jpeg"
+    }
+  },
+  "foundation-complete-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/foundation-complete-english-640w.jpeg",
+      "1280": "/optimized/crypto-essentials/foundation-complete-english-1280w.jpeg",
+      "original": "/optimized/crypto-essentials/foundation-complete-english.jpeg"
+    }
+  },
+  "gas-fees-and-transactions-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/gas-fees-and-transactions-english-640w.jpeg",
+      "1280": "/optimized/crypto-essentials/gas-fees-and-transactions-english-1280w.jpeg",
+      "original": "/optimized/crypto-essentials/gas-fees-and-transactions-english.jpeg"
+    }
+  },
+  "gas-fees-network-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/gas-fees-network-english-640w.jpeg",
+      "1280": "/optimized/crypto-essentials/gas-fees-network-english-1280w.jpeg",
+      "original": "/optimized/crypto-essentials/gas-fees-network-english.jpeg"
+    }
+  },
+  "getting-into-the-market-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/getting-into-the-market-english-640w.jpeg",
+      "1280": "/optimized/crypto-essentials/getting-into-the-market-english-1280w.jpeg",
+      "original": "/optimized/crypto-essentials/getting-into-the-market-english.jpeg"
+    }
+  },
+  "sending-to-address-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/sending-to-address-english-640w.jpeg",
+      "1280": "/optimized/crypto-essentials/sending-to-address-english-1280w.jpeg",
+      "original": "/optimized/crypto-essentials/sending-to-address-english.jpeg"
+    }
+  },
+  "spot-futures-options-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/spot-futures-options-english-640w.jpeg",
+      "1280": "/optimized/crypto-essentials/spot-futures-options-english-1280w.jpeg",
+      "original": "/optimized/crypto-essentials/spot-futures-options-english.jpeg"
+    }
+  },
+  "swap-step1-connect-wallet-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/swap-step1-connect-wallet-english-640w.jpeg",
+      "original": "/optimized/crypto-essentials/swap-step1-connect-wallet-english.jpeg"
+    }
+  },
+  "swap-step1-connect-wallet-mobile-english": {
+    "jpeg": {
+      "original": "/optimized/crypto-essentials/swap-step1-connect-wallet-mobile-english.jpeg"
+    }
+  },
+  "swap-step2-select-apt-usdc-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/swap-step2-select-apt-usdc-english-640w.jpeg",
+      "original": "/optimized/crypto-essentials/swap-step2-select-apt-usdc-english.jpeg"
+    }
+  },
+  "swap-step2-select-apt-usdc-mobile-english": {
+    "jpeg": {
+      "original": "/optimized/crypto-essentials/swap-step2-select-apt-usdc-mobile-english.jpeg"
+    }
+  },
+  "swap-step3-enter-amount-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/swap-step3-enter-amount-english-640w.jpeg",
+      "original": "/optimized/crypto-essentials/swap-step3-enter-amount-english.jpeg"
+    }
+  },
+  "swap-step3-enter-amount-mobile-english": {
+    "jpeg": {
+      "original": "/optimized/crypto-essentials/swap-step3-enter-amount-mobile-english.jpeg"
+    }
+  },
+  "swap-step4-review-rate-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/swap-step4-review-rate-english-640w.jpeg",
+      "original": "/optimized/crypto-essentials/swap-step4-review-rate-english.jpeg"
+    }
+  },
+  "swap-step4-review-rate-mobile-english": {
+    "jpeg": {
+      "original": "/optimized/crypto-essentials/swap-step4-review-rate-mobile-english.jpeg"
+    }
+  },
+  "swap-step5-sign-transaction-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/swap-step5-sign-transaction-english-640w.jpeg",
+      "original": "/optimized/crypto-essentials/swap-step5-sign-transaction-english.jpeg"
+    }
+  },
+  "swap-step5-sign-transaction-mobile-english": {
+    "jpeg": {
+      "original": "/optimized/crypto-essentials/swap-step5-sign-transaction-mobile-english.jpeg"
+    }
+  },
+  "swap-step6-swap-complete-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/swap-step6-swap-complete-english-640w.jpeg",
+      "original": "/optimized/crypto-essentials/swap-step6-swap-complete-english.jpeg"
+    }
+  },
+  "swap-step6-swap-complete-mobile-english": {
+    "jpeg": {
+      "original": "/optimized/crypto-essentials/swap-step6-swap-complete-mobile-english.jpeg"
+    }
+  },
+  "tools-of-the-trade-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/tools-of-the-trade-english-640w.jpeg",
+      "1280": "/optimized/crypto-essentials/tools-of-the-trade-english-1280w.jpeg",
+      "original": "/optimized/crypto-essentials/tools-of-the-trade-english.jpeg"
+    }
+  },
+  "what-is-crypto-trading-english": {
+    "jpeg": {
+      "640": "/optimized/crypto-essentials/what-is-crypto-trading-english-640w.jpeg",
+      "1280": "/optimized/crypto-essentials/what-is-crypto-trading-english-1280w.jpeg",
+      "original": "/optimized/crypto-essentials/what-is-crypto-trading-english.jpeg"
+    }
+  },
+  "kana-logo": {
+    "jpeg": {
+      "original": "/optimized/kana-logo.jpeg"
+    }
+  },
+  "add-margin-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/add-margin-english-640w.jpeg",
+      "1280": "/optimized/perps-essentials/add-margin-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/add-margin-english.jpeg"
+    }
+  },
+  "executing-perps-trades-english": {
+    "jpeg": {
+      "640": "/optimized/perps-essentials/executing-perps-trades-english-640w.jpeg",
+      "1280": "/optimized/perps-essentials/executing-perps-trades-english-1280w.jpeg",
+      "original": "/optimized/perps-essentials/executing-perps-trades-english.jpeg"
+    }
+  },
+  "leverage-and-liquidation-english": {
+    "jpeg": {
+      "640": "/optimized/perps-essentials/leverage-and-liquidation-english-640w.jpeg",
+      "1280": "/optimized/perps-essentials/leverage-and-liquidation-english-1280w.jpeg",
+      "original": "/optimized/perps-essentials/leverage-and-liquidation-english.jpeg"
+    }
+  },
+  "perps-essentials-banner-english": {
+    "jpeg": {
+      "640": "/optimized/perps-essentials/perps-essentials-banner-english-640w.jpeg",
+      "1280": "/optimized/perps-essentials/perps-essentials-banner-english-1280w.jpeg",
+      "original": "/optimized/perps-essentials/perps-essentials-banner-english.jpeg"
+    }
+  },
+  "perps-vs-spot-english": {
+    "jpeg": {
+      "640": "/optimized/perps-essentials/perps-vs-spot-english-640w.jpeg",
+      "1280": "/optimized/perps-essentials/perps-vs-spot-english-1280w.jpeg",
+      "original": "/optimized/perps-essentials/perps-vs-spot-english.jpeg"
+    }
+  },
+  "slippage-english": {
+    "jpeg": {
+      "640": "/optimized/perps-essentials/slippage-english-640w.jpeg",
+      "1280": "/optimized/perps-essentials/slippage-english-1280w.jpeg",
+      "original": "/optimized/perps-essentials/slippage-english.jpeg"
+    }
+  },
+  "understand-perps-futures-english": {
+    "jpeg": {
+      "640": "/optimized/perps-essentials/understand-perps-futures-english-640w.jpeg",
+      "1280": "/optimized/perps-essentials/understand-perps-futures-english-1280w.jpeg",
+      "original": "/optimized/perps-essentials/understand-perps-futures-english.jpeg"
+    }
+  },
+  "click-deposit-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/click-deposit-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/click-deposit-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/click-deposit-english.jpeg"
+    }
+  },
+  "click-withdraw-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/click-withdraw-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/click-withdraw-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/click-withdraw-english.jpeg"
+    }
+  },
+  "close-position-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/close-position-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/close-position-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/close-position-english.jpeg"
+    }
+  },
+  "confirm-balance-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/confirm-balance-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/confirm-balance-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/confirm-balance-english.jpeg"
+    }
+  },
+  "confirm-prompt-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/confirm-prompt-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/confirm-prompt-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/confirm-prompt-english.jpeg"
+    }
+  },
+  "connect-wallet-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/connect-wallet-english-640w.jpeg",
+      "original": "/optimized/perps-walkthrough/connect-wallet-english.jpeg"
+    }
+  },
+  "deposit-usdt-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/deposit-usdt-english-640w.jpeg",
+      "original": "/optimized/perps-walkthrough/deposit-usdt-english.jpeg"
+    }
+  },
+  "enable-trading-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/enable-trading-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/enable-trading-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/enable-trading-english.jpeg"
+    }
+  },
+  "enter-order-size-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/enter-order-size-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/enter-order-size-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/enter-order-size-english.jpeg"
+    }
+  },
+  "enter-order-value-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/enter-order-value-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/enter-order-value-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/enter-order-value-english.jpeg"
+    }
+  },
+  "modify-tpsl-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/modify-tpsl-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/modify-tpsl-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/modify-tpsl-english.jpeg"
+    }
+  },
+  "open-kana-perps-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/open-kana-perps-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/open-kana-perps-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/open-kana-perps-english.jpeg"
+    }
+  },
+  "order-history-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/order-history-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/order-history-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/order-history-english.jpeg"
+    }
+  },
+  "partially-close-limit-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/partially-close-limit-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/partially-close-limit-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/partially-close-limit-english.jpeg"
+    }
+  },
+  "partially-close-market-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/partially-close-market-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/partially-close-market-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/partially-close-market-english.jpeg"
+    }
+  },
+  "perps-walkthrough-banner-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/perps-walkthrough-banner-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/perps-walkthrough-banner-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/perps-walkthrough-banner-english.jpeg"
+    }
+  },
+  "place-limit-order-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/place-limit-order-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/place-limit-order-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/place-limit-order-english.jpeg"
+    }
+  },
+  "place-market-order-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/place-market-order-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/place-market-order-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/place-market-order-english.jpeg"
+    }
+  },
+  "select-asset-and-trade-type-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/select-asset-and-trade-type-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/select-asset-and-trade-type-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/select-asset-and-trade-type-english.jpeg"
+    }
+  },
+  "select-limit-order-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/select-limit-order-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/select-limit-order-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/select-limit-order-english.jpeg"
+    }
+  },
+  "select-position-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/select-position-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/select-position-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/select-position-english.jpeg"
+    }
+  },
+  "set-tpsl-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/set-tpsl-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/set-tpsl-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/set-tpsl-english.jpeg"
+    }
+  },
+  "sign-trading-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/sign-trading-english-640w.jpeg",
+      "original": "/optimized/perps-walkthrough/sign-trading-english.jpeg"
+    }
+  },
+  "tpsl-confirmation-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/tpsl-confirmation-english-640w.jpeg",
+      "1280": "/optimized/perps-walkthrough/tpsl-confirmation-english-1280w.jpeg",
+      "original": "/optimized/perps-walkthrough/tpsl-confirmation-english.jpeg"
+    }
+  },
+  "withdraw-funds-english": {
+    "jpeg": {
+      "640": "/optimized/perps-walkthrough/withdraw-funds-english-640w.jpeg",
+      "original": "/optimized/perps-walkthrough/withdraw-funds-english.jpeg"
+    }
+  },
+  "crypto-essentials": {
+    "jpeg": {
+      "640": "/optimized/thumbnails/crypto-essentials-640w.jpeg",
+      "original": "/optimized/thumbnails/crypto-essentials.jpeg"
+    }
+  },
+  "kana-perps-thumbnail-english": {
+    "jpeg": {
+      "640": "/optimized/thumbnails/kana-perps-thumbnail-english-640w.jpeg",
+      "original": "/optimized/thumbnails/kana-perps-thumbnail-english.jpeg"
+    }
+  },
+  "learn-thumbnail": {
+    "jpeg": {
+      "640": "/optimized/thumbnails/learn-thumbnail-640w.jpeg",
+      "original": "/optimized/thumbnails/learn-thumbnail.jpeg"
+    }
+  },
+  "perps-essentials-english": {
+    "jpeg": {
+      "640": "/optimized/thumbnails/perps-essentials-english-640w.jpeg",
+      "original": "/optimized/thumbnails/perps-essentials-english.jpeg"
+    }
+  }
+}
