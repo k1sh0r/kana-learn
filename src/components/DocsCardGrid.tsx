@@ -23,7 +23,7 @@ export default function DocsCardGrid() {
                 </span>
               )}
               <div className="h-40 overflow-hidden">
-                <Image src={cardImage} alt={category.label} width={1000} height={1000} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+                <img src={cardImage} alt={category.label} width={1000} height={1000} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
               </div>
               <div className="p-6">
                 <h2 className="text-xl font-bold mb-2">

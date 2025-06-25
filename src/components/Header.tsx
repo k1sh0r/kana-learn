@@ -56,8 +56,8 @@ export function Header({ rightAction }: HeaderProps = {}) {
         <div className="lg:container flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-6 lg:gap-10">
             <Link href="/" className="items-center space-x-2 flex">
-              <Image 
-                src="/images/kana-logo.png" 
+              <img 
+                src="/images/kana-logo.png"
                 alt="Kana Learn Logo" 
                 width={32}
                 height={32}

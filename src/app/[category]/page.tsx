@@ -37,10 +37,8 @@ export default function CategoryPage({ params }: { params: { category: string } 
     <DocLayout defaultCollapsed={true}>
       <div className="prose prose-lg max-w-none ">
         <div className="w-full mb-6 overflow-hidden rounded-2xl border-2 border-[#002019]">
-          <Image 
+          <img 
             src={bannerImage}
-            width={1000}
-            height={1000}
             alt={foundCategory.label}
             className="w-full h-full object-cover"
           />

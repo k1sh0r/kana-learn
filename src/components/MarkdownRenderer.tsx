@@ -137,7 +137,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
         img: ({ src = "", alt = "", ...props }) => {
           if (!src || typeof src !== "string") return null;
           return (
-            <Image
+            <img
               src={src}
               alt={alt}
               width={900}
