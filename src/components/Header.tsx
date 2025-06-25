@@ -62,7 +62,6 @@ export function Header({ rightAction }: HeaderProps = {}) {
                 width={32}
                 height={32}
                 className="h-8 w-8"
-                priority
               />
               <span
                 className="font-bold text-lg lg:text-2xl text-transparent bg-clip-text"
