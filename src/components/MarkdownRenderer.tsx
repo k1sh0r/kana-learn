@@ -5,7 +5,7 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { usePathname } from "next/navigation";
 import { metricsService } from "@/services/metricsService";
-import Image from "next/image";
+import OptImage from "./OptImage";
 
 interface MarkdownRendererProps {
   content: string;
@@ -137,13 +137,14 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
         img: ({ src = "", alt = "", ...props }) => {
           if (!src || typeof src !== "string") return null;
           return (
-            <img
+            <OptImage
               src={src}
               alt={alt}
               width={900}
               height={600}
               className={props.className}
               style={{ maxWidth: "100%", height: "auto" }}
+              {...props}
             />
           );
         },

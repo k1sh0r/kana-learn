@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 import { Data } from "@/data/DocData";
+import OptImage from "./OptImage";
 
 const categoryCardImages = {
   "crypto-essentials": "/images/thumbnails/crypto-essentials.jpg",
@@ -23,7 +23,7 @@ export default function DocsCardGrid() {
                 </span>
               )}
               <div className="h-40 overflow-hidden">
-                <img src={cardImage} alt={category.label} width={1000} height={1000} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+                <OptImage src={cardImage} alt={category.label} width={1000} height={1000} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
               </div>
               <div className="p-6">
                 <h2 className="text-xl font-bold mb-2">
