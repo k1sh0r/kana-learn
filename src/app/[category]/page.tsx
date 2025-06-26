@@ -1,19 +1,13 @@
-import { DocLayout } from "@/components/DocLayout";
-import { Data } from "@/data/DocData";
-import { notFound } from "next/navigation";
+import { getDataForLanguage } from '@/data/DocData';
 import type { Metadata } from "next";
-import CategoryPagesGrid from "@/components/CategoryPagesGrid";
-import OptImage from "@/components/OptImage";
-
-const categoryBanners = {
-  "crypto-essentials": "/images/crypto-essentials/crypto-essentials-banner-english.jpg",
-  "kanaperps": "/images/perps-walkthrough/perps-walkthrough-banner-english.png",
-  "perps": "/images/perps-essentials/perps-essentials-banner-english.png",
-};
+import CategoryPageClient from './CategoryPageClient';
+import type { Category } from '@/types';
 
 export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {
   const { category } = params;
-  const foundCategory = Data.categories.find((cat) => cat.slug === category);
+  // Always use English for static metadata
+  const data = await getDataForLanguage('en');
+  const foundCategory = data.categories.find((cat: Category) => cat.slug === category);
   if (!foundCategory) return { title: "Category Not Found | Kana Learn" };
   return {
     title: `${foundCategory.label} | Kana Learn`,
@@ -29,27 +23,5 @@ export async function generateMetadata({ params }: { params: { category: string 
 }
 
 export default function CategoryPage({ params }: { params: { category: string } }) {
-  const { category } = params;
-  const foundCategory = Data.categories.find((cat) => cat.slug === category);
-  if (!foundCategory) return notFound();
-  const bannerImage = categoryBanners[foundCategory.slug as keyof typeof categoryBanners] || "/images/banners/default.jpg";
-  return (
-    <DocLayout defaultCollapsed={true}>
-      <div className="prose prose-lg max-w-none ">
-        <div className="w-full mb-6 overflow-hidden rounded-2xl border-2 border-[#002019]">
-          <OptImage 
-            src={bannerImage}
-            alt={foundCategory.label}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <h1 className="text-3xl font-bold mb-4">{foundCategory.label}</h1>
-        {foundCategory.description && (
-          <div className="mb-12">
-            <CategoryPagesGrid foundCategory={foundCategory} />
-          </div>
-        )}
-      </div>
-    </DocLayout>
-  );
+  return <CategoryPageClient params={params} />;
 }

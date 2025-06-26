@@ -1,7 +1,10 @@
 "use client";
 import Link from "next/link";
-import { Data } from "@/data/DocData";
+import { getDataForLanguage } from '@/data/DocData';
+import { useLanguage } from '@/context/LanguageContext';
+import { useEffect, useState } from 'react';
 import OptImage from "./OptImage";
+import { Category } from '@/types';
 
 const categoryCardImages = {
   "crypto-essentials": "/images/thumbnails/crypto-essentials.jpg",
@@ -10,9 +13,14 @@ const categoryCardImages = {
 };
 
 export default function DocsCardGrid() {
+  const { language, showToastIfFallback } = useLanguage();
+  const [categories, setCategories] = useState<Category[]>([]);
+  useEffect(() => {
+    getDataForLanguage(language, showToastIfFallback).then(data => setCategories(data.categories));
+  }, [language, showToastIfFallback]);
   return (
     <div className="grid gap-6 sm:grid-cols-2">
-      {Data.categories.sort((a, b) => a.position - b.position).map((category) => {
+      {categories.sort((a, b) => a.position - b.position).map((category) => {
         const cardImage = categoryCardImages[category.slug as keyof typeof categoryCardImages] || "/images/banners/default.jpg";
         return (
           <div className="relative overflow-visible" key={category.id}>
@@ -36,8 +44,8 @@ export default function DocsCardGrid() {
                         </span>
                       </li>)}
                 </ul>
-                <span className="text-sm text-primary-600">
-                  View all {category.pages.length} modules
+                <span className="text-sm text-muted-foreground">
+                  {category.cardContent || "A beginner-friendly course that covers wallets, swaps, tokens, and on-chain actions."}
                 </span>
               </div>
             </Link>

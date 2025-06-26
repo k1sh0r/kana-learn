@@ -1,5 +1,5 @@
 import { Category } from "@/types";
-import { perpsEssentials2Pages } from "./perpsEssentials2";
+import { perpsEssentials2Pages } from "./perpsEssentials2_en";
 const understanding = `
 # **Understanding Perpetual Futures**
 
@@ -311,6 +311,7 @@ export const perpsEssentialsCategory: Category = {
   label: "Perpetual Futures Essentials",
   slug: "perps",
   position: 3,
+  cardContent: "Our newest track, focused on leveraged trading and risk strategy. Updated regularly.",
   description: `## **Overview**
 
 Let's be real — most people don't start trading perpetual futures because they love finance. They start because they heard you can turn $100 into $1,000 in five minutes. Or because someone on Twitter bragged about a 200% trade on some coin they'd never heard of.
@@ -361,6 +362,14 @@ Let's get into it.
 `,
   isNew: true,
   pages: [
+    {
+      id: "module-1", //divider
+      title: "Module - 1",
+      sidebar_label: "Module 1: Understanding Perpetual Futures",
+      sidebar_position: 1,
+      slug: "",
+      content: "",
+    },
     {
       id: "understanding-perps",
       title: "Understanding Perpetual Futures",

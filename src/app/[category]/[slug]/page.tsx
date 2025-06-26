@@ -1,15 +1,16 @@
-import { MarkdownRenderer } from "@/components/MarkdownRenderer";
-import { DocLayout } from "@/components/DocLayout";
-import { Data } from "@/data/DocData";
-import { notFound } from "next/navigation";
+import { getDataForLanguage } from '@/data/DocData';
 import type { Metadata } from "next";
+import DocPageClient from './DocPageClient';
+import type { DocPage } from '@/types';
 
 export async function generateMetadata({ params }: { params: { category: string; slug: string } }): Promise<Metadata> {
   const { category, slug } = params;
   const path = `/${category}/${slug}`;
-  let foundPage = null;
-  for (const cat of Data.categories) {
-    const matchingPage = cat.pages.find((p) => p.slug === path);
+  // Always use English for static metadata
+  const data = await getDataForLanguage('en');
+  let foundPage: DocPage | null = null;
+  for (const cat of data.categories) {
+    const matchingPage = cat.pages.find((p: DocPage) => p.slug === path);
     if (matchingPage) {
       foundPage = matchingPage;
       break;
@@ -30,22 +31,5 @@ export async function generateMetadata({ params }: { params: { category: string;
 }
 
 export default function DocPage({ params }: { params: { category: string; slug: string } }) {
-  const { category, slug } = params;
-  const path = `/${category}/${slug}`;
-  let foundPage = null;
-  for (const cat of Data.categories) {
-    const matchingPage = cat.pages.find((p) => p.slug === path);
-    if (matchingPage) {
-      foundPage = matchingPage;
-      break;
-    }
-  }
-  if (!foundPage) return notFound();
-  return (
-    <DocLayout>
-      <article>
-        <MarkdownRenderer content={foundPage.content} />
-      </article>
-    </DocLayout>
-  );
+  return <DocPageClient params={params} />;
 }

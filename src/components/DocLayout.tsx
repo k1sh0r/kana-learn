@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Header } from "./Header";
 import { DocSidebar } from "./DocSidebar";
 import { Category, DocPage } from "@/types";
-import { Data } from "@/data/DocData";
+import { getDataForLanguage } from '@/data/DocData';
 import { useIsMobile } from "@/hooks/use-mobile";
 import {
   Pagination,
@@ -17,6 +17,7 @@ import { metricsService } from "@/services/metricsService";
 import { FeedbackForm } from "./feedbackform";
 import { ChevronLeft } from "lucide-react";
 import { useRouter, usePathname } from "next/navigation";
+import { useLanguage } from '@/context/LanguageContext';
 
 
 interface DocLayoutProps {
@@ -28,7 +29,8 @@ interface DocLayoutProps {
 export function DocLayout({ children, hideSidebar = false, defaultCollapsed = false }: DocLayoutProps) {
   const router = useRouter();
   const isMobile = useIsMobile();
-  const [categories] = useState<Category[]>(Data.categories);
+  const { language, showToastIfFallback } = useLanguage();
+  const [categories, setCategories] = useState<Category[]>([]);
   const [currentPage, setCurrentPage] = useState<DocPage | null>(null);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(defaultCollapsed || isMobile); // Collapse by default on mobile
   const [feedbackOpen, setFeedbackOpen] = useState(false);
@@ -39,7 +41,10 @@ export function DocLayout({ children, hideSidebar = false, defaultCollapsed = fa
   }, [isMobile, defaultCollapsed]);
 
   useEffect(() => {
-    
+    getDataForLanguage(language, showToastIfFallback).then(data => setCategories(data.categories));
+  }, [language, showToastIfFallback]);
+
+  useEffect(() => {
     // Find the current page based on the URL
     let foundPage: DocPage | null = null;
     
@@ -198,10 +203,12 @@ function getAdjacentPage(categories: Category[], currentPage: DocPage, direction
   
   if (!currentCategory) return null;
 
-  // Only get pages from the current category
-  allPages = currentCategory.pages.sort((a, b) => 
-    (a.sidebar_position || 0) - (b.sidebar_position || 0)
-  );
+  // Only get real pages (with slug) from the current category
+  allPages = currentCategory.pages
+    .filter(page => page.slug)
+    .sort((a, b) => 
+      (a.sidebar_position || 0) - (b.sidebar_position || 0)
+    );
   
   const currentIndex = allPages.findIndex(page => page.id === currentPage.id);
   
@@ -225,7 +232,8 @@ function isLastPageInCategory(categories: Category[], currentPage: DocPage): boo
   if (!currentCategory) return false;
   
   const sortedPages = currentCategory.pages
+    .filter(page => page.slug)
     .sort((a, b) => (a.sidebar_position || 0) - (b.sidebar_position || 0));
   
-  return sortedPages[sortedPages.length - 1].id === currentPage.id;
+  return sortedPages[sortedPages.length - 1]?.id === currentPage.id;
 }

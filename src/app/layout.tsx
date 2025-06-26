@@ -3,6 +3,7 @@ import { Inter, Fira_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { LanguageProvider } from '@/context/LanguageContext';
 
 const inter = Inter({
   variable: "--font-sans",
@@ -64,9 +65,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#00a5ff" />
       </head>
       <body className={`${inter.variable} ${firaMono.variable} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <TooltipProvider>
-            {children}
+            <LanguageProvider>
+              {children}
+            </LanguageProvider>
           </TooltipProvider>
         </ThemeProvider>
       </body>

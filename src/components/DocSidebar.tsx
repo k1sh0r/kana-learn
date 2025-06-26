@@ -62,17 +62,25 @@ export function DocSidebar({ categories, currentSlug, isCollapsed = false, onTog
                   .sort((a, b) => (a.sidebar_position || 0) - (b.sidebar_position || 0))
                   .map((page) => (
                     <li key={page.id}>
-                      <Link
-                        href={page.slug}
-                        className={cn(
-                          "block px-2 py-1.5 rounded-md text-sm",
-                          page.slug === currentSlug
-                            ? "text-primary-700 bg-sidebar-accent font-medium"
-                            : "hover:text-primary-600 hover:bg-sidebar-accent"
-                        )}
-                      >
-                        {page.sidebar_label || page.title}
-                      </Link>
+                      {page.slug ? (
+                        <Link
+                          href={page.slug}
+                          className={cn(
+                            "block px-2 py-1.5 rounded-md text-sm",
+                            page.slug === currentSlug
+                              ? "text-primary-700 bg-sidebar-accent font-medium"
+                              : "hover:text-primary-600 hover:bg-sidebar-accent"
+                          )}
+                        >
+                          {page.sidebar_label || page.title}
+                        </Link>
+                      ) : (
+                        <div
+                          className="block px-2 py-1.5 rounded-md text-xs font-semibold text-muted-foreground uppercase tracking-wider opacity-70 cursor-default select-none"
+                        >
+                          {page.sidebar_label || page.title}
+                        </div>
+                      )}
                     </li>
                   ))}
               </ul>

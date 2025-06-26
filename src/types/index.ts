@@ -11,11 +11,12 @@ export interface DocPage {
 export interface Category {
   id: string;
   label: string;
-  slug: string;
+  slug?: string;
   position: number;
   pages: DocPage[];
   description?: string; // Optional markdown description
   isNew?: boolean;
+  cardContent?: string; // Optional card content for course cards
 }
 
 export interface ThemeProviderProps {

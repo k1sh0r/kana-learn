@@ -502,6 +502,7 @@ export const cryptoEssentialsCategory: Category = {
   label: "Crypto Essentials",
   slug: "crypto-essentials",
   position: 1,
+  cardContent: "A beginner-friendly course that covers wallets, swaps, tokens, and on-chain actions.",
   description: `## **Overview**
 
 **Crypto Onboarding Essentials** is a course for those who want to understand how crypto works in real life. Not in theory, not in hype, but in practice — how people get their first tokens, what wallets actually do, how swaps work, and why even simple transactions can go wrong.

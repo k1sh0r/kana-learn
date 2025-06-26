@@ -259,16 +259,30 @@ Hedge Mode on Kana Perps makes it simple: You can manage trades smarter — not 
 Hedge Mode and Dual Positions are some of the most practical tools a trader can have. This isn't about "doubling down" — it's about giving yourself tools to manage risk better. They are not "pro-only" features — they're there to help you manage risk better, even in basic situations. The more you trade, the more you'll see: flexibility is edge — and Hedge Mode gives you that edge.
 
 **Curious how to open a Dual Position in practice?**  
-[Step-by-Step Walkthrough: Opening Dual Positions (Hedge Mode)](/kanaperps/margin)
+[Step-by-Step Walkthrough: Opening Dual Positions (Hedge Mode)](/perps/dual-position?_self)
+`;
+
+const dualPosition = `
+## Opening a Dual Position (Hedge Mode)
+![Place Orders Dual Positions](/images/perps-walkthrough/place-limit-order-english.png)
+Kana Perps uses hedge mode by default, allowing you to hold both <span class="green-text">Long</span> and <span class="red-text">Short</span> positions on the same asset simultaneously. This helps manage volatility, hedge risk, or react to sudden news without closing trades or moving funds. Both trades will appear independently in the Positions tab. They can be adjusted, partially closed, or fully closed one at a time.
 `;
 
 export const perpsEssentials2Pages = [
+  {
+    id: "module-2", //divider
+    title: "Module - 2",
+    sidebar_label: "Module 2: Executing trades",
+    sidebar_position: 6,
+    slug:"",
+    content:"",
+  },
   {
     id: "market-vs-limit",
     title: "Market vs. Limit Orders",
     slug: "/perps/market-vs-limit",
     sidebar_label: "Market vs. Limit",
-    sidebar_position: 5,
+    sidebar_position: 7,
     content: marketVsLimitContent,
   },
   {
@@ -276,7 +290,7 @@ export const perpsEssentials2Pages = [
     title: "Opening a Position",
     slug: "/perps/opening-position",
     sidebar_label: "Opening a Position",
-    sidebar_position: 6,
+    sidebar_position: 8,
     content: openingPositionContent,
   },
   {
@@ -284,7 +298,7 @@ export const perpsEssentials2Pages = [
     title: "Closing a Trade",
     slug: "/perps/closing-trade",
     sidebar_label: "Closing a Trade",
-    sidebar_position: 7,
+    sidebar_position: 9,
     content: closingTradeContent,
   },
   {
@@ -292,7 +306,15 @@ export const perpsEssentials2Pages = [
     title: "Hedge Mode & Dual Positions",
     slug: "/perps/hedge-mode",
     sidebar_label: "Hedge Mode & Dual Positions",
-    sidebar_position: 8,
+    sidebar_position: 10,
     content: hedgeModeContent,
+  },
+  {
+    id: "dual-position",
+    title: "Dual Positions",
+    slug: "/perps/dual-position",
+    sidebar_label: "Dual Positions in practice",
+    sidebar_position: 0,
+    content: dualPosition,
   },
 ];

@@ -22,6 +22,9 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
   const writeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const ticking = useRef(false);
 
+  // Preprocess content to support {_self} marker for links
+  const processedContent = content.replace(/\]\(([^)]+)\)\{_self\}/g, "]($1?_self)");
+
   // Initialize page visit on mount
   useEffect(() => {
     metricsService.updateMetrics(pathname, {
@@ -124,16 +127,27 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeRaw]}
       components={{
-        a: ({ href, children, ...props }) => (
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            {...props}
-          >
-            {children}
-          </a>
-        ),
+        a: ({ href, children, ...props }) => {
+          let isSelf = false;
+          let cleanHref = href;
+
+          // If href ends with '?_self', strip it and set isSelf
+          if (typeof href === 'string' && href.endsWith('?_self')) {
+            isSelf = true;
+            cleanHref = href.replace('?_self', '');
+          }
+
+          return (
+            <a
+              href={cleanHref}
+              target={isSelf ? '_self' : '_blank'}
+              rel={isSelf ? undefined : 'noopener noreferrer'}
+              {...props}
+            >
+              {children}
+            </a>
+          );
+        },
         img: ({ src = "", alt = "", ...props }) => {
           if (!src || typeof src !== "string") return null;
           return (
@@ -150,7 +164,7 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
         },
       }}
     >
-      {content}
+      {processedContent}
     </ReactMarkdown>
   );
 }

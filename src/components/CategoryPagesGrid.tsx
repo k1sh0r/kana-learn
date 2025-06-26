@@ -8,7 +8,7 @@ import type { Category, DocPage } from "@/types/index";
 export default function CategoryPagesGrid({ foundCategory }: { foundCategory: Category }) {
   const router = useRouter();
   const filteredPages = foundCategory.pages
-    .filter((page: DocPage) => page.sidebar_position !== 0)
+    .filter((page: DocPage) => page.sidebar_position !== 0 && page.slug)
     .sort((a: DocPage, b: DocPage) => (a.sidebar_position || 0) - (b.sidebar_position || 0));
   const firstPage = filteredPages[0];
 
