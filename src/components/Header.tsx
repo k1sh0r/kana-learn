@@ -82,7 +82,7 @@ export function Header({ rightAction }: HeaderProps = {}) {
           {/* Mobile Language Dropdown (top nav, right aligned) */}
           <div className="flex md:hidden items-center gap-2 ml-auto">
             <Select value={language} onValueChange={setLanguage}>
-              <SelectTrigger className="h-9 w-20 px-2 rounded-[0.75rem] border border-input hover:bg-accent hover:text-accent-foreground text-sm font-medium outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 flex items-center gap-2" aria-label="Select language">
+              <SelectTrigger className="hidden h-9 w-20 px-2 rounded-[0.75rem] border border-input hover:bg-accent hover:text-accent-foreground text-sm font-medium outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 flex items-center gap-2" aria-label="Select language">
                 <Globe className="w-4 h-4 mr-1" />
                 <SelectValue>{language === "en" ? "EN" : "RU"}</SelectValue>
               </SelectTrigger>
@@ -124,7 +124,7 @@ export function Header({ rightAction }: HeaderProps = {}) {
               <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.3174 10.7749L19.1457 4H17.7646L12.7039 9.88256L8.66193 4H4L10.1122 12.8955L4 20H5.38119L10.7254 13.7878L14.994 20H19.656L13.3174 10.7749ZM11.4257 12.9738L10.8064 12.0881L5.87886 5.03974H8.00029L11.9769 10.728L12.5962 11.6137L17.7646 19.0075H15.6432L11.4257 12.9738Z"></path></svg>
             </a>
             <Select value={language} onValueChange={setLanguage}>
-              <SelectTrigger className="h-9 px-3 rounded-[0.75rem] border border-input hover:bg-accent hover:text-accent-foreground text-sm font-medium outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2" aria-label="Select language" style={{ minWidth: 100 }}>
+              <SelectTrigger className="hidden h-9 px-3 rounded-[0.75rem] border border-input hover:bg-accent hover:text-accent-foreground text-sm font-medium outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2" aria-label="Select language" style={{ minWidth: 100 }}>
                 <SelectValue>{language === "en" ? "English" : "Russian"}</SelectValue>
               </SelectTrigger>
               <SelectContent>
