@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import CategoryPagesGrid from "@/components/CategoryPagesGrid";
 import OptImage from "@/components/OptImage";
 import { Category } from '@/types';
+import { showToast } from '@/components/ui/sonner';
 
 const categoryBanners = {
   "crypto-essentials": "/images/crypto-essentials/crypto-essentials-banner-english.jpg",
@@ -14,19 +15,27 @@ const categoryBanners = {
   "perps": "/images/perps-essentials/perps-essentials-banner-english.png",
 };
 
+let languageFallbackToastShown = false;
+
 export default function CategoryPageClient({ params }: { params: { category: string } }) {
-  const { language, showToastIfFallback } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   const [foundCategory, setFoundCategory] = useState<Category | null>(null);
   const [loading, setLoading] = useState(true);
   const { category } = params;
   useEffect(() => {
     setLoading(true);
-    getDataForLanguage(language, showToastIfFallback).then(data => {
-      const cat = data.categories.find((cat: Category) => cat.slug === category) || null;
+    getDataForLanguage(language, category).then(({ categories, usedLanguage }) => {
+      const cat = categories.find((cat: Category) => cat.slug === category) || null;
       setFoundCategory(cat);
       setLoading(false);
+      if (usedLanguage !== language && !languageFallbackToastShown) {
+        showToast({ title: 'Language not available', description: 'Reverting back to English' });
+        setLanguage('en');
+        languageFallbackToastShown = true;
+      }
     });
-  }, [language, showToastIfFallback, category]);
+    return () => { languageFallbackToastShown = false; };
+  }, [language, category, setLanguage]);
   if (loading) return <div className="py-12 text-center text-muted-foreground">Loading...</div>;
   if (!foundCategory) return notFound();
   const bannerImage = categoryBanners[foundCategory.slug as keyof typeof categoryBanners] || "/images/banners/default.jpg";

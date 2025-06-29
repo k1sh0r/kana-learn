@@ -1,280 +1,305 @@
 import { Category } from "@/types";
-// Kana Perps Walkthroughs
-const connectingwallet = `russian
+// Kana Perps Walkthroughs (Russian)
+const connectingwallet = `# **Подключение кошелька и активация One-Click Trading**
+
+### **Зачем включать One-Click Trading?**
+
+Обычно в DeFi ты должен подтверждать каждую транзакцию вручную — это замедляет процесс и раздражает. Kana Perps упрощает всё: один клик — и сделка проходит без лишних подписей.
+
+### **Пошагово:**
+
+* Открой <a href="https://www.kana.trade/" target="_blank" rel="" className="text-primary">Kana Perps <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mb-1"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>  <br>
+
+  ![Open Kana Perps](/images/perps-walkthrough/open-kana-perps-english.png) <br>
+
+* Нажми **Connect Wallet** и выбери кошелёк (Petra или Nightly).
+
+  ![Connect Wallet](/images/perps-walkthrough/connect-wallet-english.png)  <br>
+
+* Нажми **Enable Trading** → **Sign Trading**.  
+
+  ![Enable Trading](/images/perps-walkthrough/enable-trading-english.png) ![Sign Trading](/images/perps-walkthrough/sign-trading-english.png)  <br>
+
+* **Подтверди действие в кошельке для активации One-Click Trading.**  
+
+  ![Confirm Prompt](/images/perps-walkthrough/confirm-prompt-english.png) <br>
 `;
 
-const deposit = `# **Deposit or Withdraw USDT Between Your Wallet and Trading Account**
+const deposit = `# **Как пополнить или вывести USDT между кошельком и аккаунтом Kana Perps**
 
-To start trading, you need to move USDT from your wallet into your Kana Perps trading account.
+Чтобы начать торговать, нужно перевести USDT из кошелька в свой торговый аккаунт на Kana Perps.
 
->If you don't have USDT yet, you can visit <a href="https://app.kanalabs.io/swap">Kana Swap</a> and get it.
+>Если у тебя ещё нет USDT — зайди на <a href="https://app.kanalabs.io/swap">Kana Swap</a> и обменяй нужную сумму.
 
-**1\. Click "Deposit" in the top right**
-  In the top-right corner of the interface, you'll see your wallet address and a green Deposit button. Click it to open the fund transfer window.
+**1. Нажми "Deposit" в правом верхнем углу**
+  В правом верхнем углу интерфейса ты увидишь свой адрес кошелька и зелёную кнопку Deposit. Нажми её, чтобы открыть окно перевода средств.
 
   ![Click Deposit](/images/perps-walkthrough/click-deposit-english.png) <br>
 
-**2\. Deposit USDT into Your Trading Account**  
-  Make sure the direction is correct: **From: Your Wallet → To: Trading Account**. If it's reversed, click the ↕ icon to switch. Then enter the amount you want to deposit manually or use the quick buttons (25%, 50%, 75%, Max). Once everything looks good, click the green **Deposit** button to confirm. Your funds will be moved instantly.
+**2. Внеси USDT в торговый аккаунт**  
+  Убедись, что направление стоит правильно: **From: Your Wallet → To: Trading Account**. Если указано наоборот — нажми значок ↕, чтобы поменять. Введи нужную сумму вручную или выбери одну из быстрых кнопок: 25%, 50%, 75%, Max. Когда всё готово — нажми зелёную кнопку Deposit, чтобы подтвердить. Средства поступят сразу.
 
   ![Deposit USDT](/images/perps-walkthrough/deposit-usdt-english.png) <br>
 
-**3\. Confirm your new balance**  
-  After depositing, your Trading Account balance will update in the top-right corner.  
-  You're now ready to open your first position.
+**3. Проверь баланс**  
+  После пополнения баланс твоего Trading Account обновится в правом верхнем углу. Теперь можно открывать первую позицию.
 
   ![Confirm Balance](/images/perps-walkthrough/confirm-balance-english.png) <br>
 
-**To Withdraw Funds (Trading Account → Wallet)**
+**Для вывода средств (Trading Account → Wallet)**
 
-1. Click the **arrow icon** next to your trading balance at the top right.  
+1. Нажми на стрелку рядом с балансом в правом верхнем углу.  
 
 ![Click Withdraw](/images/perps-walkthrough/click-withdraw-english.png) <br>
 
-2. In the popup, confirm the direction is set to "From: Trading Account → To: Your Wallet." If it's reversed, click the ↕ icon to switch. Enter the amount you want to withdraw manually or use the quick buttons (25%, 50%, 75%, Max), then click the green Withdraw button. Your funds will be transferred instantly.  
+2. В появившемся окне убедись, что направление стоит правильно: "From: Trading Account → To: Your Wallet". Если наоборот — снова нажми ↕, чтобы поменять. Введи сумму вручную или используй быстрые кнопки, затем нажми зелёную кнопку Withdraw. Средства вернутся в кошелёк мгновенно.  
 
 ![Withdraw Funds](/images/perps-walkthrough/withdraw-funds-english.png) <br>
 `;
 
 const trade = `
-# **Trade Basics**
+# **Основы торговли**
 
-Kana Perps lets you trade with leverage in both directions — **Long** (if you expect the price to rise) or **Short** (if you expect it to fall).
+На Kana Perps ты можешь торговать с плечом — как на рост (Long), так и на падение (Short).
 
-You can choose between **Market orders** (instant execution at current price) and **Limit orders** (execute only at your chosen price).
+Можно использовать два типа ордеров:
 
-Leverage goes up to **20x**. For example:  
- **100 USDT trade at 20x \= 5 USDT required margin.**  
- Higher leverage lowers the upfront margin — but increases the risk of liquidation.
+* **Market Order** — сделка исполняется сразу по текущей цене
+* **Limit Order** — сделка сработает только по выбранной тобой цене
 
-All positions on Kana Perps use **Isolated Margin** — meaning each trade has its own risk. If one gets liquidated, your others stay untouched.
+Плечо — до **20×**. Пример:  
+ **Сделка на 100 USDT с плечом 20× требует всего 5 USDT маржи.**  
+ Чем выше плечо — тем меньше нужно на вход, но тем выше риск ликвидации.
 
-## **Quick Links:**
+Все сделки используют **Isolated Margin** — каждая позиция со своим риском. Если одну ликвидируют, другие не пострадают.
 
-- [How to Open a Market Trade](/perps/opening-trades#placing-a-market-trade-order)
-- [How to Place Limit Orders](/perps/opening-trades#placing-a-limit-long-order)
-- [How to Close Positions (Partial & Full)](/perps/managing-trades#closing-a-trade-partial--full)
-- [Adding More Margin](/perps/managing-trades#adding-margin-to-an-open-position)
+## **Быстрые переходы:**
+
+- [Как открыть сделку по рынку](/perps/opening-trades#placing-a-market-trade-order)
+- [Как поставить лимитный ордер](/perps/opening-trades#placing-a-limit-long-order)
+- [Как закрыть позицию (частично или полностью)](/perps/managing-trades#closing-a-trade-partial--full)
+- [Как добавить маржу](/perps/managing-trades#adding-margin-to-an-open-position)
 `;
+
 const opentrade = `
-# **Placing Market & Limit Order**
-## **Opening a Market Trade Order**
+# **Открытие сделок: Market и Limit ордера**
+## **Открытие рыночного ордера (Market Order)**
 
-**Step 1: Select Asset & Trade Type**
+**Шаг 1: Выбери актив и тип сделки**
 
-Go to the Order Placement section. By default, Market order is selected. Choose the asset you want to trade and set your preferred leverage using the slider — from 1x to 20x.  
+Перейди в блок Order Placement. По умолчанию выбран тип Market. Выбери нужный актив и задай желаемое плечо с помощью ползунка — от 1× до 20×.  
 
 ![Select Asset and Trade Type](/images/perps-walkthrough/select-asset-and-trade-type-english.png) <br>
 
-**Step 2: Enter Order Value**
+**Шаг 2: Укажи сумму сделки**
 
-Type in the amount you want to trade, either in USDT or in the asset token. As you enter the value, the platform will show your estimated liquidation price, required margin, and slippage.  
+Введи объём ордера — в USDT или в токене актива. Платформа автоматически покажет: предполагаемую цену ликвидации, требуемую маржу и проскальзывание.  
 
 ![Enter Order Value](/images/perps-walkthrough/enter-order-value-english.png) <br>
 
-**Step 3: Place Market Order**
+**Шаг 3: Подтверди сделку**
 
-Click **Long** if you expect the price to rise, or **Short** if you expect it to fall. The order will execute instantly at the current market price, and your new position will appear in the **Positions** tab below.
+Нажми **Long**, если ожидаешь рост цены, или **Short**, если ставишь на падение. Операция исполнится мгновенно по текущей рыночной цене. Открытая позиция появится в блоке Positions ниже.
 
 ![Place Market Order](/images/perps-walkthrough/place-market-order-english.png) <br>
 
-## **Opening a Limit Long Order**
+## **Открытие лимитного ордера (Limit Order)**
 
-**Limit orders** let you open positions at a specific, pre-defined price, different from the current market.
+**Limit-ордер** позволяет открыть сделку по своей цене, отличной от текущей рыночной.
 
-**Step 1: Select Limit Order and Set Entry Price**  
-In the Order Placement section, select **Limit**. Enter the price at which you want the order to execute — typically below the market price for Long, or above for Short.
+**Шаг 1: Выбери Limit и задай цену входа**  
+В блоке Order Placement переключись на Limit. Укажи цену, по которой хочешь открыть позицию: ниже рынка для Long, выше рынка для Short.
 
 ![Select Limit Order](/images/perps-walkthrough/select-limit-order-english.png) <br>
 
-**Step 2: Enter Order Size**  
-Type in the amount you want to trade, either in USDT or in the asset token. As you enter the value, the platform will show your estimated liquidation price, required margin, and slippage.
+**Шаг 2: Введи объём сделки**  
+Как и в случае с Market, можно указать сумму в USDT или токене. Ты увидишь: цену ликвидации, маржу, проскальзывание.
 
 ![Enter Order Size](/images/perps-walkthrough/enter-order-size-english.png) <br>
 
-**Step 3: Place Limit Order**  
-Click **Long** or **Short** to place your order. It will appear in the **Open Orders** tab and remain there until the market reaches your target price. Once filled, it will move to the **Positions** tab.  
+**Шаг 3: Подтверди ордер**  
+Нажми **Long** или **Short**, чтобы разместить лимитный ордер. Он появится в блоке Open Orders и будет ждать, пока цена дойдёт до указанного уровня. После исполнения позиция перейдёт в Positions.
 
 ![Place Limit Order](/images/perps-walkthrough/place-limit-order-english.png) <br>
 `;
+
 const closetrade = `
+# **Как закрыть сделку (полностью или частично)**
 
-# **Closing a Trade (Partial & Full)**
-
-**Fully Close a Position**  
-Go to the **Positions** tab and find the trade you want to close. Click **Quick Close** to close the entire position at market price.
+**Полное закрытие позиции**  
+Перейди во вкладку Positions и найди нужную сделку. Нажми Quick Close, чтобы закрыть всю позицию по текущей рыночной цене.
 
 ![Close Position](/images/perps-walkthrough/close-position-english.png) <br>
 
-**Partially Close at Market Price**  
-Select the position, choose **Market**, enter the amount you want to close, and click **Confirm**. The reduced position size will update automatically.
+**Частичное закрытие по рынку (Market)**  
+Выбери нужную позицию, переключись на Market, укажи объём, который хочешь закрыть, и нажми Confirm. Размер открытой позиции обновится автоматически.
 
 ![Partially Close Market](/images/perps-walkthrough/partially-close-market-english.png) <br>
 
-**Partially Close at a Specific Price (Limit)**  
-Select the position, switch to **Limit**, and enter your desired exit price and amount. Click **Confirm** to place the closing order. It will appear under **Open Orders** and execute when the price is reached.
+**Частичное закрытие по лимитной цене (Limit)**  
+Выбери позицию, переключись на Limit, задай желаемую цену выхода и объём. Нажми Confirm, чтобы разместить ордер на частичное закрытие. Он появится во вкладке Open Orders и исполнится, когда цена достигнет заданного уровня.
 
 ![Partially Close Limit](/images/perps-walkthrough/partially-close-limit-english.png) <br>
 
-Once closed, the trade will move to **Order History**.
+После полного или частичного закрытия сделка переместится в Order History.
 
 ![Order History](/images/perps-walkthrough/order-history-english.png) <br>
 `;
+
 const margin = `
-# **Adding Margin to an Open Position**
+# **Добавление маржи к открытой позиции**
 
-Kana Perps uses **isolated margin**. Each trade requires fixed collateral, preventing total balance liquidation. Monitor your positions and add margin when needed.
+Kana Perps использует изолированную маржу. Каждая сделка имеет своё собственное обеспечение — это защищает остальные позиции от ликвидации.
 
-**Step 1: Select Position**  
- Go to the **Positions** tab and click the **pencil icon** next to the trade you want to add margin to.
+Следи за своими активными позициями и добавляй маржу, когда это необходимо.
+
+**Шаг 1: Выбери позицию**  
+Перейди во вкладку Positions и нажми на значок карандаша рядом с той сделкой, к которой хочешь добавить маржу.
 
 ![Select Position](/images/perps-walkthrough/select-position-english.png) <br>
 
-**Step 2: Enter Additional Margin**  
- Type the amount you want to add — it must be **less than your current margin**.  
- Click **Update** to confirm.  The new margin value will be reflected in your **Positions** tab immediately.  
+**Шаг 2: Введи сумму**  
+Укажи, сколько маржи хочешь добавить. Сумма должна быть меньше текущей маржи в позиции. Нажми Update, чтобы подтвердить. Новая сумма маржи сразу отобразится во вкладке Positions.
 
- ![Add Margin](/images/perps-walkthrough/add-margin-english.png) <br>
+![Add Margin](/images/perps-walkthrough/add-margin-english.png) <br>
 `;
-const tpsl = `
-# **Setting TP/SL (Take Profit/Stop Loss)**
 
-**Method 1: Set TP/SL While Opening a Trade**  
- Before placing your order, check the **TP/SL** box in the Order Placement section. Enter your desired take profit and stop loss prices. As you adjust the values, the platform will show your estimated gains and losses in real time. Once ready, place your Long or Short order as usual — your TP/SL will be set automatically.
+const tpsl = `
+# **TP/SL (тейк-профит и стоп-лосс)**
+
+**Способ 1: Задать TP/SL при открытии сделки**  
+Перед тем как разместить ордер, поставь галочку TP/SL в блоке Order Placement. Укажи желаемую цену тейк-профита и стоп-лосса. Платформа сразу покажет предполагаемую прибыль и убыток по текущей позиции. После этого размести ордер (Long или Short) — TP и SL будут применены автоматически.
 
 ![Set TPSL](/images/perps-walkthrough/set-tpsl-english.png) <br>
 
-**Method 2: Add or Modify TP/SL After Opening a Trade**  
-Go to the **Positions** tab and click the **edit icon** next to the TP/SL section of your open trade. Enter your target values and click **Confirm**. Your updated TP/SL will be applied immediately and shown in the same tab.
+**Способ 2: Добавить или изменить TP/SL после открытия сделки**  
+Перейди во вкладку Positions и нажми на значок редактирования рядом с TP/SL. Укажи новые значения и нажми Confirm. Обновлённые уровни сразу применятся и отобразятся в позиции.
 
 ![Modify TPSL](/images/perps-walkthrough/modify-tpsl-english.png) <br>
 
 ![TPSL Confirmation](/images/perps-walkthrough/tpsl-confirmation-english.png) <br>
 
-**Opening a Dual Position (Hedge Mode)**
+## **Открытие двух позиций (Hedge Mode)**
 
-Kana Perps uses **hedge mode by default**, allowing you to hold both Long and Short positions on the same asset simultaneously. This helps manage volatility, hedge risk, or react to sudden news without closing trades or moving funds.
+На Kana Perps Hedge Mode включён по умолчанию — ты можешь держать одновременно Long и Short по одному и тому же активу. Это позволяет хеджировать риск, торговать в обе стороны, не закрывать старую позицию, чтобы открыть новую.
 
-**Step 1: Select Asset**  
-Go to the Order Placement section and choose the asset you want to hedge.
+**Шаг 1: Выбери актив**  
+В блоке Order Placement выбери нужный актив.
 
-**Step 2: Open a Long and Short Position**  
-Set your desired leverage and trade amount. First, open a **Long** position — then immediately open a **Short** on the same asset (or vice versa).
+**Шаг 2: Открой Long и Short**  
+Задай нужное плечо и объём. Сначала открой позицию в одну сторону (например, Long), а затем сразу — в другую (Short). Или наоборот.
 
-**Step 3: Manage Positions Separately**  
-Both trades will appear independently in the **Positions** tab. They can be adjusted, partially closed, or fully closed one at a time.
-
+**Шаг 3: Управляй позициями отдельно**  
+Обе позиции появятся в списке Positions как независимые сделки. Их можно редактировать, частично закрывать или закрыть полностью — по отдельности.
 `;
+
 const swap = `
+# **Обмен APT → USDC на Kana Labs**
 
-# **Walkthrough: Swapping APT → USDC on Kana Labs**
+Обмен токенов — одна из самых базовых и важных операций в DeFi. Kana Labs делает это быстро, дёшево и удобно — особенно в сети Aptos. Вот простой гайд по первому обмену.
 
-Swapping tokens is one of the most basic and essential actions in DeFi. Kana Labs makes it fast, cheap, and easy — especially on Aptos. Here's a simple walkthrough to guide you through your first swap.
+**Что ты сделаешь:**  
+ Ты обменяешь свои APT на USDC (стейблкоин) через агрегатор DEX от Kana Labs, который автоматически находит лучший курс среди разных источников.
 
-**What You'll Do:**  
- You'll swap your APT tokens for USDC (a stablecoin) using Kana Labs' DEX Aggregator, which finds the best rate across multiple sources automatically.
+## **Пошагово:**
 
-## **Step-by-Step Walkthrough:**
+**Шаг 1: Подключи кошелёк**  
+ Открой Kana Labs и нажми "Connect Wallet".  
+ Выбери нужный кошелёк (Petra, Nightly и др.) и убедись, что сеть выбрана правильно (Aptos Mainnet или Testnet).
 
-**Step 1: Connect Your Wallet**  
- Open Kana Labs and click "Connect Wallet."  
- Select your preferred wallet (Petra, Nightly, etc.) and make sure you're connected to the correct network (Aptos Mainnet or Testnet).
+**Шаг 2: Выбери пару для обмена**  
+ В разделе Swap выбери **APT** как токен для продажи и **USDC** как токен для получения.
 
-**Step 2: Select Swap Pair**  
- In the Swap section, select **APT** as the token you're selling, and **USDC** as the token you want to receive.
+**Шаг 3: Введи сумму обмена**  
+ Введи, сколько APT хочешь обменять.  
+ Ты увидишь примерное количество USDC, которое получишь, включая актуальный курс.
 
-**Step 3: Enter Swap Amount**  
- Type in how much APT you want to swap.  
- You'll see the estimated amount of USDC you'll get, including the live exchange rate.
+**Шаг 4: Проверь курс и комиссию**  
+ Kana автоматически подберёт лучший курс среди DEX.  
+ Проверь проскальзывание, ожидаемый результат и комиссию до подтверждения.
 
-**Step 4: Review Rate and Gas Fee**  
- Kana automatically pulls the best available rate across DEXs.  
- Check the slippage, expected output, and estimated gas fee before proceeding.
+**Шаг 5: Соверши обмен**  
+ Нажми **"Swap"**, затем подтверди транзакцию в кошельке.
 
-**Step 5: Execute Swap**  
- Click **"Swap"**, then confirm the transaction in your wallet popup.
+**Шаг 6: Готово!**  
+ USDC поступят на твой кошелёк в течение нескольких секунд.  
+ Баланс обновится сразу.
 
-**Step 6: Done\!**  
- Your USDC will arrive in your wallet within seconds.  
- You can check your updated balance immediately.
+## **Совет:**
 
-## **Tip:**
-
-Want to swap back?  
- Simply reverse the direction (USDC → APT) and follow the same steps.
+Хочешь обменять обратно?  
+ Просто поменяй направление (USDC → APT) и повтори шаги.
 `;
 
-// Export category data
 export const perpsCategory: Category = {
   id: "kanaperps",
-  label: "Kana Perps Walkthroughs",
+  label: "Kana Perps: Пошаговые инструкции",
   slug: "kanaperps",
   position: 2,
-  cardContent: "step-by-step guides showing exactly what to click, how to trade, and how to manage positions on Kana Perps.",
-  description:` Learning by doing is the fastest way to get comfortable. That's why we've prepared step-by-step walkthroughs for every major action you'll need. Whenever you're unsure, just check the guide and keep moving forward — everything's laid out clearly and simply.`,
-  
+  cardContent: "Пошаговые гайды: что нажать, как торговать и управлять позициями на Kana Perps.",
+  description: `Осваивайся на практике! Мы подготовили пошаговые инструкции для каждого действия. Если не уверен — просто открой нужный раздел. Всё по делу — без лишних слов.`,
   pages: [
     {
       id: "connecting-wallet",
-      title: "Connecting Your Wallet",
-      slug: "/kanaperps/connecting-wallet",
-      sidebar_label: "Connecting Wallet",
+      title: "Подключение кошелька",
+      slug: "/kanaperps-ru/connecting-wallet",
+      sidebar_label: "Подключение кошелька",
       sidebar_position: 2,
       content: connectingwallet,
     },
     {
       id: "deposit-withdraw",
-      title: "Deposit & Withdraw",
-      slug: "/kanaperps/deposit-withdraw",
-      sidebar_label: "Deposit & Withdraw",
+      title: "Пополнение и вывод средств",
+      slug: "/kanaperps-ru/deposit-withdraw",
+      sidebar_label: "Пополнение и вывод",
       sidebar_position: 3,
       content: deposit,
     },
     {
       id: "trade-basics",
-      title: "Trade Basics",
-      slug: "/kanaperps/trade-basics",
-      sidebar_label: "Trade Basics",
+      title: "Основы торговли",
+      slug: "/kanaperps-ru/trade-basics",
+      sidebar_label: "Основы торговли",
       sidebar_position: 4,
       content: trade,
     },
     {
       id: "opening-trades",
-      title: "Opening Trades",
-      slug: "/kanaperps/opening-trades",
-      sidebar_label: "Opening Trades",
+      title: "Открытие сделок",
+      slug: "/kanaperps-ru/opening-trades",
+      sidebar_label: "Открытие сделок",
       sidebar_position: 5,
       content: opentrade,
     },
     {
       id: "closing-trades",
-      title: "Closing Trades",
-      slug: "/kanaperps/closing-trades",
-      sidebar_label: "Closing Trades",
+      title: "Закрытие сделок",
+      slug: "/kanaperps-ru/closing-trades",
+      sidebar_label: "Закрытие сделок",
       sidebar_position: 6,
       content: closetrade,
     },
     {
       id: "margin",
-      title: "Adding Margin",
-      slug: "/kanaperps/margin",
-      sidebar_label: "Adding Margin",
+      title: "Добавление маржи",
+      slug: "/kanaperps-ru/margin",
+      sidebar_label: "Добавление маржи",
       sidebar_position: 7,
       content: margin,
     },
     {
       id: "tpsl",
       title: "TP/SL",
-      slug: "/kanaperps/tpsl",
+      slug: "/kanaperps-ru/tpsl",
       sidebar_label: "TP/SL",
       sidebar_position: 8,
       content: tpsl,
     },
     {
       id: "token-swaps",
-      title: "Token Swaps",
-      slug: "/kanaperps/token-swaps",
-      sidebar_label: "Token Swaps",
+      title: "Обмен токенов",
+      slug: "/kanaperps-ru/token-swaps",
+      sidebar_label: "Обмен токенов",
       sidebar_position: 0,
       content: swap,
     }

@@ -11,7 +11,7 @@ import {
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useToast } from "@/components/ui/use-toast";
+import { showToast } from "@/components/ui/sonner";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -44,7 +44,6 @@ export function FeedbackForm({ open, onOpenChange }: FeedbackFormProps) {
   const [feeling, setFeeling] = React.useState<string>();
   const [note, setNote] = React.useState("");
   const [isSubmitting, setIsSubmitting] = React.useState(false);
-  const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -86,18 +85,14 @@ export function FeedbackForm({ open, onOpenChange }: FeedbackFormProps) {
       setFeeling(undefined);
       setNote("");
 
-      toast({
-        title: "Thank you for your feedback!",
-        description: "Your response has been recorded successfully.",
-      });
+      showToast({ title: 'Thank you for your feedback!', description: 'We appreciate your input.' });
       onOpenChange(false);
       router.push("/docs"); // Redirect to DocsHome
     } catch (error) {
       console.error("Form submission error:", error);
-      toast({
+      showToast({
         title: "Unable to submit feedback",
-        description: "Please try again. If the problem persists, contact support.",
-        variant: "destructive",
+        description: "Please try again. If the problem persists, contact support."
       });
     } finally {
       setIsSubmitting(false);
@@ -106,7 +101,7 @@ export function FeedbackForm({ open, onOpenChange }: FeedbackFormProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl max-h-[100vh] md:max-h-[80vh] flex flex-col p-0 gap-0">
+      <DialogContent className="max-w-2xl max-h-[100vh] md:max-h-[80vh] p-0 gap-0">
         <div className="sticky top-0 border-b">
           <DialogHeader className="px-6 py-4">
             <DialogTitle>Leave Your Feedback</DialogTitle>

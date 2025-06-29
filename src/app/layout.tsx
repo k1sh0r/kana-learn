@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from '@/context/LanguageContext';
+import { Toaster } from '@/components/ui/sonner';
 
 const inter = Inter({
   variable: "--font-sans",
@@ -72,6 +73,7 @@ export default function RootLayout({
             </LanguageProvider>
           </TooltipProvider>
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );

@@ -1,5 +1,7 @@
+"use client";
 import { useTheme } from "next-themes"
 import { Toaster as Sonner, toast } from "sonner"
+import CustomToast from "./CustomToast"
 
 type ToasterProps = React.ComponentProps<typeof Sonner>
 
@@ -13,7 +15,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
       toastOptions={{
         classNames: {
           toast:
-            "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
+            "right-[0rem]",
           description: "group-[.toast]:text-muted-foreground",
           actionButton:
             "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
@@ -26,4 +28,15 @@ const Toaster = ({ ...props }: ToasterProps) => {
   )
 }
 
-export { Toaster, toast }
+// Helper to show a custom toast everywhere
+export function showToast({ title, description }: { title: string; description?: string }) {
+  return toast.custom((t) => (
+    <CustomToast
+      title={title}
+      description={description}
+      onClose={() => toast.dismiss(t)}
+    />
+  ));
+}
+
+export { Toaster }

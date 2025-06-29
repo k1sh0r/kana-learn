@@ -1,30 +1,17 @@
 "use client";
-import React, { createContext, useContext, useState, useCallback } from 'react';
-import { useToast } from '@/components/ui/use-toast';
+import React, { createContext, useContext, useState } from 'react';
 
 interface LanguageContextProps {
   language: string;
   setLanguage: (lang: string) => void;
-  showToastIfFallback: (requested: string, fallback: string) => void;
 }
 
 const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState('en');
-  const { toast } = useToast();
-
-  const showToastIfFallback = useCallback((requested: string, fallback: string) => {
-    if (requested !== fallback) {
-      toast({
-        title: 'Language not available',
-        description: `Falling back to English.`,
-      });
-    }
-  }, [toast]);
-
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, showToastIfFallback }}>
+    <LanguageContext.Provider value={{ language, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
