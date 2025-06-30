@@ -13,11 +13,11 @@ const categoryCardImages = {
 };
 
 export default function DocsCardGrid() {
-  const { language, showToastIfFallback } = useLanguage();
+  const { language } = useLanguage();
   const [categories, setCategories] = useState<Category[]>([]);
   useEffect(() => {
-    getDataForLanguage(language, showToastIfFallback).then(data => setCategories(data.categories));
-  }, [language, showToastIfFallback]);
+    getDataForLanguage(language).then(data => setCategories(data.categories));
+  }, [language]);
   return (
     <div className="grid gap-6 sm:grid-cols-2">
       {categories.sort((a, b) => a.position - b.position).map((category) => {

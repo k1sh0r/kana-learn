@@ -29,7 +29,7 @@ interface DocLayoutProps {
 export function DocLayout({ children, hideSidebar = false, defaultCollapsed = false }: DocLayoutProps) {
   const router = useRouter();
   const isMobile = useIsMobile();
-  const { language, showToastIfFallback } = useLanguage();
+  const { language } = useLanguage();
   const [categories, setCategories] = useState<Category[]>([]);
   const [currentPage, setCurrentPage] = useState<DocPage | null>(null);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(defaultCollapsed || isMobile); // Collapse by default on mobile
@@ -41,8 +41,8 @@ export function DocLayout({ children, hideSidebar = false, defaultCollapsed = fa
   }, [isMobile, defaultCollapsed]);
 
   useEffect(() => {
-    getDataForLanguage(language, showToastIfFallback).then(data => setCategories(data.categories));
-  }, [language, showToastIfFallback]);
+    getDataForLanguage(language).then(data => setCategories(data.categories));
+  }, [language]);
 
   useEffect(() => {
     // Find the current page based on the URL
